@@ -5,12 +5,12 @@ import { nav } from './config/nav'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "wangry",
-  titleTemplate: 'wangry | :title',
+  // titleTemplate: 'wangry | :title',
   description: "wangry's blog",
   head: [
     [
       'link', 
-      {rel: 'icon', href: '/logo.jpg'}
+      {rel: 'icon', href: './logo.jpg'}
     ]
   ],
   base: './',

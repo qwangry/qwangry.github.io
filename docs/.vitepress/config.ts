@@ -1,28 +1,42 @@
 import { defineConfig } from 'vitepress'
+import { sidebar } from './config/sidebar'
+import { nav } from './config/nav'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "wangry",
+  titleTemplate: 'wangry | :title',
   description: "wangry's blog",
+  head: [
+    [
+      'link', 
+      {rel: 'icon', href: '/images/logo.jpg'}
+    ]
+  ],
+  cleanUrls: true,
+  lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
+    logo: '/images/logo.jpg',
+    nav,
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    sidebar,
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+      { icon: 'github', link: 'https://qwangry.github.io' }
+    ],
+    editLink: {
+      pattern: 'https://github.com/qwangry/qwangry.github.io/docs/:path',
+      text: 'Edit this page on GitHub'
+    },
+    outline: [2,3],
+    docFooter: {
+      prev: '上一篇：',
+      next: '下一篇：'
+    }
+  },
+  markdown: {
+    theme: 'material-theme-palenight',
+    lineNumbers: true,
   }
 })

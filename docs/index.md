@@ -4,7 +4,7 @@ layout: home
 
 hero:
   image:
-    src: /images/logo.jpg
+    src: "./images/logo.jpg"
     alt: wangry
 
   name: "wangry"

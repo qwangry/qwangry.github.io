@@ -10,14 +10,14 @@ export default defineConfig({
   head: [
     [
       'link', 
-      {rel: 'icon', href: '/images/logo.jpg'}
+      {rel: 'icon', href: 'logo.jpg'}
     ]
   ],
   cleanUrls: true,
   lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '/images/logo.jpg',
+    logo: 'logo.jpg',
     nav,
 
     sidebar,

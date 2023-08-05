@@ -9,6 +9,7 @@ hero:
 
   name: "wangry"
   text: "wangry's blog"
+  title: "wangry"
   tagline: My great project tagline
 
   actions:

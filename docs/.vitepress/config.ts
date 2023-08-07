@@ -33,7 +33,11 @@ export default defineConfig({
     docFooter: {
       prev: '上一篇：',
       next: '下一篇：'
-    }
+    },
+    // 本地搜索
+    search:{
+      provider: 'local'
+    },
   },
   markdown: {
     theme: 'material-theme-palenight',

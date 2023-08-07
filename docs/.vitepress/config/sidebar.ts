@@ -28,6 +28,7 @@ export const sidebar={
                 { text: '简介', link: '/docx/javascript/introduce' },
                 { text: '定义', link: '/docx/javascript/定义' },
                 { text: '一些语法', link: '/docx/javascript/一些语法' },
+                { text: '字符串', link: '/docx/javascript/字符串' },
             ]
         },
         {

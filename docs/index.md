@@ -17,14 +17,15 @@ hero:
       text: 快速开始
       link: /docx/hello/hello
     - theme: alt
+      text: 团队介绍
+      link: /public/team
+    - theme: alt
       text: Github
       link: https://github.com/qwangry
 
-# features:
-#   - title: Feature A
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature B
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature C
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+features:
+  - title: 文档
+    details: 前端，leetcode，go
+  - title: 文章记录
+    details: 开发中...
 ---

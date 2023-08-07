@@ -15,7 +15,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /docs/hello/hello
+      link: /docx/hello/hello
     - theme: alt
       text: Github
       link: https://github.com/qwangry

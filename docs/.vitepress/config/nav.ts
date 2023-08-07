@@ -1,8 +1,8 @@
 export const nav=[
     {
         text: '文档',
-        activeMatch: '/docs/',
-        link: '/docs/hello/hello'
+        activeMatch: '/docx/',
+        link: '/docx/hello/hello'
     },
     {
         text: '文章记录',

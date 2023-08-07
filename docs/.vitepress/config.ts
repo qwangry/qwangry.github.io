@@ -10,10 +10,9 @@ export default defineConfig({
   head: [
     [
       'link', 
-      {rel: 'icon', href: './favicon.ico'}
+      {rel: 'icon', href: '/logo.jpg'}
     ]
   ],
-  base: './',
   cleanUrls: true,
   lastUpdated: true,
   themeConfig: {

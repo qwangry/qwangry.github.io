@@ -24,8 +24,8 @@ hero:
       link: https://github.com/qwangry
 
 features:
-  - title: 文档
+  - title: 👋 文档
     details: 前端，leetcode，go
-  - title: 文章记录
+  - title: 👀 文章记录
     details: 开发中...
 ---

@@ -5,6 +5,7 @@ export const sidebar={
             collapsed: false,
             items: [
                 { text: 'Hello', link: '/docx/hello/hello' },
+                { text: '写在前面', link: '/docx/hello/写在前面' },
             ]
         },
         {
@@ -30,6 +31,7 @@ export const sidebar={
                 { text: '一些语法', link: '/docx/javascript/一些语法' },
                 { text: '字符串', link: '/docx/javascript/字符串' },
                 { text: '数组', link: '/docx/javascript/数组' },
+                { text: '代码块', link: '/docx/javascript/代码块'},
             ]
         },
         {

@@ -9,11 +9,11 @@ export const nav=[
         activeMatch: '/acticle/',
         link: '/acticle/hello/hello'
     },
-    {
-        text: '团队介绍',
-        activeMatch: '/acticle/',
-        link: '/public/team'
-    },
+    // {
+    //     text: '团队介绍',
+    //     activeMatch: '/acticle/',
+    //     link: '/public/team'
+    // },
     // {
     //     text: '图片',
     //     activeMatch: '/public/',

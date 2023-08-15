@@ -5,20 +5,20 @@ layout: home
 hero:
   image:
     src: /logo.jpg
-    alt: wangry
+    alt: "..."
 
-  name: "wangry"
-  text: "wangry's blog"
-  title: "wangry"
-  tagline: My great project tagline
+  name: "..."
+  text: "..."
+  title: "..."
+  tagline: 学习记录，也许坚持就会成功吧
 
   actions:
     - theme: brand
       text: 快速开始
       link: /docx/hello/hello
-    - theme: alt
-      text: 团队介绍
-      link: /public/team
+    # - theme: alt
+    #   text: 团队介绍
+    #   link: /public/team
     - theme: alt
       text: Github
       link: https://github.com/qwangry

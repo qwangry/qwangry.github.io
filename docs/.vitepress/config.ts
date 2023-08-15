@@ -4,9 +4,9 @@ import { nav } from './config/nav'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "wangry",
-  titleTemplate: 'wangry | :title',
-  description: "wangry's blog",
+  title: "title",
+  titleTemplate: 'title | :title',
+  description: "...",
   head: [
     [
       'link', 

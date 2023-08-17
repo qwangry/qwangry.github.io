@@ -35,6 +35,7 @@ export const sidebar={
                 { text: 'js对象', link: '/docx/javascript/js对象'},
                 { text: '面向对象', link: '/docx/javascript/面向对象'},
                 { text: 'json', link: '/docx/javascript/json'},
+                { text: '异步', link: '/docx/javascript/异步'},
             ]
         },
         {

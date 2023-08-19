@@ -497,7 +497,7 @@ strokeText()：绘制文本外边框（描边）。
   </body>
 </html>
 ```
-![Alt text](image16.png)
+![Alt text](./images/image16.png)
 
 #### 图片
 

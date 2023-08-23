@@ -37,6 +37,7 @@ export const sidebar={
                 { text: 'json', link: '/docx/javascript/json'},
                 { text: '异步', link: '/docx/javascript/异步'},
                 { text: '客户端WebAPI', link: '/docx/javascript/客户端WebAPI'},
+                { text: 'ES6', link: '/docx/javascript/ES6'},
                 
             ]
         },

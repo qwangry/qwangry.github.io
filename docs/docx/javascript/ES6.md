@@ -542,3 +542,242 @@ fn('vae');
 // vae
 // smyh
 ```
+
+## 剩余参数和扩展运算符
+
+### 剩余参数
+剩余参数允许将不确定数量的剩余的元素放到一个数组中。
+
+传统写法：
+
+定义方法中，参数要确定个数
+
+```JavaScript
+function fn(a,b,c){
+    console.log(a)
+    console.log(b)
+    console.log(c)
+    console.log(d)
+}
+fn(1,2,3)
+// 报错
+```
+
+ES6写法：
+```JavaScript
+const fn=(...args)=>{
+    console.log(args[0])
+    console.log(args[1])
+    console.log(args[2])
+    console.log(args[3])
+}
+fn(1,2)
+// 1
+// 2
+// undefined
+// undefined
+```
+
+args之后不能再加别的参数，否则编译报错。
+
+但可以在前面加：
+```JavaScript
+function fn(first,...args){
+    console.log(first)
+    console.log(args)
+}
+fn(10,20,30)
+// 10 [20,30]
+```
+
+示例：参数求和
+```javascript
+const sum=(...args)=>{
+    let total=0
+    args.forEach(item=>total+=item)
+    return total
+}
+console.log(sum(10,20,30))
+// 60
+```
+
+示例：解构赋值
+```javascript
+const students = ['张三', '李四', '王五'];
+let [s1, ...s2] = students;
+
+console.log(s1); // '张三'
+console.log(s2); // ['李四', '王五']
+```
+
+### 扩展运算符（展开语法）
+剩余参数是将剩余的元素放到一个数组中；而扩展运算符是将数组或者对象拆分成逗号分隔的参数序列。
+
+```JavaScript
+const arr = [10, 20, 30];
+...arr // 10, 20, 30      注意，这一行是伪代码，这里用到了扩展运算符
+console.log(...arr); // 10 20 30
+
+console.log(10, 20, 30); // 10 20 30
+```
+
+#### 数组赋值
+
+```javascript
+let arr1 = ['www', 'smyhvae', 'com'];
+let arr2 = arr1; // 将 arr1 赋值给 arr2，其实是让 arr2 指向 arr1 的内存地址
+console.log('arr1:' + arr1);
+console.log('arr2:' + arr2);
+console.log('---------------------');
+
+arr2.push('xx'); //往 arr2 里添加一部分内容
+console.log('arr1:' + arr1);
+console.log('arr2:' + arr2);
+// arr1:www,smyhvae,com
+// arr2:www,smyhvae,com
+// arr1:www,smyhvae,com,xx
+// arr2:www,smyhvae,com,xx
+```
+let arr2 = arr1;其实是让 arr2 指向 arr1 的地址。也就是说，二者指向的是同一个内存地址。
+
+如果不想让 arr1 和 arr2 指向同一个内存地址，可以借助扩展运算符来做：
+
+```JavaScript
+let arr1 = ['www', 'smyhvae', 'com'];
+let arr2 = [...arr1]; //【重要代码】arr2 会重新开辟内存地址
+console.log('arr1:' + arr1);
+console.log('arr2:' + arr2);
+console.log('---------------------');
+
+arr2.push('你懂得'); //往arr2 里添加一部分内容
+console.log('arr1:' + arr1);
+console.log('arr2:' + arr2);
+// arr1:www,smyhvae,com
+// arr2:www,smyhvae,com
+// arr1:www,smyhvae,com
+// arr2:www,smyhvae,com,xx
+```
+
+#### 合并数组
+```JavaScript
+let arr1 = ['王一', '王二', '王三'];
+let arr2 = ['王四', '王五', '王六'];
+// ...arr1  // '王一','王二','王三'
+// ...arr2  // '王四','王五','王六'
+
+// 方法1
+let arr3 = [...arr1, ...arr2];
+console.log(arr3); // ["王一", "王二", "王三", "王四", "王五", "王六"]
+
+// 方法2
+arr1.push(...arr2);
+console.log(arr1); // ["王一", "王二", "王三", "王四", "王五", "王六"]
+```
+
+
+#### 将伪数组或者可遍历对象转换为真正的数组
+```JavaScript
+const myDivs = document.getElementsByClassName('div');
+const divArr = [...myDivs]; // 利用扩展运算符，将伪数组转为真正的数组
+```
+
+**另外一种方式，将伪数组转换为真正的数组**
+```JavaScript
+let arr2=Array.from(arrayLike)
+```
+
+## 字符串、数组、对象扩展
+
+### 字符串
+- includes(str)：判断是否包含指定的字符串
+
+- startsWith(str)：判断是否以指定字符串开头
+
+- endsWith(str)：判断是否以指定字符串结尾
+
+- repeat(count)：重复指定次数
+
+### Number
+二进制与八进制数值表示法: 二进制用`0b`, 八进制用`0o`。
+
+```JavaScript
+console.log(0b1010); //10
+console.log(0o56); //46
+```
+
+- Number.isFinite(i)：判断是否为有限大的数。比如Infinity这种无穷大的数，返回的就是 false。
+
+- Number.isNaN(i)：判断是否为 NaN。
+
+- Number.isInteger(i)：判断是否为整数。
+
+- Number.parseInt(str)：将字符串转换为对应的数值。
+
+- Math.trunc(i)：去除小数部分。
+
+### 数组
+
+- Array.from()
+
+- find()
+
+- findIndex()
+
+### 对象
+
+- Object.is(v1,v2)：判断两个数据是否完全相等，底层是通过字符串来判断的
+
+```JavaScript
+console.log(0 == -0);
+console.log(NaN == NaN);
+// true
+// false
+```
+NaN和任何值都不相等
+
+```JavaScript
+console.log(Object.is(0, -0));
+console.log(Object.is(NaN, NaN));
+// false
+// true
+```
+
+- Object.assign()：浅拷贝
+
+-`__proto__`属性
+```JavaScript
+let obj1 = { name: 'smyhvae' };
+let obj2 = {};
+
+obj2.__proto__ = obj1;
+
+console.log(obj1);
+console.log(obj2);
+console.log(obj2.name);
+```
+![Alt text](./images/image20.png)
+
+## Set数据结构
+
+ES6 提供了 新的数据结构 Set。Set 类似于数组，但成员的值都是唯一的，没有重复的值。
+
+Set 本身就是一个构造函数，可通过 new Set() 生成一个 Set 的实例。
+
+```JavaScript
+const set1 = new Set();
+console.log(set1.size); // 打印结果：0
+```
+
+可以接收一个数组作为参数，实现数组去重：
+```JavaScript
+const set2 = new Set(['张三', '李四', '王五', '张三']); // 注意，这个数组里有重复的值
+
+// 注意，这里的 set2 并不是数组，而是一个单纯的 Set 数据结构
+console.log(set2); // {"张三", "李四", "王五"}
+
+// 通过扩展运算符，拿到 set 中的元素（用逗号分隔的序列）
+// ...set2 //  "张三", "李四", "王五"
+
+// 注意，到这一步，才获取到了真正的数组
+console.log([...set2]); // ["张三", "李四", "王五"]
+```

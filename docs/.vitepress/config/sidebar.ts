@@ -55,6 +55,13 @@ export const sidebar={
                 { text: '常用操作', link: '/docx/leetcode/常用操作' },
             ]
         },
+        {
+            text: '云原生',
+            collapsed: false,
+            items: [
+                { text: 'docker', link: '/docx/云原生/docker' },
+            ]
+        },
     ],
     '/acticle/':[
         {

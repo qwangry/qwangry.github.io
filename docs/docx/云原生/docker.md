@@ -101,6 +101,10 @@ docker exec -it 容器id  /bin/bash
 ```
 
 2、挂载数据到外部修改
+
+目的是将docker容器中的某个目录，挂载到主机的某个目录
+-v 后的内容就是指挂载内容，ro指的是主机可修改，但是容器内部不能修改。rw指的是容器内部也可以改
+
 ```bash
 docker run --name=mynginx   \
 -d  --restart=always \
@@ -156,4 +160,27 @@ docker push leifengyang/guignginx:v1.0
 
 # 别的机器下载
 docker pull leifengyang/guignginx:v1.0
+```
+
+- 其他
+
+```bash
+# 看日志排错
+docker logs 容器名/id   排错
+
+# 进入容器的控制台
+docker exec -it 容器id /bin/bash
+
+# docker 经常修改nginx配置文件
+docker run -d -p 80:80 \
+-v /data/html:/usr/share/nginx/html:ro \
+-v /data/conf/nginx.conf:/etc/nginx/nginx.conf \
+--name mynginx-02 \
+nginx
+
+
+#把容器指定位置的东西复制出来 
+docker cp 5eff66eec7e1:/etc/nginx/nginx.conf  /data/conf/nginx.conf
+#把外面的内容复制到容器里面
+docker cp  /data/conf/nginx.conf  5eff66eec7e1:/etc/nginx/nginx.conf
 ```

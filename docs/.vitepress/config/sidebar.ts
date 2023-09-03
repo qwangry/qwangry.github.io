@@ -60,6 +60,7 @@ export const sidebar={
             collapsed: false,
             items: [
                 { text: 'docker', link: '/docx/云原生/docker' },
+                { text: 'DevOps', link: '/docx/云原生/DevOps' },
             ]
         },
     ],

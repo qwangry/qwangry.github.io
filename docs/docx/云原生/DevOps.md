@@ -251,7 +251,7 @@ docker-compose安装
 
 在github上搜索docker/compose，下载已发布的压缩文件
 docker-compose-Linux-x86_64
-(本事就是一个可执行文件，但没有执行权限)
+(本身就是一个可执行文件，但没有执行权限)
 
 设置可执行权限
 ```bash
@@ -268,4 +268,146 @@ mv docker-compose /usr/bin
 # 放到PATH之后任何位置可以执行
 docker-compose version
 ```
+
+## Jenkins
+Jenkins涉及到将编写完毕的代码发布到测试环境和生产环境的任务，并且还涉及到了构建项目等任务。
+
+Jenkins需要大量的插件保证工作，安装成本较高
+
+### 介绍
+Jenkins是一个开源软件项目，基于Java开发的一种持续集成工具
+
+Jenkins应用广泛，大多数互联网公司都采用Jenkins配合GitLab、Docker、K8s作为实现DevOps的核心工具
+
+Jenkins最强大的在于插件，Jenkins官方提供了大量的插件库，来自动化CI/CD过程中的各种琐碎功能
+
+CI过程即是通过Jenkins将代码拉取、构建、制作镜像交给测试人员测试
+- 持续集成：让软件代码可以持续的集成到主干上，并自动构建和测试
+
+CD过程即是通过Jenkins将打好标签的发行版本代码拉取、构建、制作镜像交给运维人员部署
+- 持续交付：让经过持续集成的代码可以进行手动部署
+- 持续部署：让可以持续交付的代码随时随地的自动化部署
+
+![Alt text](./images/image9.png)
+
+### Jenkins安装
+[https://www.jenkins.io/](https://www.jenkins.io/)
+
+进入官网，点击docker安装方式，跳转到相应页面，按照指令进行安装即可
+
+```bash
+docker pull jenkins/jenkins:2.319.1-lts
+```
+
+:::tip
+lts：持续稳定版本的意思
+:::
+
+在/usr/local里面创建docker文件夹，再创建jenkibs_docker文件夹
+
+编写docker-compose.yml文件
+```yml
+version: "3.1"
+services:
+  jenkins:
+    image: jenkins/jenkins:2.319.1-lts
+    container_name: jenkins
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - ./data/:/var/jenkins_home/
+```
+`/var/jenkins_home/`是安装jenkins成功之后的home目录，插件、项目最终都会在这个目录下进行一些操作，映射到宿主机的`./data/`目录下
+
+使用`docker-compose up -d`指令跑起来
+
+使用`docker logs -f jenkins`查看日志
+
+报错如下：
+```bash
+[root@localhost jenkins_docker]# docker logs -f jenkins 
+touch: cannot touch '/var/jenkins_home/copy_reference_file.log': Permission denied
+Can not write to /var/jenkins_home/copy_reference_file.log. Wrong volume permissions?
+```
+
+解决方法，给data目录增加权限：
+```bash
+[root@localhost jenkins_docker]# chmod -R 777 data
+```
+
+再次启动：
+```bash
+docker-compose restart
+```
+
+注：在这一步，还是报错
+
+解决办法如下：
+
+1、检查Docker服务状态，确保Docker服务正在运行
+
+```bash
+systemctl status docker
+```
+
+如果没有运行，使用以下命令启动：
+
+```bash
+systemctl start docker
+```
+
+2、清理不使用的容器和镜像，不使用的容器额镜像可能会导致Docker数据不一致
+
+```bash
+docker container prune
+docker image prune -a
+```
+
+3、重新创建容器，如果还没有解决，尝试删除并重建
+
+首先停止并删除容器
+```bash
+docker-compose down
+```
+然后重新启动
+```bash
+docker-compose up -d
+```
+
+
+插件下载失败是正常的，可后续下载
+
+进入页面的插件管理，搜索Git Parameter，Publish Over SSH
+
+### 配置
+
+配置jdk和maven：
+
+![Alt text](./images/image16.png)
+
+将jdk和maven挪到Jenkins里面，映射到容器内部
+
+![Alt text](./images/image10.png)
+
+在页面配置如下：
+![Alt text](./images/image11.png)
+
+![Alt text](./images/image12.png)
+
+![Alt text](./images/image13.png)
+
+
+为了推送而进行的配置：
+
+![Alt text](./images/image15.png)
+
+在Publish Over SSH插件配置里面
+
+注意要提前创建好test目录
+
+![Alt text](./images/image14.png)
+
+
+
 

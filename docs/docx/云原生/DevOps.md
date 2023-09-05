@@ -130,7 +130,27 @@ services:
         environment:
             GITLAB_OMNIBUS_CONFIG: | 
             # 宿主机IP
-                external_url 'http://192.168.107.232:8989'   
+                external_url 'http://192.168.181.137:8989'   
+                gitlab_rails['gitlab_shell_ssh_port'] = 2224
+        ports:
+            - '8989:8989'
+            - '2224:2224'
+        volumes:
+            - './config:/etc/gitlab'
+            - './logs:/var/log/gitlab'
+            - './data:/var/opt/gitlab'
+```
+
+```
+version: '3.1'
+services:
+    gitlab:
+        image: 'gitlab/gitlab-ce:latest'
+        container_name: gitlab
+        restart: always
+        environment:
+            GITLAB_OMNIBUS_CONFIG: | 
+                external_url 'http://192.168.181.137:8989'   
                 gitlab_rails['gitlab_shell_ssh_port'] = 2224
         ports:
             - '8989:8989'
@@ -162,6 +182,7 @@ docker-compose logs -f
 docker exec -it gitlab bash
 cat /etc/gitlab/initial_root_password
 # 文件里有默认的密码
+# Zdl97KLUR5qFCdTxMJ1pDu9Q2BnubOFTHqlkmteK0m4=
 ```
 登录进去之后，可以用户那里修改密码
 
@@ -409,5 +430,112 @@ docker-compose up -d
 ![Alt text](./images/image14.png)
 
 
+## CI操作
 
+创建一个简单的spring boot项目
+
+在gitlab创建一个仓库
+![Alt text](./images/image17.png)
+
+按照仓库给的提示进行git配置
+
+推送到gitlab仓库
+
+在Jenkins创建任务：New Item
+![Alt text](./images/image18.png)
+
+输入，保存之后，Jenkins会自动拉取gitlab地址
+
+可以进容器查看一下是否已经拉取
+```bash
+docker exec -it jenkins bash
+```
+
+然后maven设置，让Jenkins可以通过maven进行package操作
+
+![Alt text](./images/image19.png)
+
+![Alt text](./images/image20.png)
+
+然后进行构建，第一次构建时间比较长
+![Alt text](./images/image21.png)
+
+jenkins把构建好的jar包推送到目标服务器，目标服务器把它运行起来，运行方式是docker
+
+还在刚刚界面，构建后操作：
+![Alt text](./images/image22.png)
+
+目标服务器在前面已经配置过了
+![Alt text](./images/image23.png)
+
+要是想能够自动在docker，需要在项目中追加Dockerfile文件
+
+先找一个基础镜像
+[https://hub.daocloud.io/](https://hub.daocloud.io/)
+
+搜索Java
+
+![Alt text](./images/image24.png)
+
+在里面找一个8的
+![Alt text](./images/image25.png)
+
+![Alt text](./images/image26.png)
+
+```dockerfile
+FROM daocloud.io/library/java:8u40-jdk
+COPY demo.jar /usr/local/
+WORKDIR /usr/local/
+CMD java -jar demo.jar
+```
+
+```docker-compose.yml
+version:'3.1'
+services:
+  demo:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: demo:v1.0.0
+    container_name: demo
+    ports:
+      - 8081:8080
+```
+
+推送到gitlab
+
+配置更新：
+![Alt text](./images/image27.png)
+![Alt text](./images/image28.png)
+![Alt text](./images/image29.png)
+
+
+下面这个指令可以清楚重复的镜像
+```bash
+docker image prune -f
+```
+![Alt text](./images/image30.png)
+
+![Alt text](./images/image31.png)
+
+## CD操作
+
+![Alt text](./images/image32.png)
+
+![Alt text](./images/image33.png)
+
+gitlab新建tag
+![Alt text](./images/image34.png)
+
+再新建一个v2.0.0
+
+Jenkins可以选择tag，然后根据版本显示不同内容
+
+![Alt text](./images/image35.png)
+
+## SonarQube
+
+检测代码质量
+
+![Alt text](./images/image36.png)
 

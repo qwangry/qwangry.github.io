@@ -441,6 +441,9 @@ docker-compose up -d
 
 推送到gitlab仓库
 
+
+![Alt text](./images/image37.png)
+
 在Jenkins创建任务：New Item
 ![Alt text](./images/image18.png)
 

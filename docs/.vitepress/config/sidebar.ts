@@ -60,6 +60,7 @@ export const sidebar={
             collapsed: false,
             items: [
                 { text: '01', link: '/docx/Docker/01' },
+                { text: '02', link: '/docx/Docker/02' },
             ]
         },
         {

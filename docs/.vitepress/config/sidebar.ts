@@ -61,6 +61,7 @@ export const sidebar={
             items: [
                 { text: '01', link: '/docx/Docker/01' },
                 { text: '02', link: '/docx/Docker/02' },
+                { text: '03', link: '/docx/Docker/03' },
             ]
         },
         {

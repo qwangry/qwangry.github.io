@@ -54,6 +54,7 @@ export const sidebar={
             items: [
                 { text: '常用操作', link: '/docx/leetcode/常用操作' },
                 { text: '代码1', link: '/docx/leetcode/代码1' },
+                { text: '代码2', link: '/docx/leetcode/代码2' },
             ]
         },
         {

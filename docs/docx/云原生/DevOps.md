@@ -542,3 +542,115 @@ Jenkins可以选择tag，然后根据版本显示不同内容
 
 ![Alt text](./images/image36.png)
 
+是一个开源代码分析平台，支持多种语言。检查代码中是否有重复内容，漏洞等等。可以基于多种平台。
+
+![Alt text](image.png)
+
+![Alt text](image-2.png)
+
+创建文件夹sonarqube_docker
+创建docker-compose.yml
+![Alt text](image-3.png)
+
+docker-compose up -d跑起来
+
+报错处理：虚拟内存不足
+![Alt text](image-5.png)
+![Alt text](image-4.png)
+
+![Alt text](image-6.png)
+
+安装中文插件
+![Alt text](image-7.png)
+
+在maven中配置sonar
+![Alt text](image-8.png)
+
+![Alt text](image-9.png)
+
+如果有maven的环境变量，可在命令行检测：
+![Alt text](image-10.png)
+
+![Alt text](image-11.png)
+
+sonar-scanner下载：
+![Alt text](image-12.png)
+
+yum install -y unzip安装解压软件
+
+![Alt text](image-13.png)
+
+![Alt text](image-14.png)
+
+sonar-scanner移动到Jenkins的data目录下
+![Alt text](image-15.png)
+
+编辑配置文件：
+
+![Alt text](image-17.png)
+![Alt text](image-16.png)
+
+利用sonar-scanner里面的东西检测workspace里面的代码：
+![Alt text](image-18.png)
+
+![Alt text](image-19.png)
+
+![Alt text](image-20.png)
+
+检测命令：
+![Alt text](image-21.png)
+上图命令是-D，不是-S
+![Alt text](image-22.png)
+
+![Alt text](image-23.png)
+
+![Alt text](image-24.png)
+
+![Alt text](image-25.png)
+
+![Alt text](image-26.png)
+![Alt text](image-27.png)
+
+![Alt text](image-28.png)
+
+### jenkins集成sonarqube
+在Jenkins里面下载插件：
+![Alt text](image-29.png)
+
+![Alt text](image-30.png)
+
+![Alt text](image-31.png)
+
+![Alt text](image-32.png)
+![Alt text](image-33.png)
+
+![Alt text](image-34.png)
+
+![Alt text](image-35.png)
+
+![Alt text](image-36.png)
+
+![Alt text](image-37.png)
+
+## harbor自定义镜像
+![Alt text](image-38.png)
+
+安装：GitHub下载安装包，解压一下
+
+![Alt text](image-39.png)
+修改配置文件：
+![Alt text](image-40.png)
+
+![Alt text](image-41.png)
+![Alt text](image-42.png)
+
+![Alt text](image-43.png)
+
+![Alt text](image-44.png)
+
+:80访问
+
+admin
+默认密码
+
+

@@ -24,7 +24,7 @@ export const sidebar={
         },
         {
             text: 'JavaScript',
-            collapsed: false,
+            collapsed: true,
             items: [
                 { text: '简介', link: '/docx/javascript/introduce' },
                 { text: '定义', link: '/docx/javascript/定义' },
@@ -38,7 +38,15 @@ export const sidebar={
                 { text: '异步', link: '/docx/javascript/异步'},
                 { text: '客户端WebAPI', link: '/docx/javascript/客户端WebAPI'},
                 { text: 'ES6', link: '/docx/javascript/ES6'},
+                { text: 'web表单', link: '/docx/javascript/web表单'},
                 
+            ]
+        },
+        {
+            text: 'vue',
+            collapsed: false,
+            items: [
+                {text: '',link:'/docx/vue/'},
             ]
         },
         {
@@ -59,7 +67,7 @@ export const sidebar={
         },
         {
             text: 'Docker',
-            collapsed: false,
+            collapsed: true,
             items: [
                 { text: '01', link: '/docx/Docker/01' },
                 { text: '02', link: '/docx/Docker/02' },

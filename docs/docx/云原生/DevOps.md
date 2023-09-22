@@ -119,7 +119,7 @@ docker images
 ```
 
 编辑docker-compose.yml文件
-```yml
+```
 version: '3.1'
 services:
     gitlab:
@@ -327,7 +327,7 @@ lts：持续稳定版本的意思
 在/usr/local里面创建docker文件夹，再创建jenkibs_docker文件夹
 
 编写docker-compose.yml文件
-```yml
+```
 version: "3.1"
 services:
   jenkins:
@@ -652,5 +652,22 @@ sonar-scanner移动到Jenkins的data目录下
 
 admin
 默认密码
+
+
+![Alt text](image-46.png)
+
+![Alt text](image-45.png)
+
+![Alt text](image-47.png)
+
+![Alt text](image-48.png)
+报错，是因为修改完之后没有重启docker
+
+![Alt text](image-49.png)
+再次报错，显示没有权限，是因为没有登录harbor
+![Alt text](image-50.png)
+
+拉取harbor里面的镜像
+![Alt text](image-51.png)
 
 

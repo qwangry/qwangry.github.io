@@ -448,37 +448,359 @@ price.addEventListener("input", () => {
 下拉菜单是一种简单地让用户从许多不同选项中进行选择的控件，不占用用户界面太多空间。HTML 有两种下拉内容：一种是选择框、另外一种是自动补全框。这两种情况下的交互是相同的——一旦被激活，浏览器就会显示可供用户选择的值的列表。
 
 
+**选择框**
+一个简单的选择框是由 `<select>` 元素及一个或多个 `<option>` 子元素构成的，每个子元素指定了选择框的可能取值。
 
+```html
+<select id="simple" name="simple">
+  <option>Banana</option>
+  <option selected>Cherry</option>
+  <option>Lemon</option>
+</select>
+```
 
+如果需要的话，选择框的默认值可以由要指定默认值的 `<option>` 元素中的 selected 属性设置，这样在页面加载后，该选项可以预先选中。
 
+**使用 optgroup**
+`<option>` 元素可以嵌套在 `<optgroup>` 元素中，以在视觉上关联一组取值：
 
+```html
+<select id="groups" name="groups">
+  <optgroup label="fruits">
+    <option>Banana</option>
+    <option selected>Cherry</option>
+    <option>Lemon</option>
+  </optgroup>
+  <optgroup label="vegetables">
+    <option>Carrot</option>
+    <option>Eggplant</option>
+    <option>Potato</option>
+  </optgroup>
+</select>
+```
 
+在 `<optgroup>` 元素中，label 属性的值在嵌套选项之前显示。浏览器往往在视觉上将它们与选项分开（如，将其粗体并显示于不同的嵌套级别），以避免它们与实际选项混淆。
 
+**使用 value 属性**
+如果一个 `<option>` 元素明确设置了 value 属性，当表单提交时也会提交那个选项对应的值。如果像上面的例子那样省略了 value 属性，`<option> `元素的内容会作为提交的值。所以 value 属性并不是必需的，但可能需要向服务器中发送与视觉所见相比缩短或者改变过的值。
 
+```html
+<select id="simple" name="simple">
+  <option value="banana">Big, beautiful yellow banana</option>
+  <option value="cherry">Succulent, juicy cherry</option>
+  <option value="lemon">Sharp, powerful lemon</option>
+</select>
+```
 
+默认情况下，选择框的高度足以显示单个值。可选的 size 属性控制在选择框不处于聚焦状态时，可见选项的数量。
 
+**多选选择框**
+默认情况下，选择框只允许用户选择单个值。通过向`<select>` 元素添加 multiple 属性，可以允许用户使用操作系统提供的机制选择多个值（如按下 Cmd/Ctrl 并先后单击多个值）。
 
+```html
+<select id="multi" name="multi" multiple size="2">
+  <optgroup label="fruits">
+    <option>Banana</option>
+    <option selected>Cherry</option>
+    <option>Lemon</option>
+  </optgroup>
+  <optgroup label="vegetables">
+    <option>Carrot</option>
+    <option>Eggplant</option>
+    <option>Potato</option>
+  </optgroup>
+</select>
+```
 
+### 自动补全框
+可以通过`<datalist>`元素中的一些显示的`<option>`子元素为表单项提供推荐的自动补全值。`<datalist>`元素需要指定一个id。
 
+数据列表会使用list属性绑定至一个`<input>`元素，该属性的取值就是要绑定的数据列表的id值。
 
+```html
+<label for="myFruit">What's your favorite fruit?</label>
+<input type="text" name="myFruit" id="myFruit" list="mySuggestion" />
+<datalist id="mySuggestion">
+  <option>Apple</option>
+  <option>Banana</option>
+  <option>Blackberry</option>
+  <option>Blueberry</option>
+  <option>Lemon</option>
+  <option>Lychee</option>
+  <option>Peach</option>
+  <option>Pear</option>
+</datalist>
+```
 
+### 其他表单功能
 
+**进度条**
+```html
+<progress max="100" value="75">75/100</progress>
+```
 
+**计量器**
+计量器代表了一个由max和min限定范围内的固定值。
+这个值在视觉上呈现为一个条形，为了了解这个条形的样子，将这个值与其他一些设定的值进行比较：
 
+- low 和 high 将范围分为了三个部分：
 
+1.下半部分范围在 min 和 low 值之间，包含端点值。
 
+2.中间部分范围在 low 和 high 值之间，不包含端点值。
 
+3.上半部分范围在 high 和 max 值之间，包含端点值。
 
+- optimum 值定义了 `<meter>` 元素的最佳值，它与 low 和 high 值一同定义了首选的范围部分：
 
+1.如果 optimum 在下半部分范围内，下半部分范围被认为是首选部分，中间部分范围被认为是平均部分，而上半部分范围被认为是最差的部分。
 
+2.如果 optimum 在中间部分范围内，下半部分范围被认为是平均部分，中间部分范围被认为是首选部分，而上半部分范围也被认为是平均部分。
 
+3.如果 optimum 在上半部分范围内，下半部分范围被认为是最差的部分，中间部分范围被认为是平均部分，而上半部分范围被认为是首选部分。
 
+所有实现了 `<meter>` 元素的浏览器使用这些值来改变计量器的颜色：
 
+- 如果当前值位于首选范围，则计量器显示为绿色。
+- 如果当前值位于平均范围，则计量器显示为黄色。
+- 如果当前值位于最差范围，则计量器显示为红色。
 
+```html
+<meter min="0" max="100" value="75" low="33" high="66" optimum="50">75</meter>
+```
+![Alt text](image-5.png)
 
+## 表单数据校验
 
+当向web应用输入数据时，应用会验证输入的数据是否是正确的。
 
+如果验证通过，应用允许提交这些数据到服务器并存储到数据库中
 
+如果验证未通过，则web应用会提示有哪些错误的数据，并且一般都会明确指出错误发生在哪里
 
+不同类型的表单数据校验：
 
+- 客户端校验：
 
+发生在浏览器端，表单数据被提交到服务器之前，这种方式相较于服务器端校验来说，用户体验更好，能实时的反馈用户的输入校验结果，这种类型的校验可以进一步细分成以下几种：
+
+1、JavaScript校验，自定义实现方式
+
+2、HTML5内置校验，不需要JavaScript，而且性能更好，但不能像JavaScript那样可自定义
+
+- 服务器端校验：
+
+发生在浏览器提交数据并被服务器端程序接收之后，通常服务器端校验发生在将数据写入数据库之前，如果数据没通过校验，则会直接从服务器端返回错误消息，并且告诉浏览器端发生错误的具体位置和原因，服务器端校验不像客户端校验那样有好的用户体验，因为它直到整个表单都提交后才能返回错误信息。但是服务器端校验是你的应用对抗错误/恶意数据的最后防线，在这之后，数据将被持久化至数据库。当今所有的服务端框架都提供了数据校验与清洁功能（让数据更安全）。
+
+### 内置表单数据校验
+通过表单元素的`校验属性`实现的，这些属性可以定义一些规则，用于限定用户的输入
+
+当一个元素校验通过时：
+
+- 该元素可以通过CSS伪类`:valid`进行特殊的样式化
+
+- 如果用户尝试提交表单，如果没有其他的控制来阻止该操作，那么该表单的数据会被提交
+
+如果一个元素未校验通过：
+
+该元素将可以通过 CSS 伪类 `:invalid` 进行特殊的样式化；
+如果用户尝试提交表单，浏览器会展示出错误消息，并停止表单的提交。
+
+**input属性校验**
+
+**require属性**
+ 如果要使输入成为必需的，则可以使用此属性标记元素。当设置此属性时，如果输入为空，该表单将不会提交（并将显示错误消息），输入也将被视为无效。
+
+```html
+<form>
+  <label for="choose">Would you prefer a banana or cherry?</label>
+  <input id="choose" name="i_like" required />
+  <button>Submit</button>
+</form>
+```
+
+```css
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:valid {
+  border: 2px solid black;
+}
+```
+
+**正则表达式校验**
+使用`pattern`属性，正则表达式
+
+```html
+<form>
+  <label for="choose">Would you prefer a banana or a cherry?</label>
+  <input id="choose" name="i_like" required pattern="banana|cherry" />
+  <button>Submit</button>
+</form>
+```
+
+**限制输入的长度**
+
+`<input>`或`<textarea>`都可以使用`minlength`和`maxlength`属性来限制长度，如果输入长度不在两者之间则无效。
+
+在`<input type="number">`中，`min`和`max`属性同样提供校验约束。
+
+```html
+<form>
+  <p>
+    <fieldset>
+      <legend>Title<abbr title="This field is mandatory">*</abbr></legend>
+      <input type="radio" required name="title" id="r1" value="Mr"><label for="r1">Mr.</label>
+      <input type="radio" required name="title" id="r2" value="Ms"><label for="r2">Ms.</label>
+    </fieldset>
+  </p>
+  <p>
+    <label for="n1">How old are you?</label>
+    <!-- 这里的 pattern 属性可以用作不支持 number 类 input 浏览器的备用方法
+         请注意当与数字输入框一起使用时，支持 pattern 属性的浏览器会使它沉默失效。
+         它仅仅是在这里用作备用 -->
+    <input type="number" min="12" max="120" step="1" id="n1" name="age"
+           pattern="\d+">
+  </p>
+  <p>
+    <label for="t1">What's your favorite fruit?<abbr title="This field is mandatory">*</abbr></label>
+    <input type="text" id="t1" name="fruit" list="l1" required
+           pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range">
+    <datalist id="l1">
+      <option>Banana</option>
+      <option>Cherry</option>
+      <option>Apple</option>
+      <option>Strawberry</option>
+      <option>Lemon</option>
+      <option>Orange</option>
+    </datalist>
+  </p>
+  <p>
+    <label for="t2">What's your e-mail?</label>
+    <input type="email" id="t2" name="email">
+  </p>
+  <p>
+    <label for="t3">Leave a short message</label>
+    <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+  </p>
+  <p>
+    <button>Submit</button>
+  </p>
+</form>
+```
+```css
+body {
+  font: 1em sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  max-width: 200px;
+  margin: 0;
+  padding: 0 5px;
+}
+
+p > label {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+fieldset {
+  /* 需要在基于 WebKit 的浏览器上对表单元素进行恰当的样式设置 */
+  -webkit-appearance: none;
+
+  width: 100%;
+  border: 1px solid #333;
+  margin: 0;
+
+  font-family: inherit;
+  font-size: 90%;
+
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+```
+
+**自定义错误信息**
+
+html5提供api来检测和自定义表单元素的状态，也可以改变错误的文本
+
+```html
+<form>
+  <label for="mail">I would like you to provide me an e-mail</label>
+  <input type="email" id="mail" name="mail" />
+  <button>Submit</button>
+</form>
+```
+在JavaScript中调用`setCustomValidity()`方法：
+```javascript
+var email = document.getElementById("mail");
+
+email.addEventListener("input", function (event) {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("I expect an e-mail, darling!");
+  } else {
+    email.setCustomValidity("");
+  }
+});
+```
+![Alt text](image-6.png)
+
+<!-- ### javascript校验表单 -->
+
+## 发送表单数据
+`<form>`中的两个重要属性：`action`和`method`
+
+- action属性：
+定义发送数据要去的位置。它的值必须是一个有效的URL。
+
+```html
+<form action="http://foo.com">…</form>
+```
+
+使用相对的URL：
+```html
+<form action="/somewhere_else">…</form>
+```
+
+在没有属性的情况下，数据被发送到表单出现的相同页面上：
+
+```html
+<form>...</form>
+```
+
+- method属性：
+定义了如何发送数据。
+
+HTTP 协议提供了几种执行请求的方法；HTML 表单数据可以通过许多不同的方法进行数据传输，其中最常见的是GET方法和POST方法。
+
+### 常见的安全问题
+
+**XSS和CSRF**
+跨站脚本 (XSS) 和跨站点请求伪造 (CSRF) 是常见的攻击类型，它们发生在当你将用户发送的数据显示给这个用户或另一个用户时。
+
+XSS 允许攻击者将客户端脚本注入到其他用户查看的 Web 页面中。攻击者可以使用跨站点脚本攻击的漏洞来绕过诸如同源策略之类的访问控制。这些攻击的影响可能从一个小麻烦到一个重大的安全风险。
+
+CSRF 攻击类似于 XSS 攻击，因为它们以相同的方式开始攻击——向 Web 页面中注入客户端脚本——但它们的目标是不同的。CSRF 攻击者试图将权限升级到特权用户 (比如站点管理员) 的级别，以执行他们不应该执行的操作 (例如，将数据发送给一个不受信任的用户)。
+
+XSS 攻击利用用户对 web 站点的信任，而 CSRF 攻击则利用网站对其用户的信任。
+
+**SQL注入**
+SQL 注入是一种试图在目标 web 站点使用的数据库上执行操作的攻击类型。这通常包括发送一个 SQL 请求，希望服务器能够执行它（通常发生在应用服务器试图存储由用户发送的数据时）。这实际上是攻击网站的主要途径之一。
+
+**HTTP数据头注入和电子邮件注入**
+
+这种类型的攻击出现在当你的应用程序基于表单上用户的数据输入构建 HTTP 头部或电子邮件时。这些不会直接损害你的服务器或影响你的用户，但它们会引发一个更深入的问题，例如会话劫持或网络钓鱼攻击。

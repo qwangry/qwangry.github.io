@@ -44,6 +44,13 @@ export const sidebar={
             ]
         },
         {
+            text: 'React',
+            collapsed: false,
+            items: [
+                {text: '入门',link:'/docx/React/入门'},
+            ]
+        },
+        {
             text: 'vue',
             collapsed: false,
             items: [

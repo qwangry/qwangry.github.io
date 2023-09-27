@@ -49,6 +49,7 @@ export const sidebar={
             collapsed: false,
             items: [
                 {text: '入门',link:'/docx/React/入门'},
+                {text:'入门项目开始',link:'/docx/React/入门项目开始'},
             ]
         },
         {

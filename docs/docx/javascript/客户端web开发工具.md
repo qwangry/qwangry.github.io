@@ -343,12 +343,138 @@ const date = "1996-09-13 10:00:00";
 document.body.textContent = `${formatDistanceToNow(new Date(date))} ago`;
 ```
 
+上面的代码使用了`data-fns`包中的formatDistanceToNow()函数，但并没有手动安装这个包，parcel发现需要这个模块，因此在`npmjs.com`仓库中搜索并自动为我们本地安装了它。查看package.json文件，可以看到：
+```js
+"dependencies": {
+  "date-fns": "^2.12.0",
+  "parcel-bundler": "^1.12.4"
+}
+```
 
+5、生产环境
 
+大多数构建工具系统都有“开发模式”和“生产模式”。重要的区别在于，在最终网站中不需要很多你在开发中使用的有用功能，因此这些功能将在生产环境中被剥离，例如“模块热替换”、“实时重新加载”和“未压缩和注释的源代码”。虽然远非穷尽，但这些都是常见的 Web 开发功能，在开发阶段非常有用，但在生产中它们并不是很有用。
 
+Parcel 提供了一个额外的命令来生成适合发布的文件，使用 build 选项生成捆绑包
 
+```bash
+parcel build index.html
+```
 
+可以看到类似以下的输出：
+```bash
+✨  Built in 9.35s.
 
+dist/my-project.fb76efcf.js.map    648.58 KB     64ms
+dist/my-project.fb76efcf.js        195.74 KB    8.43s
+dist/index.html                        288 B    806ms
+```
 
+6、减少应用的文件大小
 
+当开发工具在运行时，可以要求软件检查对代码的使用，并在构建中仅包含实际使用的函数——这个过程称为“摇树优化（Tree Shaking）”
+
+虽然可用的工具的发展日新月异，但有三个主要的打包工具可以将源代码构建为捆绑包：Webpack、Rollup和Parcel。
+
+- RollUp 工具提供摇树优化和代码拆分作为其核心特性。
+
+- Webpack 需要“一些”配置（尽管“一些”可能低估了一些开发人员的 Webpack 配置的复杂性）。
+
+- 在 Parcel（Parcel 2 之前）的情况下，需要一个特殊的标志——--experimental-scope-hoisting——来进行摇树优化构建。
+
+```bash
+parcel build index.html --experimental-scope-hoisting
+```
+
+输出：
+
+```bash
+✨  Built in 7.87s.
+
+dist/my-project.86f8a5fc.js    10.34 KB    7.17s
+dist/index.html                   288 B    753ms
+```
+
+### 包客户端的简要指南
+
+- [npm](npmjs.org)
+
+- [pnpm](pnpmjs.org)
+
+- [Yarn](yarnpkg.com)
+
+从命令行的角度，npm和pnpm非常相似，pnpm旨在提供与npm完全相同的参数选项。不同之处在于，pnpm使用不同的方法在计算机上下载和存储软件包，以减少总磁盘空间的占用
+
+相比较npm，Yarn在安装过程中通常被认为更快。
+
+常见操作：
+
+1、初始化
+```bash
+npm init
+yarn init
+```
+
+2、安装依赖
+```bash
+npm install date-fns
+yarn add date-fns
+```
+
+3、更新依赖
+```bash
+npm update
+yarn upgrade
+```
+
+4、漏洞审查
+```bash
+npm audit
+yarn audit
+```
+
+5、检查一个依赖
+```bash
+npm ls date-fns
+yarn why date-fns
+```
+
+创建自己的命令：
+
+```bash
+npm run dev
+# 或 yarn run dev
+```
+
+这将运行一个自定义脚本来以“开发模式”启动项目
+
+如果尝试在之前的 Parcel 测试项目中运行此命令，它将可能会报告“dev 脚本丢失”。这是因为 npm、Yarn（或者其他类似的包管理器）会去查找 package.json 文件中 scripts 属性下的一个名为 dev 的属性。
+
+Parcel 可以使用 parcel serve filename.html 命令运行开发服务器，我们希望在开发过程中经常使用它。
+
+```bash
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "dev": "parcel serve index.html"
+},
+```
+已经将自定义的 dev 命令添加为 npm 脚本命令。
+
+这将启动 Parcel 并在本地开发服务器上提供你的 index.html
+
+## 完整的工具链
+
+- JSX，一组与react相关的语法扩展，允许在JavaScript中定义组件结构等。
+
+- 最新的JavaScript内置特性
+
+- 有用的开发工具，如格式化的Prettier和代码规范检查的ESLint
+
+- PostCSS，提供CSS嵌套功能
+
+- Parcel，用于构建和压缩代码，并自动编写一堆配置文件内容
+
+- Github，管理源代码
+
+- Netlify，用于自动化部署过程（是一个用于静态网站的托管服务，静态网站即完全由不实时更改的文件组成的网站，允许每天部署多次，并免费托管各种静态站点）
 

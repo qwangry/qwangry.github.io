@@ -40,6 +40,7 @@ export const sidebar={
                 { text: 'ES6', link: '/docx/javascript/ES6'},
                 { text: 'web表单', link: '/docx/javascript/web表单'},
                 { text: '客户端web开发工具', link: '/docx/javascript/客户端web开发工具'},
+                { text: '客户端框架介绍', link: '/docx/javascript/客户端框架介绍'},
                 
             ]
         },

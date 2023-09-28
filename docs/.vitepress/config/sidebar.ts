@@ -53,10 +53,10 @@ export const sidebar={
             ]
         },
         {
-            text: 'vue',
+            text: 'Vue',
             collapsed: false,
             items: [
-                {text: '',link:'/docx/vue/'},
+                {text: '入门',link:'/docx/Vue/入门'},
             ]
         },
         {

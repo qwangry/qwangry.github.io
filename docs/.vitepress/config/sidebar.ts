@@ -9,64 +9,6 @@ export const sidebar={
             ]
         },
         {
-            text: 'HTML',
-            collapsed: false,
-            items: [
-                { text: '简介', link: '/docx/html/introduce' },
-            ]
-        },
-        {
-            text: 'CSS',
-            collapsed: false,
-            items: [
-                { text: '简介', link: '/docx/css/introduce' },
-            ]
-        },
-        {
-            text: 'JavaScript',
-            collapsed: true,
-            items: [
-                { text: '简介', link: '/docx/javascript/introduce' },
-                { text: '定义', link: '/docx/javascript/定义' },
-                { text: '一些语法', link: '/docx/javascript/一些语法' },
-                { text: '字符串', link: '/docx/javascript/字符串' },
-                { text: '数组', link: '/docx/javascript/数组' },
-                { text: '代码块', link: '/docx/javascript/代码块'},
-                { text: 'js对象', link: '/docx/javascript/js对象'},
-                { text: '面向对象', link: '/docx/javascript/面向对象'},
-                { text: 'json', link: '/docx/javascript/json'},
-                { text: '异步', link: '/docx/javascript/异步'},
-                { text: '客户端WebAPI', link: '/docx/javascript/客户端WebAPI'},
-                { text: 'ES6', link: '/docx/javascript/ES6'},
-                { text: 'web表单', link: '/docx/javascript/web表单'},
-                { text: '客户端web开发工具', link: '/docx/javascript/客户端web开发工具'},
-                { text: '客户端框架介绍', link: '/docx/javascript/客户端框架介绍'},
-                
-            ]
-        },
-        {
-            text: 'React',
-            collapsed: false,
-            items: [
-                {text: '入门',link:'/docx/React/入门'},
-                {text:'入门项目开始',link:'/docx/React/入门项目开始'},
-            ]
-        },
-        {
-            text: 'Vue',
-            collapsed: false,
-            items: [
-                {text: '入门',link:'/docx/Vue/入门'},
-            ]
-        },
-        {
-            text: '跨浏览器测试',
-            collapsed:false,
-            items:[
-                {text:'介绍',link:'/docx/跨浏览器测试/介绍'},
-            ]
-        },
-        {
             text: 'Go',
             collapsed: false,
             items: [
@@ -98,6 +40,81 @@ export const sidebar={
             items: [
                 { text: 'docker', link: '/docx/云原生/docker' },
                 { text: 'DevOps', link: '/docx/云原生/DevOps' },
+            ]
+        },
+    ],
+    '/前端开发/':[
+        {
+            text: '基础',
+            collapsed: false,
+            items: [
+                { text: '构建网站的工具', link: '/前端开发/基础/构建网站的工具' },
+            ]
+        }, 
+        {
+            text: 'HTML',
+            collapsed: false,
+            items: [
+                { text: '简介', link: '/前端开发/html/introduce' },
+            ]
+        },
+        {
+            text: 'CSS',
+            collapsed: false,
+            items: [
+                { text: '简介', link: '/前端开发/css/introduce' },
+            ]
+        },
+        {
+            text: 'JavaScript',
+            collapsed: false,
+            items: [
+                { text: '简介', link: '/前端开发/javascript/introduce' },
+                { text: '定义', link: '/前端开发/javascript/定义' },
+                { text: '一些语法', link: '/前端开发/javascript/一些语法' },
+                { text: '字符串', link: '/前端开发/javascript/字符串' },
+                { text: '数组', link: '/前端开发/javascript/数组' },
+                { text: '代码块', link: '/前端开发/javascript/代码块'},
+                { text: 'js对象', link: '/前端开发/javascript/js对象'},
+                { text: '面向对象', link: '/前端开发/javascript/面向对象'},
+                { text: 'json', link: '/前端开发/javascript/json'},
+                { text: '异步', link: '/前端开发/javascript/异步'},
+                { text: '客户端WebAPI', link: '/前端开发/javascript/客户端WebAPI'},
+                { text: 'ES6', link: '/前端开发/javascript/ES6'},
+                { text: 'web表单', link: '/前端开发/javascript/web表单'},
+                { text: '客户端web开发工具', link: '/前端开发/javascript/客户端web开发工具'},
+                { text: '客户端框架介绍', link: '/前端开发/javascript/客户端框架介绍'},
+                
+            ]
+        },
+        {
+            text: 'React',
+            collapsed: false,
+            items: [
+                {text: '入门',link:'/前端开发/React/入门'},
+                {text:'入门项目开始',link:'/前端开发/React/入门项目开始'},
+            ]
+        },
+        {
+            text: 'Vue',
+            collapsed: false,
+            items: [
+                {text: '入门',link:'/前端开发/Vue/入门'},
+            ]
+        },
+        {
+            text: '跨浏览器测试',
+            collapsed:false,
+            items:[
+                {text:'介绍',link:'/前端开发/跨浏览器测试/介绍'},
+            ]
+        },
+        {
+            text: '服务端网页编程',
+            collapsed:false,
+            items:[
+                {text: '介绍',link:'/前端开发/服务端网页编程/介绍'},
+                
             ]
         },
     ],

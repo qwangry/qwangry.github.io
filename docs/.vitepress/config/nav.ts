@@ -3,6 +3,11 @@ export const nav=[
         text: '文档',
         activeMatch: '/docx/',
         link: '/docx/hello/hello'
+    }, 
+    {
+        text: '前端',
+        activeMatch: '/前端开发/',
+        link: '/前端开发/html/introduce'
     },
     {
         text: '文章记录',

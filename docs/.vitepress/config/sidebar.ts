@@ -60,6 +60,13 @@ export const sidebar={
             ]
         },
         {
+            text: '跨浏览器测试',
+            collapsed:false,
+            items:[
+                {text:'介绍',link:'/docx/跨浏览器测试/介绍'},
+            ]
+        },
+        {
             text: 'Go',
             collapsed: false,
             items: [

@@ -114,7 +114,8 @@ export const sidebar={
             collapsed:false,
             items:[
                 {text: '介绍',link:'/前端开发/服务端网页编程/介绍'},
-                
+                {text:'Django',link:'/前端开发/服务端网页编程/Django'},
+                {text:'代码',link:'/前端开发/服务端网页编程/代码'},
             ]
         },
     ],

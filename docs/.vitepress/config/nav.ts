@@ -14,6 +14,11 @@ export const nav=[
         activeMatch: '/acticle/',
         link: '/acticle/hello/hello'
     },
+    {
+        text: '杂项',
+        activeMatch: '/杂项/',
+        link: '/杂项/安全/同源策略'
+    },
     // {
     //     text: '团队介绍',
     //     activeMatch: '/acticle/',

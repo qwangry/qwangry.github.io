@@ -127,5 +127,14 @@ export const sidebar={
                 { text: 'hello', link: '/acticle/hello/hello' },
             ]
         },
-    ]
+    ],
+    '/杂项/':[
+        {
+            text: '安全',
+            collapsed: false,
+            items: [
+                { text: '同源策略', link: '/杂项/安全/同源策略' },
+            ]
+        },
+    ],
 }

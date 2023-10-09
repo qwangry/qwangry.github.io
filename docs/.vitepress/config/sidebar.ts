@@ -25,6 +25,13 @@ export const sidebar={
             ]
         },
         {
+            text: 'git',
+            collapsed: false,
+            items: [
+                { text: '入门1', link: '/docx/git/入门1' },
+            ]
+        },
+        {
             text: 'Docker',
             collapsed: true,
             items: [

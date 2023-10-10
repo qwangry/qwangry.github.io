@@ -107,6 +107,8 @@ export const sidebar={
             collapsed: false,
             items: [
                 {text: '入门',link:'/前端开发/Vue/入门'},
+                {text:'黑马程序员day1',link:'/前端开发/Vue/黑马程序员day1'},
+                {text:'黑马程序员day2',link:'/前端开发/Vue/黑马程序员day2'},
             ]
         },
         {

@@ -41,27 +41,9 @@
 
 ![Alt text](image-20.png)
 
+## watch侦听器（监视器）
+![Alt text](image-21.png)
 
+![Alt text](image-22.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![Alt text](image-23.png)

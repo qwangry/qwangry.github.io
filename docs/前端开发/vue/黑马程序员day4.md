@@ -53,10 +53,13 @@
 
 ![Alt text](image-15.png)
 
+## .sync修饰符
+![Alt text](image-16.png)
 
+## ref和$refs
+![Alt text](image-17.png)
+![Alt text](image-18.png)
 
-
-
-
-
-
+## vue异步更新、$nextTick
+![Alt text](image-19.png)
+![Alt text](image-20.png)

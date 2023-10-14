@@ -53,16 +53,16 @@ store的数据不支持双向绑定，因为是单向流的，所以可以利用
 
 **访问模块内的内容**
 
+![Alt text](image-15.png)
+
+![Alt text](image-16.png)
+
+![Alt text](image-17.png)
+
+![Alt text](image-18.png)
 
 
-
-
-
-
-
-
-
-
+![Alt text](image-19.png)
 
 
 

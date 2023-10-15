@@ -114,6 +114,7 @@ export const sidebar={
                 {text:'黑马程序员day5',link:'/前端开发/Vue/黑马程序员day5'},
                 {text:'黑马程序员day6',link:'/前端开发/Vue/黑马程序员day6'},
                 {text:'黑马程序员day7',link:'/前端开发/Vue/黑马程序员day7'},
+                {text:'黑马程序员day8',link:'/前端开发/Vue/黑马程序员day8'},
             ]
         },
         {

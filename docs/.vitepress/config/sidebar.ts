@@ -101,6 +101,7 @@ export const sidebar={
                 {text: '入门',link:'/前端开发/React/入门'},
                 {text:'入门项目开始',link:'/前端开发/React/入门项目开始'},
                 {text:'黑马程序员day1',link:'/前端开发/React/黑马程序员day1'},
+                {text:'黑马程序员day2',link:'/前端开发/React/黑马程序员day2'},
 
             ]
         },

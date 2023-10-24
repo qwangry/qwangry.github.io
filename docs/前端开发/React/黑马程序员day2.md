@@ -59,12 +59,39 @@
 ### antD-mobile主题定制
 ![Alt text](image-19.png)
 
+## 使用CRA初始化项目环境
+![Alt text](image-20.png)
 
+### 安装scss
+![Alt text](image-21.png)
+![Alt text](image-22.png)
 
+### 安装Ant Design组件库
+![Alt text](image-23.png)
 
+看官方文档即可
+```
+npm install antd --save
+```
 
+### 配置基础路由router
+![Alt text](image-24.png)
 
+### 配置@别名路径
+![Alt text](image-25.png)
+![Alt text](image-26.png)
+![Alt text](image-27.png)
 
+### 使用gitee管理项目
+![Alt text](image-28.png)
+
+### Axios请求拦截器注入Token
+![Alt text](image-29.png)
+
+### 使用Token做路由权限控制
+![Alt text](image-30.png)
+![Alt text](image-31.png)
+![Alt text](image-32.png)
 
 
 

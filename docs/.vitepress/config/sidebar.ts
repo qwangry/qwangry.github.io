@@ -138,14 +138,21 @@ export const sidebar={
             ]
         },
     ],
-    '/acticle/':[
+    '/article/':[
         {
             text: 'Welcome',
             collapsed: false,
             items: [
-                { text: 'hello', link: '/acticle/hello/hello' },
+                { text: 'hello', link: '/article/hello/hello' },
             ]
         },
+        {
+            text:'待学列表',
+            collapsed: false,
+            items:[
+                { text: '待学列表整理', link: '/article/待学列表/待学列表整理' }
+            ]
+        }
     ],
     '/杂项/':[
         {

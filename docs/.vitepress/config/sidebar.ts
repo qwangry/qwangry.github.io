@@ -119,6 +119,14 @@ export const sidebar={
                 {text:'黑马程序员day7',link:'/前端开发/Vue/黑马程序员day7'},
                 {text:'黑马程序员day8',link:'/前端开发/Vue/黑马程序员day8'},
                 {text:'黑马程序员-vue3',link:'/前端开发/Vue/vue3'},
+                {text:'Vue单元测试',link:'/前端开发/Vue/Vue单元测试'},
+            ]
+        },
+        {
+            text: '微信小程序',
+            collapsed: false,
+            items:[
+                { text: '黑马程序员day1', link:'/前端开发/微信小程序/黑马程序员day1' },
             ]
         },
         {

@@ -11,8 +11,8 @@ export const nav=[
     },
     {
         text: '文章记录',
-        activeMatch: '/acticle/',
-        link: '/acticle/hello/hello'
+        activeMatch: '/article/',
+        link: '/article/hello/hello'
     },
     {
         text: '杂项',

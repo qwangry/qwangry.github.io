@@ -122,6 +122,13 @@ export const sidebar={
             ]
         },
         {
+            text: 'uni-app',
+            collapsed: false,
+            items:[
+                { text: '黑马程序员day1', link:'/前端开发/uni-app/黑马程序员day1' },
+            ]
+        },
+        {
             text: '跨浏览器测试',
             collapsed:false,
             items:[

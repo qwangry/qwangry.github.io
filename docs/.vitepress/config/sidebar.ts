@@ -128,6 +128,7 @@ export const sidebar={
             items:[
                 { text: '黑马程序员day1', link:'/前端开发/微信小程序/黑马程序员day1' },
                 { text: '黑马程序员day2', link:'/前端开发/微信小程序/黑马程序员day2' },
+                { text: '黑马程序员day3', link:'/前端开发/微信小程序/黑马程序员day3' },
             ]
         },
         {

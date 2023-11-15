@@ -130,6 +130,7 @@ export const sidebar={
                 { text: '黑马程序员day2', link:'/前端开发/微信小程序/黑马程序员day2' },
                 { text: '黑马程序员day3', link:'/前端开发/微信小程序/黑马程序员day3' },
                 { text: '黑马程序员day4', link:'/前端开发/微信小程序/黑马程序员day4' },
+                { text: '案例', link:'/前端开发/微信小程序/案例' },
             ]
         },
         {

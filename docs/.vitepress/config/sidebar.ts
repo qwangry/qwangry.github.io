@@ -95,6 +95,13 @@ export const sidebar={
             ]
         },
         {
+            "text":'typescript',
+            collapsed:false,
+            items:[
+                { text: '基础知识', link: '/前端开发/typescript/基础知识.md' },
+            ]
+        },
+        {
             text: 'React',
             collapsed: false,
             items: [

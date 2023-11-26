@@ -25,6 +25,13 @@ export const sidebar={
             ]
         },
         {
+            text: 'C/C++',
+            collapsed: false,
+            items: [
+                { text: 'C入门1',link: '/docx/C-C++/C入门1' },
+            ]
+        },
+        {
             text: 'git',
             collapsed: false,
             items: [

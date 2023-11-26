@@ -95,6 +95,13 @@ export const sidebar={
             ]
         },
         {
+            "text":'webpack',
+            collapsed:false,
+            items:[
+                { text: '基础知识', link: '/前端开发/webpack/基础知识.md' },
+            ]
+        },
+        {
             "text":'typescript',
             collapsed:false,
             items:[

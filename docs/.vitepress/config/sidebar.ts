@@ -77,6 +77,7 @@ export const sidebar={
             collapsed: false,
             items: [
                 { text: '简介', link: '/前端开发/css/introduce' },
+                { text: '十种布局', link: '/前端开发/css/十种布局' },
             ]
         },
         {

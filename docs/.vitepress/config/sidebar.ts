@@ -78,6 +78,7 @@ export const sidebar={
             items: [
                 { text: '简介', link: '/前端开发/css/introduce' },
                 { text: 'CSS基础', link: '/前端开发/css/CSS基础' },
+                { text: '样式设置', link: '/前端开发/css/样式设置' },
                 { text: '十种布局', link: '/前端开发/css/十种布局' },
             ]
         },

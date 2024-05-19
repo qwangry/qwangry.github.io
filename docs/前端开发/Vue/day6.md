@@ -1,4 +1,4 @@
-# 黑马程序员day6
+# day6
 
 ## 路由的封装抽离
 ![Alt text](day6/image-1.png)

@@ -1,4 +1,4 @@
-# 黑马程序员day3
+# day3
 
 ## 页面导航
 ![Alt text](day3/image.png)

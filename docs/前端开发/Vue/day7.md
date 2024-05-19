@@ -1,4 +1,4 @@
-# 黑马程序员day7
+# day7
 
 ## vuex概述
 ![Alt text](day7/image.png)

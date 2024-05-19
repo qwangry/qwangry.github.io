@@ -1,4 +1,4 @@
-# 黑马程序员day1
+# day1
 
 ## 技术架构
 ![Alt text](image.png)

@@ -124,8 +124,9 @@ export const sidebar={
             items: [
                 {text: '入门',link:'/前端开发/React/入门'},
                 {text:'入门项目开始',link:'/前端开发/React/入门项目开始'},
-                {text:'黑马程序员day1',link:'/前端开发/React/黑马程序员day1'},
-                {text:'黑马程序员day2',link:'/前端开发/React/黑马程序员day2'},
+                {text:'day1',link:'/前端开发/React/day1'},
+                {text:'day2',link:'/前端开发/React/day2'},
+                {text:'Hooks',link:'/前端开发/React/Hooks'},
 
             ]
         },
@@ -134,15 +135,15 @@ export const sidebar={
             collapsed: false,
             items: [
                 {text: '入门',link:'/前端开发/Vue/入门'},
-                {text:'黑马程序员day1',link:'/前端开发/Vue/黑马程序员day1'},
-                {text:'黑马程序员day2',link:'/前端开发/Vue/黑马程序员day2'},
-                {text:'黑马程序员day3',link:'/前端开发/Vue/黑马程序员day3'},
-                {text:'黑马程序员day4',link:'/前端开发/Vue/黑马程序员day4'},
-                {text:'黑马程序员day5',link:'/前端开发/Vue/黑马程序员day5'},
-                {text:'黑马程序员day6',link:'/前端开发/Vue/黑马程序员day6'},
-                {text:'黑马程序员day7',link:'/前端开发/Vue/黑马程序员day7'},
-                {text:'黑马程序员day8',link:'/前端开发/Vue/黑马程序员day8'},
-                {text:'黑马程序员-vue3',link:'/前端开发/Vue/vue3'},
+                {text:'day1',link:'/前端开发/Vue/day1'},
+                {text:'day2',link:'/前端开发/Vue/day2'},
+                {text:'day3',link:'/前端开发/Vue/day3'},
+                {text:'day4',link:'/前端开发/Vue/day4'},
+                {text:'day5',link:'/前端开发/Vue/day5'},
+                {text:'day6',link:'/前端开发/Vue/day6'},
+                {text:'day7',link:'/前端开发/Vue/day7'},
+                {text:'day8',link:'/前端开发/Vue/day8'},
+                {text:'vue3',link:'/前端开发/Vue/vue3'},
                 {text:'Vue单元测试',link:'/前端开发/Vue/Vue单元测试'},
             ]
         },
@@ -150,10 +151,10 @@ export const sidebar={
             text: '微信小程序',
             collapsed: false,
             items:[
-                { text: '黑马程序员day1', link:'/前端开发/微信小程序/黑马程序员day1' },
-                { text: '黑马程序员day2', link:'/前端开发/微信小程序/黑马程序员day2' },
-                { text: '黑马程序员day3', link:'/前端开发/微信小程序/黑马程序员day3' },
-                { text: '黑马程序员day4', link:'/前端开发/微信小程序/黑马程序员day4' },
+                { text: 'day1', link:'/前端开发/微信小程序/day1' },
+                { text: 'day2', link:'/前端开发/微信小程序/day2' },
+                { text: 'day3', link:'/前端开发/微信小程序/day3' },
+                { text: 'day4', link:'/前端开发/微信小程序/day4' },
                 { text: '案例', link:'/前端开发/微信小程序/案例' },
             ]
         },
@@ -161,7 +162,7 @@ export const sidebar={
             text: 'uni-app',
             collapsed: false,
             items:[
-                { text: '黑马程序员day1', link:'/前端开发/uni-app/黑马程序员day1' },
+                { text: 'day1', link:'/前端开发/uni-app/day1' },
             ]
         },
         {

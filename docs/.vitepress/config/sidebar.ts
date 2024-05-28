@@ -63,6 +63,7 @@ export const sidebar={
             collapsed: false,
             items: [
                 { text: '构建网站的工具', link: '/前端开发/基础/构建网站的工具' },
+                { text: '前端模块化', link: '/前端开发/基础/前端模块化' },
             ]
         }, 
         {

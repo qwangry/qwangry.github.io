@@ -106,6 +106,13 @@ export const sidebar={
             ]
         },
         {
+            "text":"工具库",
+            collapsed:false,
+            item:[
+                {text:'axios',link:'/前端开发/工具库/axios'},
+            ]
+        },
+        {
             "text":'webpack',
             collapsed:false,
             items:[
@@ -128,7 +135,7 @@ export const sidebar={
                 {text:'day1',link:'/前端开发/React/day1'},
                 {text:'day2',link:'/前端开发/React/day2'},
                 {text:'Hooks',link:'/前端开发/React/Hooks'},
-
+                {text:'知识记录',link:'/前端开发/React/知识记录'},
             ]
         },
         {

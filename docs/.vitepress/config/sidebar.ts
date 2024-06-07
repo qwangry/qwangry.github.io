@@ -113,6 +113,13 @@ export const sidebar={
             ]
         },
         {
+            "text":"测试",
+            collapsed:false,
+            item:[
+                {text:'mockjs',link:'/前端开发/测试/mockjs'},
+            ]
+        },
+        {
             "text":'webpack',
             collapsed:false,
             items:[

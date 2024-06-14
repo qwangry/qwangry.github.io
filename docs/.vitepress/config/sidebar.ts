@@ -124,6 +124,7 @@ export const sidebar={
             collapsed:false,
             items:[
                 { text: '基础知识', link: '/前端开发/webpack/基础知识.md' },
+                { text: '核心概念', link: '/前端开发/webpack/核心概念.md' },
             ]
         },
         {
@@ -219,6 +220,7 @@ export const sidebar={
             collapsed: false,
             items: [
                 { text: '同源策略', link: '/杂项/安全/同源策略' },
+                { text: '内容安全策略', link: '/杂项/安全/CSP' },
             ]
         },
     ],

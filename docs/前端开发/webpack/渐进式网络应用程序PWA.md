@@ -1,0 +1,37 @@
+# 渐进式网络应用程序PWA
+
+渐进式网络应用程序（progressive web application - PWA），是一种可以提供类似于native app（原生应用程序）体验的web app（网络应用程序）。PWA可以用来做很多事，最重要的是，在离线时应用程序能继续运行功能。这是通过使用名为Service Workers的web技术来实现的
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

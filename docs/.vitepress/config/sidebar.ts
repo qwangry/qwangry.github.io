@@ -109,31 +109,31 @@ export const sidebar={
             "text":"工具库",
             collapsed:false,
             items:[
-                {text:'axios',link:'/前端开发/工具库/axios.md'},
+                {text:'axios',link:'/前端开发/工具库/axios'},
             ]
         },
         {
             "text":"测试",
             collapsed:false,
             items:[
-                {text:'mockjs',link:'/前端开发/测试/mockjs.md'},
+                {text:'mockjs',link:'/前端开发/测试/mockjs'},
             ]
         },
         {
             "text":'webpack',
             collapsed:false,
             items:[
-                { text: '基础知识', link: '/前端开发/webpack/基础知识.md' },
-                { text: '核心概念', link: '/前端开发/webpack/核心概念.md' },
-                { text: '渐进式网络应用程序PWA', link: '/前端开发/webpack/渐进式网络应用程序PWA.md' },
-                { text: '一些特性', link: '/前端开发/webpack/一些特性.md' },
+                { text: '基础知识', link: '/前端开发/webpack/基础知识' },
+                { text: '核心概念', link: '/前端开发/webpack/核心概念' },
+                { text: '渐进式网络应用程序PWA', link: '/前端开发/webpack/渐进式网络应用程序PWA' },
+                { text: '一些特性', link: '/前端开发/webpack/一些特性' },
             ]
         },
         {
             "text":'typescript',
             collapsed:false,
             items:[
-                { text: '基础知识', link: '/前端开发/typescript/基础知识.md' },
+                { text: '基础知识', link: '/前端开发/typescript/基础知识' },
             ]
         },
         {
@@ -217,6 +217,14 @@ export const sidebar={
         }
     ],
     '/杂项/':[
+        {
+            text: '协议',
+            collapsed: false,
+            items: [
+                { text: 'http', link: '/杂项/协议/http' },
+                { text: 'websocket', link: '/杂项/协议/websocket' },
+            ]
+        },
         {
             text: '安全',
             collapsed: false,

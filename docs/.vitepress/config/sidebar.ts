@@ -10,30 +10,30 @@ export const sidebar={
         },
         {
             text: 'Go',
-            collapsed: false,
+            collapsed: true,
             items: [
                 { text: '学习', link: '/docx/go/学习' },
             ]
         },
         {
             text: 'leetcode',
-            collapsed: false,
+            collapsed: true,
             items: [
                 { text: '常用操作', link: '/docx/leetcode/常用操作' },
                 { text: '代码1', link: '/docx/leetcode/代码1' },
                 { text: '代码2', link: '/docx/leetcode/代码2' },
             ]
         },
-        {
-            text: 'C/C++',
-            collapsed: false,
-            items: [
-                { text: 'C入门1',link: '/docx/C-C++/C入门1' },
-            ]
-        },
+        // {
+        //     text: 'C/C++',
+        //     collapsed: false,
+        //     items: [
+        //         { text: 'C入门1',link: '/docx/C-C++/C入门1' },
+        //     ]
+        // },
         {
             text: 'git',
-            collapsed: false,
+            collapsed: true,
             items: [
                 { text: '入门1', link: '/docx/git/入门1' },
             ]
@@ -50,7 +50,7 @@ export const sidebar={
         },
         {
             text: '云原生',
-            collapsed: false,
+            collapsed: true,
             items: [
                 { text: 'docker', link: '/docx/云原生/docker' },
                 { text: 'DevOps', link: '/docx/云原生/DevOps' },
@@ -108,15 +108,15 @@ export const sidebar={
         {
             "text":"工具库",
             collapsed:false,
-            item:[
-                {text:'axios',link:'/前端开发/工具库/axios'},
+            items:[
+                {text:'axios',link:'/前端开发/工具库/axios.md'},
             ]
         },
         {
             "text":"测试",
             collapsed:false,
-            item:[
-                {text:'mockjs',link:'/前端开发/测试/mockjs'},
+            items:[
+                {text:'mockjs',link:'/前端开发/测试/mockjs.md'},
             ]
         },
         {
@@ -125,6 +125,8 @@ export const sidebar={
             items:[
                 { text: '基础知识', link: '/前端开发/webpack/基础知识.md' },
                 { text: '核心概念', link: '/前端开发/webpack/核心概念.md' },
+                { text: '渐进式网络应用程序PWA', link: '/前端开发/webpack/渐进式网络应用程序PWA.md' },
+                { text: '一些特性', link: '/前端开发/webpack/一些特性.md' },
             ]
         },
         {
@@ -221,6 +223,7 @@ export const sidebar={
             items: [
                 { text: '同源策略', link: '/杂项/安全/同源策略' },
                 { text: '内容安全策略', link: '/杂项/安全/CSP' },
+                { text: 'XSS和CSRF', link: '/杂项/安全/XSS和CSRF' },
             ]
         },
     ],

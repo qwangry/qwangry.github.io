@@ -15,7 +15,8 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /docx/hello/hello
+      # link: /docx/hello/hello
+      link: /前端开发/html/introduce
     # - theme: alt
     #   text: 团队介绍
     #   link: /public/team

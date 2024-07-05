@@ -9,6 +9,20 @@ export const sidebar={
             ]
         },
         {
+            text: '数据库',
+            collapsed: true,
+            items: [
+                { text: '数据库', link: '/docx/数据库/一些指令' },
+            ]
+        },
+        {
+            text: 'Shell',
+            collapsed: true,
+            items: [
+                { text: 'Shell指令', link: '/docx/Shell/Shell指令' },
+            ]
+        },
+        {
             text: 'Go',
             collapsed: true,
             items: [
@@ -58,6 +72,13 @@ export const sidebar={
         },
     ],
     '/前端开发/':[
+        {
+            text: 'Welcome',
+            collapsed: false,
+            items: [
+                { text: 'Hello', link: '/前端开发/hello/hello' },
+            ]
+        },
         {
             text: '基础',
             collapsed: false,
@@ -217,6 +238,13 @@ export const sidebar={
         }
     ],
     '/杂项/':[
+        {
+            text: 'Welcome',
+            collapsed: false,
+            items: [
+                { text: 'Hello', link: '/杂项/hello/hello' },
+            ]
+        },
         {
             text: '协议',
             collapsed: false,

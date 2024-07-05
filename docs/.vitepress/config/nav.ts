@@ -7,7 +7,7 @@ export const nav=[
     {
         text: '前端',
         activeMatch: '/前端开发/',
-        link: '/前端开发/html/introduce'
+        link: '/前端开发/hello/hello'
     },
     // {
     //     text: '文章记录',
@@ -17,7 +17,7 @@ export const nav=[
     {
         text: '杂项',
         activeMatch: '/杂项/',
-        link: '/杂项/安全/同源策略'
+        link: '/杂项/hello/hello'
     },
     // {
     //     text: '团队介绍',

@@ -262,5 +262,22 @@ export const sidebar={
                 { text: 'XSS和CSRF', link: '/杂项/安全/XSS和CSRF' },
             ]
         },
+        {
+            text: '手写代码',
+            collapsed: false,
+            items: [
+                { text: 'Promise', link: '/杂项/手写代码/Promise' },
+                { text: '防抖节流', link: '/杂项/手写代码/防抖节流' },
+                { text: 'call-apply-bind', link: '/杂项/手写代码/call-apply-bind' },
+                { text: '深拷贝和浅拷贝', link: '/杂项/手写代码/深拷贝和浅拷贝' },
+            ]
+        },
+        {
+            text: '代码格式',
+            collapsed: false,
+            items: [
+                { text: 'Eslint', link: '/杂项/代码格式/Eslint' },
+            ]
+        },
     ],
 }

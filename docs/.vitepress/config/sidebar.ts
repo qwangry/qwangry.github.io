@@ -279,5 +279,12 @@ export const sidebar={
                 { text: 'Eslint', link: '/杂项/代码格式/Eslint' },
             ]
         },
+        {
+            text: '常用操作',
+            collapsed: false,
+            items: [
+                { text: '遍历', link: '/杂项/常用操作/遍历' },
+            ]
+        },
     ],
 }

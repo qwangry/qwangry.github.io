@@ -1,5 +1,5 @@
-export const sidebar={
-    '/docx/':[
+export const sidebar = {
+    '/docx/': [
         {
             text: 'Welcome',
             collapsed: false,
@@ -71,7 +71,7 @@ export const sidebar={
             ]
         },
     ],
-    '/前端开发/':[
+    '/前端开发/': [
         {
             text: 'Welcome',
             collapsed: false,
@@ -86,7 +86,7 @@ export const sidebar={
                 { text: '构建网站的工具', link: '/前端开发/基础/构建网站的工具' },
                 { text: '前端模块化', link: '/前端开发/基础/前端模块化' },
             ]
-        }, 
+        },
         {
             text: 'HTML',
             collapsed: false,
@@ -113,37 +113,37 @@ export const sidebar={
                 { text: '一些语法', link: '/前端开发/javascript/一些语法' },
                 { text: '字符串', link: '/前端开发/javascript/字符串' },
                 { text: '数组', link: '/前端开发/javascript/数组' },
-                { text: '代码块', link: '/前端开发/javascript/代码块'},
-                { text: 'js对象', link: '/前端开发/javascript/js对象'},
-                { text: '面向对象', link: '/前端开发/javascript/面向对象'},
-                { text: 'json', link: '/前端开发/javascript/json'},
-                { text: '异步', link: '/前端开发/javascript/异步'},
-                { text: '客户端WebAPI', link: '/前端开发/javascript/客户端WebAPI'},
-                { text: 'ES6', link: '/前端开发/javascript/ES6'},
-                { text: 'web表单', link: '/前端开发/javascript/web表单'},
-                { text: '客户端web开发工具', link: '/前端开发/javascript/客户端web开发工具'},
-                { text: '客户端框架介绍', link: '/前端开发/javascript/客户端框架介绍'},
-                
+                { text: '代码块', link: '/前端开发/javascript/代码块' },
+                { text: 'js对象', link: '/前端开发/javascript/js对象' },
+                { text: '面向对象', link: '/前端开发/javascript/面向对象' },
+                { text: 'json', link: '/前端开发/javascript/json' },
+                { text: '异步', link: '/前端开发/javascript/异步' },
+                { text: '客户端WebAPI', link: '/前端开发/javascript/客户端WebAPI' },
+                { text: 'ES6', link: '/前端开发/javascript/ES6' },
+                { text: 'web表单', link: '/前端开发/javascript/web表单' },
+                { text: '客户端web开发工具', link: '/前端开发/javascript/客户端web开发工具' },
+                { text: '客户端框架介绍', link: '/前端开发/javascript/客户端框架介绍' },
+
             ]
         },
         {
-            "text":"工具库",
-            collapsed:false,
-            items:[
-                {text:'axios',link:'/前端开发/工具库/axios'},
+            "text": "工具库",
+            collapsed: false,
+            items: [
+                { text: 'axios', link: '/前端开发/工具库/axios' },
             ]
         },
         {
-            "text":"测试",
-            collapsed:false,
-            items:[
-                {text:'mockjs',link:'/前端开发/测试/mockjs'},
+            "text": "测试",
+            collapsed: false,
+            items: [
+                { text: 'mockjs', link: '/前端开发/测试/mockjs' },
             ]
         },
         {
-            "text":'webpack',
-            collapsed:false,
-            items:[
+            "text": 'webpack',
+            collapsed: false,
+            items: [
                 { text: '基础知识', link: '/前端开发/webpack/基础知识' },
                 { text: '核心概念', link: '/前端开发/webpack/核心概念' },
                 { text: '渐进式网络应用程序PWA', link: '/前端开发/webpack/渐进式网络应用程序PWA' },
@@ -151,9 +151,9 @@ export const sidebar={
             ]
         },
         {
-            "text":'typescript',
-            collapsed:false,
-            items:[
+            "text": 'typescript',
+            collapsed: false,
+            items: [
                 { text: '基础知识', link: '/前端开发/typescript/基础知识' },
             ]
         },
@@ -161,67 +161,67 @@ export const sidebar={
             text: 'React',
             collapsed: false,
             items: [
-                {text: '入门',link:'/前端开发/React/入门'},
-                {text:'入门项目开始',link:'/前端开发/React/入门项目开始'},
-                {text:'day1',link:'/前端开发/React/day1'},
-                {text:'day2',link:'/前端开发/React/day2'},
-                {text:'Hooks',link:'/前端开发/React/Hooks'},
-                {text:'知识记录',link:'/前端开发/React/知识记录'},
+                { text: '入门', link: '/前端开发/React/入门' },
+                { text: '入门项目开始', link: '/前端开发/React/入门项目开始' },
+                { text: 'day1', link: '/前端开发/React/day1' },
+                { text: 'day2', link: '/前端开发/React/day2' },
+                { text: 'Hooks', link: '/前端开发/React/Hooks' },
+                { text: '知识记录', link: '/前端开发/React/知识记录' },
             ]
         },
         {
             text: 'Vue',
             collapsed: false,
             items: [
-                {text: '入门',link:'/前端开发/Vue/入门'},
-                {text:'day1',link:'/前端开发/Vue/day1'},
-                {text:'day2',link:'/前端开发/Vue/day2'},
-                {text:'day3',link:'/前端开发/Vue/day3'},
-                {text:'day4',link:'/前端开发/Vue/day4'},
-                {text:'day5',link:'/前端开发/Vue/day5'},
-                {text:'day6',link:'/前端开发/Vue/day6'},
-                {text:'day7',link:'/前端开发/Vue/day7'},
-                {text:'day8',link:'/前端开发/Vue/day8'},
-                {text:'vue3',link:'/前端开发/Vue/vue3'},
-                {text:'Vue单元测试',link:'/前端开发/Vue/Vue单元测试'},
+                { text: '入门', link: '/前端开发/Vue/入门' },
+                { text: 'day1', link: '/前端开发/Vue/day1' },
+                { text: 'day2', link: '/前端开发/Vue/day2' },
+                { text: 'day3', link: '/前端开发/Vue/day3' },
+                { text: 'day4', link: '/前端开发/Vue/day4' },
+                { text: 'day5', link: '/前端开发/Vue/day5' },
+                { text: 'day6', link: '/前端开发/Vue/day6' },
+                { text: 'day7', link: '/前端开发/Vue/day7' },
+                { text: 'day8', link: '/前端开发/Vue/day8' },
+                { text: 'vue3', link: '/前端开发/Vue/vue3' },
+                { text: 'Vue单元测试', link: '/前端开发/Vue/Vue单元测试' },
             ]
         },
         {
             text: '微信小程序',
             collapsed: false,
-            items:[
-                { text: 'day1', link:'/前端开发/微信小程序/day1' },
-                { text: 'day2', link:'/前端开发/微信小程序/day2' },
-                { text: 'day3', link:'/前端开发/微信小程序/day3' },
-                { text: 'day4', link:'/前端开发/微信小程序/day4' },
-                { text: '案例', link:'/前端开发/微信小程序/案例' },
+            items: [
+                { text: 'day1', link: '/前端开发/微信小程序/day1' },
+                { text: 'day2', link: '/前端开发/微信小程序/day2' },
+                { text: 'day3', link: '/前端开发/微信小程序/day3' },
+                { text: 'day4', link: '/前端开发/微信小程序/day4' },
+                { text: '案例', link: '/前端开发/微信小程序/案例' },
             ]
         },
         {
             text: 'uni-app',
             collapsed: false,
-            items:[
-                { text: 'day1', link:'/前端开发/uni-app/day1' },
+            items: [
+                { text: 'day1', link: '/前端开发/uni-app/day1' },
             ]
         },
         {
             text: '跨浏览器测试',
-            collapsed:false,
-            items:[
-                {text:'介绍',link:'/前端开发/跨浏览器测试/介绍'},
+            collapsed: false,
+            items: [
+                { text: '介绍', link: '/前端开发/跨浏览器测试/介绍' },
             ]
         },
         {
             text: '服务端网页编程',
-            collapsed:false,
-            items:[
-                {text: '介绍',link:'/前端开发/服务端网页编程/介绍'},
-                {text:'Django',link:'/前端开发/服务端网页编程/Django'},
-                {text:'代码',link:'/前端开发/服务端网页编程/代码'},
+            collapsed: false,
+            items: [
+                { text: '介绍', link: '/前端开发/服务端网页编程/介绍' },
+                { text: 'Django', link: '/前端开发/服务端网页编程/Django' },
+                { text: '代码', link: '/前端开发/服务端网页编程/代码' },
             ]
         },
     ],
-    '/article/':[
+    '/article/': [
         {
             text: 'Welcome',
             collapsed: false,
@@ -230,14 +230,14 @@ export const sidebar={
             ]
         },
         {
-            text:'待学列表',
+            text: '待学列表',
             collapsed: false,
-            items:[
+            items: [
                 { text: '待学列表整理', link: '/article/待学列表/待学列表整理' }
             ]
         }
     ],
-    '/杂项/':[
+    '/杂项/': [
         {
             text: 'Welcome',
             collapsed: false,
@@ -246,11 +246,12 @@ export const sidebar={
             ]
         },
         {
-            text: '协议',
+            text: '浏览器-协议',
             collapsed: false,
             items: [
-                { text: 'http', link: '/杂项/协议/http' },
-                { text: 'websocket', link: '/杂项/协议/websocket' },
+                { text: 'http', link: '/杂项/浏览器-协议/http' },
+                { text: 'websocket', link: '/杂项/浏览器-协议/websocket' },
+                { text: '浏览器进程', link: '/杂项/浏览器-协议/浏览器进程' },
             ]
         },
         {

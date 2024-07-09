@@ -250,6 +250,7 @@ export const sidebar = {
             collapsed: false,
             items: [
                 { text: 'http', link: '/杂项/浏览器-协议/http' },
+                { text: 'tcp', link: '/杂项/浏览器-协议/tcp' },
                 { text: 'websocket', link: '/杂项/浏览器-协议/websocket' },
                 { text: '浏览器进程', link: '/杂项/浏览器-协议/浏览器进程' },
             ]

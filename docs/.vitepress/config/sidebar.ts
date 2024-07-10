@@ -288,5 +288,12 @@ export const sidebar = {
                 { text: '遍历', link: '/杂项/常用操作/遍历' },
             ]
         },
+        {
+            text: 'shell脚本',
+            collapsed: false,
+            items: [
+                { text: '基本语法', link: '/杂项/shell脚本/基本语法' },
+            ]
+        },
     ],
 }

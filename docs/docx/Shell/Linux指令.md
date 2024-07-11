@@ -68,7 +68,7 @@
 >
 >- 图形界面登录
 
-![alt text](image.png)
+![alt text](./images/Linux/image.png)
 
 ### Linux关机
 
@@ -183,7 +183,7 @@ tail [-n number] 文件
 ```
 
 ## vi/vim
-![alt text](image-1.png)
+![alt text](./images/Linux/image-1.png)
 
 ### 命令模式command mode
 `i` -- 切换到`输入模式`，在光标当前位置开始输入文本。
@@ -250,7 +250,7 @@ tail [-n number] 文件
 
 `:q!`：强制退出Vim编辑器，不保存修改。
 
-![alt text](image-2.png)
+![alt text](./images/Linux/image-2.png)
 
 ### 常用
 

@@ -254,6 +254,7 @@ export const sidebar = {
                 { text: 'tcp', link: '/杂项/浏览器-协议/tcp' },
                 { text: 'websocket', link: '/杂项/浏览器-协议/websocket' },
                 { text: '浏览器进程', link: '/杂项/浏览器-协议/浏览器进程' },
+                { text: '浏览器渲染网页', link: '/杂项/浏览器-协议/浏览器渲染网页' },
             ]
         },
         {

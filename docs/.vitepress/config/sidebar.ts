@@ -12,7 +12,7 @@ export const sidebar = {
             text: '数据库',
             collapsed: true,
             items: [
-                { text: '数据库', link: '/docx/数据库/一些指令' },
+                { text: '数据库', link: '/docx/数据库/数据库指令' },
             ]
         },
         {

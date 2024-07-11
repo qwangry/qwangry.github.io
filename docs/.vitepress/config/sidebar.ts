@@ -19,7 +19,8 @@ export const sidebar = {
             text: 'Shell',
             collapsed: true,
             items: [
-                { text: 'Shell指令', link: '/docx/Shell/Shell指令' },
+                { text: 'Shell基本语法', link: '/docx/Shell/Shell基本语法' },
+                { text: 'Linux指令', link: '/docx/Shell/Linux指令' },
             ]
         },
         {
@@ -286,13 +287,6 @@ export const sidebar = {
             collapsed: false,
             items: [
                 { text: '遍历', link: '/杂项/常用操作/遍历' },
-            ]
-        },
-        {
-            text: 'shell脚本',
-            collapsed: false,
-            items: [
-                { text: '基本语法', link: '/杂项/shell脚本/基本语法' },
             ]
         },
     ],

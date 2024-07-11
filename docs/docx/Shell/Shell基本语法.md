@@ -662,6 +662,7 @@ if `ps -ef | grep ssh`;  then echo hello; fi
 
 
 #### if else
+
 ```sh
 if condition
 then
@@ -673,6 +674,33 @@ else
     command
 fi
 ```
+
+if else的`[...]`判断语句中大于使用`-gt`，小于使用`-lt`
+```sh
+if [ "$a" -gt "$b" ]; then
+...
+fi
+```
+
+使用`((...))`作为判断语句，大于和小于可以直接使用`>`和`<`
+```sh
+if (( a > b )); then
+...
+fi
+```
+
+经常和test命令结合使用
+```sh
+num1=$[2*3]
+num2=$[1+5]
+if test $[num1] -eq $[num2]
+then
+    echo '两个数字相等!'
+else
+    echo '两个数字不相等!'
+fi
+```
+
 
 #### if else-if else
 ```sh
@@ -756,6 +784,23 @@ done
 
 #### case
 ```sh
+case 值 in
+模式1)
+    command1
+    command2
+    ...
+    commandN
+    ;;
+模式2)
+    command1
+    command2
+    ...
+    commandN
+    ;;
+esac
+```
+
+```sh
 case "${opt}" in
 	"Install-Puppet-Server" )
 		install_master $1
@@ -784,6 +829,87 @@ case "${opt}" in
 	* ) echo "Bad option, please choose again"
 esac
 ```
+
+### 函数
+```sh
+[ function ] funname [()]
+
+{
+
+    action;
+
+    [return int;]
+
+}
+```
+
+1、可以带 `function fun()` 定义，也可以直接 `fun()` 定义,不带任何参数。
+
+2、参数返回，可以显示加：`return` 返回，如果不加，将以最后一条命令运行结果，作为返回值。 `return` 后跟数值 `n(0-255)`
+
+
+```sh
+#!/bin/bash
+# author:菜鸟教程
+# url:www.runoob.com
+
+funWithReturn(){
+    echo "这个函数会对输入的两个数字进行相加运算..."
+    echo "输入第一个数字: "
+    read aNum
+    echo "输入第二个数字: "
+    read anotherNum
+    echo "两个数字分别为 $aNum 和 $anotherNum !"
+    return $(($aNum+$anotherNum))
+}
+funWithReturn
+echo "输入的两个数字之和为 $? !"
+# 这个函数会对输入的两个数字进行相加运算...
+# 输入第一个数字: 
+# 1
+# 输入第二个数字: 
+# 2
+# 两个数字分别为 1 和 2 !
+# 输入的两个数字之和为 3 !
+```
+
+函数返回值在调用该函数后通过 `$?` 来获得。
+
+#### 函数参数
+
+函数体内部，通过 $n 的形式来获取参数的值，当n>=10时，需要使用${n}来获取参数
+
+```sh
+#!/bin/bash
+# author:菜鸟教程
+# url:www.runoob.com
+
+funWithParam(){
+    echo "第一个参数为 $1 !"
+    echo "第二个参数为 $2 !"
+    echo "第十个参数为 $10 !"
+    echo "第十个参数为 ${10} !"
+    echo "第十一个参数为 ${11} !"
+    echo "参数总数有 $# 个!"
+    echo "作为一个字符串输出所有参数 $* !"
+}
+funWithParam 1 2 3 4 5 6 7 8 9 34 73
+```
+
+`$#`	传递到脚本或函数的参数个数
+
+`$*`	以一个单字符串显示所有向脚本传递的参数
+
+`$$`	脚本运行的当前进程ID号
+
+`$!`	后台运行的最后一个进程的ID号
+
+`$@`	与`$*`相同，但是使用时加引号，并在引号中返回每个参数。
+
+`$-`	显示Shell使用的当前选项，与set命令功能相同。
+
+`$?`	显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。
+
 
 ## 命令
 
@@ -964,6 +1090,24 @@ else
 fi
 # 至少有一个文件存在!
 ```
+
+### 输入输出重定向
+
+`command > file`	将输出重定向到 file。
+
+`command < file`	将输入重定向到 file。
+
+`command >> fil`e	将输出以追加的方式重定向到 file。
+
+`n > file`	将文件描述符为 n 的文件重定向到 file。
+
+`n >> file`	将文件描述符为 n 的文件以追加的方式重定向到 file。
+
+`n >& m`	将输出文件 m 和 n 合并。
+
+`n <& m`	将输入文件 m 和 n 合并。
+
+`<< tag`	将开始标记 tag 和结束标记 tag 之间的内容作为输入。
 
 
 ## 参考

@@ -42,5 +42,7 @@ export default defineConfig({
   markdown: {
     theme: 'material-theme-palenight',
     lineNumbers: true,
-  }
+  },
+  // 当设置为 true 时，VitePress 不会因为死链而导致构建失败
+  ignoreDeadLinks: true,
 })

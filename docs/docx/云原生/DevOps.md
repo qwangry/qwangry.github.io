@@ -492,7 +492,8 @@ WORKDIR /usr/local/
 CMD java -jar demo.jar
 ```
 
-```docker-compose.yml
+```yml
+# docker-compose.yml
 version:'3.1'
 services:
   demo:

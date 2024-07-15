@@ -122,7 +122,7 @@ docker commit -a "leifengyang"  -m "首页变化" 341d81f7504f guignginx:v1.0
 
 ```
 
-![Alt text](images/image1.png)
+![Alt text](./images/docker/image1.png)
 
 1、镜像传输
 ```bash
@@ -134,7 +134,7 @@ docker load -i abc.tar
 # 离线安装
 ```
 本地打包后传输到另一个机器
-![Alt text](./images/image2.png)
+![Alt text](./images/docker/image2.png)
 
 
 - 推送远程仓库

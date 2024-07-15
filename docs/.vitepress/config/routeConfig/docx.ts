@@ -22,34 +22,20 @@ export const docx=[
             { text: 'Linux指令', link: '/docx/Shell/Linux指令' },
         ]
     },
-    // {
-    //     text: 'Go',
-    //     collapsed: false,
-    //     items: [
-    //         { text: '学习', link: '/docx/go/学习' },
-    //     ]
-    // },
     {
         text: 'leetcode',
         collapsed: false,
         items: [
-            { text: '常用操作', link: '/docx/leetcode/常用操作' },
-            { text: '代码1', link: '/docx/leetcode/代码1' },
-            { text: '代码2', link: '/docx/leetcode/代码2' },
+            { text: '数据结构', link: '/docx/leetcode/数据结构' },
+            { text: '排序算法', link: '/docx/leetcode/排序算法' },
+            { text: 'leetcode总结1', link: '/docx/leetcode/leetcode总结1' },
         ]
     },
-    // {
-    //     text: 'C/C++',
-    //     collapsed: false,
-    //     items: [
-    //         { text: 'C入门1',link: '/docx/C-C++/C入门1' },
-    //     ]
-    // },
     {
         text: 'git',
         collapsed: false,
         items: [
-            { text: '入门1', link: '/docx/git/入门1' },
+            { text: '入门', link: '/docx/git/入门' },
         ]
     },
     {
@@ -70,4 +56,18 @@ export const docx=[
             { text: 'DevOps', link: '/docx/云原生/DevOps' },
         ]
     },
+    // {
+    //     text: 'C/C++',
+    //     collapsed: false,
+    //     items: [
+    //         { text: 'C入门1',link: '/docx/C-C++/C入门1' },
+    //     ]
+    // },
+    // {
+    //     text: 'Go',
+    //     collapsed: false,
+    //     items: [
+    //         { text: '学习', link: '/docx/go/学习' },
+    //     ]
+    // },
 ]

@@ -18,14 +18,14 @@ DevOPs：Development & Operations 的缩写，也就是开发&运维
 
 其实QA测试团队也是参与其中的。
 
-![Alt text](./images/image3.png)
+![Alt text](./images/DevOps/image3.png)
 
 DevOps强调的是高效组织团队之间如何通过自动化的工具写作和沟通来完成软件的生命周期管理，从而更快、更频繁的交付更稳定的软件
 
 自动化的工具写作和沟通来完成软件的声明周期管理。
 
 
-![Alt text](./images/image5.png)
+![Alt text](./images/DevOps/image5.png)
 
 
 ## docker && docker-compose --> gitlab安装
@@ -166,7 +166,7 @@ services:
 docker-compose up -d
 ```
 
-![Alt text](./images/image4.png)
+![Alt text](./images/DevOps/image4.png)
 
 图中的错误重启docker即可
 
@@ -226,11 +226,11 @@ vim setting.xml
 # 开启一下JDK8
 ```
 
-![Alt text](./images/image6.png)
+![Alt text](./images/DevOps/image6.png)
 
-![Alt text](./images/image7.png)
+![Alt text](./images/DevOps/image7.png)
 
-![Alt text](./images/image8.png)
+![Alt text](./images/DevOps/image8.png)
 
 :::tip
 vim里面`:set nu`指令可以显示文件的行
@@ -309,7 +309,7 @@ CD过程即是通过Jenkins将打好标签的发行版本代码拉取、构建�
 - 持续交付：让经过持续集成的代码可以进行手动部署
 - 持续部署：让可以持续交付的代码随时随地的自动化部署
 
-![Alt text](./images/image9.png)
+![Alt text](./images/DevOps/image9.png)
 
 ### Jenkins安装
 [https://www.jenkins.io/](https://www.jenkins.io/)
@@ -405,29 +405,29 @@ docker-compose up -d
 
 配置jdk和maven：
 
-![Alt text](./images/image16.png)
+![Alt text](./images/DevOps/image16.png)
 
 将jdk和maven挪到Jenkins里面，映射到容器内部
 
-![Alt text](./images/image10.png)
+![Alt text](./images/DevOps/image10.png)
 
 在页面配置如下：
-![Alt text](./images/image11.png)
+![Alt text](./images/DevOps/image11.png)
 
-![Alt text](./images/image12.png)
+![Alt text](./images/DevOps/image12.png)
 
-![Alt text](./images/image13.png)
+![Alt text](./images/DevOps/image13.png)
 
 
 为了推送而进行的配置：
 
-![Alt text](./images/image15.png)
+![Alt text](./images/DevOps/image15.png)
 
 在Publish Over SSH插件配置里面
 
 注意要提前创建好test目录
 
-![Alt text](./images/image14.png)
+![Alt text](./images/DevOps/image14.png)
 
 
 ## CI操作
@@ -435,17 +435,17 @@ docker-compose up -d
 创建一个简单的spring boot项目
 
 在gitlab创建一个仓库
-![Alt text](./images/image17.png)
+![Alt text](./images/DevOps/image17.png)
 
 按照仓库给的提示进行git配置
 
 推送到gitlab仓库
 
 
-![Alt text](./images/image37.png)
+![Alt text](./images/DevOps/image37.png)
 
 在Jenkins创建任务：New Item
-![Alt text](./images/image18.png)
+![Alt text](./images/DevOps/image18.png)
 
 输入，保存之后，Jenkins会自动拉取gitlab地址
 
@@ -456,20 +456,20 @@ docker exec -it jenkins bash
 
 然后maven设置，让Jenkins可以通过maven进行package操作
 
-![Alt text](./images/image19.png)
+![Alt text](./images/DevOps/image19.png)
 
-![Alt text](./images/image20.png)
+![Alt text](./images/DevOps/image20.png)
 
 然后进行构建，第一次构建时间比较长
-![Alt text](./images/image21.png)
+![Alt text](./images/DevOps/image21.png)
 
 jenkins把构建好的jar包推送到目标服务器，目标服务器把它运行起来，运行方式是docker
 
 还在刚刚界面，构建后操作：
-![Alt text](./images/image22.png)
+![Alt text](./images/DevOps/image22.png)
 
 目标服务器在前面已经配置过了
-![Alt text](./images/image23.png)
+![Alt text](./images/DevOps/image23.png)
 
 要是想能够自动在docker，需要在项目中追加Dockerfile文件
 
@@ -478,12 +478,12 @@ jenkins把构建好的jar包推送到目标服务器，目标服务器把它运�
 
 搜索Java
 
-![Alt text](./images/image24.png)
+![Alt text](./images/DevOps/image24.png)
 
 在里面找一个8的
-![Alt text](./images/image25.png)
+![Alt text](./images/DevOps/image25.png)
 
-![Alt text](./images/image26.png)
+![Alt text](./images/DevOps/image26.png)
 
 ```dockerfile
 FROM daocloud.io/library/java:8u40-jdk
@@ -509,145 +509,145 @@ services:
 推送到gitlab
 
 配置更新：
-![Alt text](./images/image27.png)
-![Alt text](./images/image28.png)
-![Alt text](./images/image29.png)
+![Alt text](./images/DevOps/image27.png)
+![Alt text](./images/DevOps/image28.png)
+![Alt text](./images/DevOps/image29.png)
 
 
 下面这个指令可以清楚重复的镜像
 ```bash
 docker image prune -f
 ```
-![Alt text](./images/image30.png)
+![Alt text](./images/DevOps/image30.png)
 
-![Alt text](./images/image31.png)
+![Alt text](./images/DevOps/image31.png)
 
 ## CD操作
 
-![Alt text](./images/image32.png)
+![Alt text](./images/DevOps/image32.png)
 
-![Alt text](./images/image33.png)
+![Alt text](./images/DevOps/image33.png)
 
 gitlab新建tag
-![Alt text](./images/image34.png)
+![Alt text](./images/DevOps/image34.png)
 
 再新建一个v2.0.0
 
 Jenkins可以选择tag，然后根据版本显示不同内容
 
-![Alt text](./images/image35.png)
+![Alt text](./images/DevOps/image35.png)
 
 ## SonarQube
 
 检测代码质量
 
-![Alt text](./images/image36.png)
+![Alt text](./images/DevOps/image36.png)
 
 是一个开源代码分析平台，支持多种语言。检查代码中是否有重复内容，漏洞等等。可以基于多种平台。
 
-![Alt text](image.png)
+![Alt text](./images/DevOps/2/image.png)
 
-![Alt text](image-2.png)
+![Alt text](./images/DevOps/2/image-2.png)
 
 创建文件夹sonarqube_docker
 创建docker-compose.yml
-![Alt text](image-3.png)
+![Alt text](./images/DevOps/2/image-3.png)
 
 docker-compose up -d跑起来
 
 报错处理：虚拟内存不足
-![Alt text](image-5.png)
-![Alt text](image-4.png)
+![Alt text](./images/DevOps/2/image-5.png)
+![Alt text](./images/DevOps/2/image-4.png)
 
-![Alt text](image-6.png)
+![Alt text](./images/DevOps/2/image-6.png)
 
 安装中文插件
-![Alt text](image-7.png)
+![Alt text](./images/DevOps/2/image-7.png)
 
 在maven中配置sonar
-![Alt text](image-8.png)
+![Alt text](./images/DevOps/2/image-8.png)
 
-![Alt text](image-9.png)
+![Alt text](./images/DevOps/2/image-9.png)
 
 如果有maven的环境变量，可在命令行检测：
-![Alt text](image-10.png)
+![Alt text](./images/DevOps/2/image-10.png)
 
-![Alt text](image-11.png)
+![Alt text](./images/DevOps/2/image-11.png)
 
 sonar-scanner下载：
-![Alt text](image-12.png)
+![Alt text](./images/DevOps/2/image-12.png)
 
 yum install -y unzip安装解压软件
 
-![Alt text](image-13.png)
+![Alt text](./images/DevOps/2/image-13.png)
 
-![Alt text](image-14.png)
+![Alt text](./images/DevOps/2/image-14.png)
 
 sonar-scanner移动到Jenkins的data目录下
-![Alt text](image-15.png)
+![Alt text](./images/DevOps/2/image-15.png)
 
 编辑配置文件：
 
-![Alt text](image-17.png)
-![Alt text](image-16.png)
+![Alt text](./images/DevOps/2/image-17.png)
+![Alt text](./images/DevOps/2/image-16.png)
 
 利用sonar-scanner里面的东西检测workspace里面的代码：
-![Alt text](image-18.png)
+![Alt text](./images/DevOps/2/image-18.png)
 
-![Alt text](image-19.png)
+![Alt text](./images/DevOps/2/image-19.png)
 
-![Alt text](image-20.png)
+![Alt text](./images/DevOps/2/image-20.png)
 
 检测命令：
-![Alt text](image-21.png)
+![Alt text](./images/DevOps/2/image-21.png)
 上图命令是-D，不是-S
-![Alt text](image-22.png)
+![Alt text](./images/DevOps/2/image-22.png)
 
-![Alt text](image-23.png)
+![Alt text](./images/DevOps/2/image-23.png)
 
-![Alt text](image-24.png)
+![Alt text](./images/DevOps/2/image-24.png)
 
-![Alt text](image-25.png)
+![Alt text](./images/DevOps/2/image-25.png)
 
-![Alt text](image-26.png)
-![Alt text](image-27.png)
+![Alt text](./images/DevOps/2/image-26.png)
+![Alt text](./images/DevOps/2/image-27.png)
 
-![Alt text](image-28.png)
+![Alt text](./images/DevOps/2/image-28.png)
 
 ### jenkins集成sonarqube
 在Jenkins里面下载插件：
-![Alt text](image-29.png)
+![Alt text](./images/DevOps/2/image-29.png)
 
-![Alt text](image-30.png)
+![Alt text](./images/DevOps/2/image-30.png)
 
-![Alt text](image-31.png)
+![Alt text](./images/DevOps/2/image-31.png)
 
-![Alt text](image-32.png)
-![Alt text](image-33.png)
+![Alt text](./images/DevOps/2/image-32.png)
+![Alt text](./images/DevOps/2/image-33.png)
 
-![Alt text](image-34.png)
+![Alt text](./images/DevOps/2/image-34.png)
 
-![Alt text](image-35.png)
+![Alt text](./images/DevOps/2/image-35.png)
 
-![Alt text](image-36.png)
+![Alt text](./images/DevOps/2/image-36.png)
 
-![Alt text](image-37.png)
+![Alt text](./images/DevOps/2/image-37.png)
 
 ## harbor自定义镜像
-![Alt text](image-38.png)
+![Alt text](./images/DevOps/2/image-38.png)
 
 安装：GitHub下载安装包，解压一下
 
-![Alt text](image-39.png)
+![Alt text](./images/DevOps/2/image-39.png)
 修改配置文件：
-![Alt text](image-40.png)
+![Alt text](./images/DevOps/2/image-40.png)
 
-![Alt text](image-41.png)
-![Alt text](image-42.png)
+![Alt text](./images/DevOps/2/image-41.png)
+![Alt text](./images/DevOps/2/image-42.png)
 
-![Alt text](image-43.png)
+![Alt text](./images/DevOps/2/image-43.png)
 
-![Alt text](image-44.png)
+![Alt text](./images/DevOps/2/image-44.png)
 
 :80访问
 
@@ -655,20 +655,18 @@ admin
 默认密码
 
 
-![Alt text](image-46.png)
+![Alt text](./images/DevOps/2/image-46.png)
 
-![Alt text](image-45.png)
+![Alt text](./images/DevOps/2/image-45.png)
 
-![Alt text](image-47.png)
+![Alt text](./images/DevOps/2/image-47.png)
 
-![Alt text](image-48.png)
+![Alt text](./images/DevOps/2/image-48.png)
 报错，是因为修改完之后没有重启docker
 
-![Alt text](image-49.png)
+![Alt text](./images/DevOps/2/image-49.png)
 再次报错，显示没有权限，是因为没有登录harbor
-![Alt text](image-50.png)
+![Alt text](./images/DevOps/2/image-50.png)
 
 拉取harbor里面的镜像
-![Alt text](image-51.png)
-
-
+![Alt text](./images/DevOps/2/image-51.png)

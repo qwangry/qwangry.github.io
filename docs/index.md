@@ -16,7 +16,7 @@ hero:
     - theme: brand
       text: 快速开始
       # link: /docx/hello/hello
-      link: /前端开发/html/introduce
+      link: /前端开发/
     # - theme: alt
     #   text: 团队介绍
     #   link: /public/team
@@ -26,7 +26,9 @@ hero:
 
 features:
   - title: 👋 文档
-    details: 前端，leetcode，go
-  - title: 👀 文章记录
-    details: 开发中...
+    details: Linux指令，数据库，docker，leetcode
+  - title: 🌱 前端
+    details: HTML、CSS、JavaScript，React，Webpack，NodeJS
+  - title: 🙌 杂项
+    details: 浏览器，协议，安全
 ---

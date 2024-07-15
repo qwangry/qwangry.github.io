@@ -19,9 +19,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     logo: '/logo.jpg',
     nav,
-
     sidebar,
-
     socialLinks: [
       { icon: 'github', link: 'https://qwangry.github.io' }
     ],

@@ -349,46 +349,286 @@ display: inline-block 是 display 的一个特殊值，它提供了介于 inline
 
 
 ### 背景与边框
+```css
+.box{
+    background:
+        linear-gradient(
+            105deg,
+            rgba(255,255,255,0.2) 39%,
+            rgba(51,56,57,1) 96%
+        )
+        center center / 400px 200px no-repeat,
+        url(big-star.png) center no-repeat,
+        rebeccapurple;
+}
+```
+
+**控制背景平铺background-repeat**
+- no-repeat——阻止背景重复平铺。
+
+- repeat-x——仅水平方向上重复平铺。
+
+- repeat-y——仅垂直方向上重复平铺。
+
+- repeat——默认值，在水平和垂直两个方向重复平铺。
+
+**background-size**
+- 设置长度或百分比
+
+- cover ：完全覆盖，保持宽高比，可能跳出盒子
+
+- contain：调整到适合的尺寸，可能有空隙
+
+**background-position 背景图像定位**
+出现在所应用的盒子上的位置，相对于左上角
+
+- 设置两个值，一个水平，一个垂直
+
+- 使用关键字 top right
+
+**gradient渐变背景**
+```css
+.a {
+  background-image: linear-gradient(18deg, rgb(0 249 255 / 100%) 39%, rgb(51 56 57 / 100%) 96%);
+}
+
+.b {
+  background-image: radial-gradient(circle, rgb(0 249 255 / 100%) 39%, rgb(51 56 57 / 100%) 96%);
+  background-size: 100px 50px;
+}
+```
+
+**背景附加background-attachment**
+- scroll：使元素的背景在页面滚动时滚动。如果`滚动了元素内容，则背景不会移动`。实际上，背景被固定在页面的相同位置，所以它会随着页面的滚动而滚动。
+
+- fixed：使元素的`背景固定在视口上`，这样当页面或元素内容滚动时，它就不会滚动。它将始终保持在屏幕上相同的位置。
+
+- local：将背景`固定在它所设置的元素上`，所以当你滚动该元素时，背景也随之滚动。
+
+#### 边框
+```css
+.box {
+  border: 1px solid black;
+}
+.box {
+  border-radius: 10px;
+}
+.box {
+  border-top-right-radius: 1em 10%;
+}
+```
 
 
 ### 处理不同的文本方向
 
+#### 书写模式
+从左到右（ltr）
 
-### 溢出的内容
+从右到左（rtl）
+
+```css
+/* 关键字值 */
+/* 块流向从上至下，文本方向是横向 */
+writing-mode: horizontal-tb;
+/* 块流向从右向左，文本方向是纵向 */
+writing-mode: vertical-rl;
+/* 块流向从左向右，文本方向是纵向 */
+writing-mode: vertical-lr;
+
+/* 全局值 */
+writing-mode: inherit;
+writing-mode: initial;
+writing-mode: revert;
+writing-mode: revert-layer;
+writing-mode: unset;
+```
+
+```css
+h1 {
+  writing-mode: vertical-rl;
+}
+/* writing-mode: horizontal-tb; */
+```
+
+
+### 溢出的内容overflow
+
+```css
+/* 默认可见 */
+overflow: visible
+overflow: hidden
+overflow: scroll
+/* 只是想让滚动条在有比盒子所能装下更多的内容的时候才显示，那么使用 overflow: auto */
+/* 控制仅在x轴方向滚动 */
+overflow-x: scroll
+/* 控制仅在y轴方向滚动 */
+overflow-y: scroll
+/* 可以用 overflow 属性指定 x 轴和 y 轴方向的滚动，同时使用两个值进行传递。如果指定了两个关键字，第一个对 overflow-x 生效而第二个对 overflow-y 生效。否则，overflow-x 和 overflow-y 将会被设置成同样的值。 */
+overflow: scroll hidden
+```
 
 
 ### 值和单位
 
+- px：像素
+
+- pt：点
+
+- in：英寸
+
+相对长度单位：
+
+- em 和 rem 分别相对于父元素和根元素的`字体大小`。
+
+- vh 和 vw 分别相对于`视口`的高度和宽度。
 
 
 ### 在CSS中调整大小
 
+#### 原始尺寸、固有尺寸
+在受 CSS 设置影响之前，HTML 元素有其原始的尺寸。一个直观的例子就是图像。一幅图像的长和宽由这个图像文件自身确定。这个尺寸就是固有尺寸
 
-### 图片、媒体和表单元素
-
-
-### 样式化表格
-
-
-### 调试CSS
+元素的固有尺寸——由其所包含的内容决定
 
 
-### 组织CSS
+#### 设置具体的尺寸
+当给元素指定尺寸（然后其内容需要适合该尺寸）时，将其称为`外部尺寸`
+
+可以给元素一个具体的 width 和 height 值
+
+使用百分数：指的是父容器宽度/高度的百分数
+
+使用百分比作为元素外边距（margin）或填充（padding）的单位时，值是以包含块的内联尺寸进行计算的，也就是元素的水平宽度。
+
+#### min- 和max- 尺寸
+让 CSS 给定一个元素的最大或最小尺寸
 
 
+#### 视口单位
+
+视口，即在浏览器中看到的部分页面，也是有尺寸的。
 
 
+### 高级区块效果
+
+#### 盒子阴影box-shadow
+```css
+.simple {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* 多个盒子阴影 */
+.multiple {
+  box-shadow:
+    1px 1px 1px black,
+    2px 2px 1px black,
+    3px 3px 1px red,
+    4px 4px 1px red,
+    5px 5px 1px black,
+    6px 6px 1px black;
+}
+
+/* 内部阴影  inset关键字 */
+button:active {
+  box-shadow:
+    inset 2px 2px 1px black,
+    inset 2px 3px 5px rgba(0, 0, 0, 0.3),
+    inset -2px -3px 5px rgba(255, 255, 255, 0.5);
+}
+```
+
+#### 滤镜Filters
+滤镜真正出色的地方在于，它们作用于盒（box）内内容（content）的确切形状，而不仅仅将盒子本身作为一个大的块。
+
+```css
+.filter {
+  -webkit-filter: drop-shadow(5px 5px 1px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(5px 5px 1px rgba(0, 0, 0, 0.7));
+}
+```
+
+在filter属性中通过-webkit-前缀包含了一个版本信息，这被称为一个 Vendor Prefix，有时会被浏览器使用，以在一个新特性完整实现之前，当它与无前缀版本没有冲突的时候支持并实验这个特性。
+
+#### Blend modes（混合模式）
+CSS 混合模式允许为元素添加一个混合模式，以当两个元素重叠时，指定一个混合的效果——最终每个像素所展示的颜色将会是原来像素中颜色和其下面一层相组合之后的结果
 
 
+- background-blend-mode, 用来将单个元素的`多重背景图片和背景颜色`设置混合在一起。
+
+- mix-blend-mode, 用来将一个元素与它覆盖的那些元素各自所设置的背景`（background）和内容 (content)` 混合在一起。
+
+```css
+.multiply {
+  background-blend-mode: multiply;
+}
+.multiply-mix {
+  mix-blend-mode: multiply;
+}
+```
+
+#### -webkit-background-clip: text
+
+当与专有 -webkit-text-fill-color: transparent; 特性一起使用时，这允许将背景图像剪贴到元素文本的形状，从而产生一些不错的效果。
+
+```css
+.text-clip {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+```
+
+### 浏览器引擎前缀
+浏览器厂商们有时会给实验性的或者非标准的 CSS 属性和 JavaScript API 添加前缀，这样开发者就可以用这些新的特性进行试验，同时（理论上）防止他们的试验代码被依赖，从而在标准化过程中破坏 web 开发者的代码。
+
+#### CSS前缀
+主流浏览器引擎前缀：
+
+`-webkit-` （谷歌，Safari，新版 Opera 浏览器，以及几乎所有 iOS 系统中的浏览器（包括 iOS 系统中的火狐浏览器）；基本上所有基于 WebKit 内核的浏览器）
+
+`-moz-` （火狐浏览器）
+
+`-o-` （旧版 Opera 浏览器）
+
+`-ms-` （IE 浏览器 和 Edge 浏览器）
+
+```css
+-webkit-transition: all 4s ease;
+-moz-transition: all 4s ease;
+-ms-transition: all 4s ease;
+-o-transition: all 4s ease;
+transition: all 4s ease;
+```
+#### API前缀
+
+##### 接口前缀
+需要使用大写的前缀修饰接口名：
+
+`WebKit` (谷歌，Safari, 新版 Opera 浏览器，以及几乎所有 iOS 系统中的浏览器 (包括 iOS 系统中的火狐浏览器); 简单的说，所有基于 WebKit 内核的浏览器)
+
+`Moz` (火狐浏览器)
+
+`O` (旧版 Opera 浏览器)
+
+`MS` (IE 浏览器 和 Edge 浏览器)
+
+##### 属性和方法前缀
+需要使用小写的前缀修饰属性或者方法
+
+`webkit` (谷歌，Safari, 新版 Opera 浏览器，以及几乎所有 iOS 系统中的浏览器 (包括 iOS 系统中的火狐浏览器); 简单的说，所有基于 WebKit 内核的浏览器)
+
+`moz` (火狐浏览器)
+
+`o` (旧版 Opera 浏览器等
+
+`ms` (IE 浏览器 和 Edge 浏览器)
 
 
-
-
-
-
-
-
-
-
-
-
+```css
+window.requestAnimationFrame =
+  window.requestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.oRequestAnimationFrame ||
+  window.msRequestAnimationFrame;
+```

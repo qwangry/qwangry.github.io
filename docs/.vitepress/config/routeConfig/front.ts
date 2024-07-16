@@ -18,6 +18,7 @@ export const front=[
                 items: [
                     { text: '简介', link: '/前端开发/基础/css/introduce' },
                     { text: 'CSS基础', link: '/前端开发/基础/css/CSS基础' },
+                    { text: '常见概念', link: '/前端开发/基础/css/常见概念' },
                     { text: '样式设置', link: '/前端开发/基础/css/样式设置' },
                     { text: '十种布局', link: '/前端开发/基础/css/十种布局' },
                 ],

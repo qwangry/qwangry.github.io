@@ -34,7 +34,7 @@ JS的语法是非常灵活的，比如说，随便写一个变量x，这个变�
 1、正常模式中，如果一个变量没有声明就赋值，默认是全局变量。严格模式禁止这种写法，全局变量必须显示声明
 
 2、禁止this关键字指向全局对象
-```JavaScript
+```js
         var foo = function () {
             console.log(this);
         }
@@ -75,23 +75,24 @@ JS的语法是非常灵活的，比如说，随便写一个变量x，这个变�
 
 10、新增关键字
 
-为了向将来Javascript的新版本过渡，严格模式新增了一些保留字：implements, interface, let, package, private, protected, public, static, yield。
+为了向将来js的新版本过渡，严格模式新增了一些保留字：implements, interface, let, package, private, protected, public, static, yield。
 
 ## ES5中的一些扩展
 
 1、JSON
-```javascript
+```js
 JSON.stringify(obj/arr)
 JSON.parse(json)
 ```
 
 2、Object扩展
+
 **方法一**
-```JavaScript
+```js
 Object.create(prototype, [descriptors])
 ```
 以指定对象为原型，创建新的对象。第二个参数可以为新的对象添加新的属性，并以此属性进行描述。
-```javascript
+```js
 var obj1={username:'smy',age:26}
 var obj2={address:'shenzhen'}
 
@@ -103,12 +104,12 @@ console.log(obj2)
 
 **方法二**
 
-```JavaScript
+```js
 Object.defineProperties(object, descriptors)
 ```
 为指定对象定义扩展多个属性。
 
-```javascript
+```js
     var obj2 = {
         firstName : 'smyh',
         lastName : 'vae'
@@ -136,11 +137,11 @@ Object.defineProperties(object, descriptors)
 3、object的扩展二
 
 obj对象本身就带了两个方法：
-```JavaScript
+```js
 get 属性名(){}用来得到当前属性值的回调函数
 set 属性名(){}用来监视当前属性值变化的回调函数
 ```
-```javascript
+```js
     var obj = {
         firstName : 'kobe',
         lastName : 'bryant',
@@ -163,27 +164,27 @@ set 属性名(){}用来监视当前属性值变化的回调函数
 以下都是给数组实例使用的。
 
 - 获取value在数组的第一个下标
-```javascript
+```js
 Array.prototype.indexOf(value)
 ```
 
 - 获取value在数组中的最后一个下标
-```JavaScript
+```js
 Array.prototype.lastIndexOf(value)
 ```
 
 - 遍历数组
-```JavaScript
+```js
 Array.prototype.forEach(function(item,index){})
 ```
 
 - 遍历数组返回一个新的数组，返回的是加工之后的新数组
-```JavaScript
+```js
 Array.prototype.map(function(item,index){})
 ```
 
 - 遍历过滤出一个新的子数组，返回条件为true的值
-```JavaScript
+```js
 Arrya.prototype.filter(function(item,index){})
 ```
 
@@ -191,7 +192,7 @@ Arrya.prototype.filter(function(item,index){})
 
 改变this的指向，将函数内的this绑定为obj，并将函数返回
 
-```JavaScript
+```js
 Function.prototype.bind(obj)
 ```
 
@@ -209,7 +210,7 @@ ES6中，新增`let`和`const`来定义变量。
 
 var不具有块级作用域特性
 
-```javascript
+```js
 {
     var a=1
 }
@@ -220,7 +221,7 @@ console.log(a)
 
 ```
 
-```JavaScript
+```js
 var a=1
 
 {
@@ -236,7 +237,7 @@ var定义的变量容易造成全局污染
 
 `let`具备块级作用域，只在局部起作用
 
-```JavaScript
+```js
 {
     let a='hello'
 }
@@ -257,7 +258,7 @@ console.log(a)
 
 `const`定义常量，常量就是值（内存地址）不能变化的量。
 
-```JavaScript
+```js
 const name='smyhvae'
 ```
 
@@ -292,7 +293,7 @@ DTC其实是一种保护机制，可以让我们养成良好的编程习惯。
 ### ES5定义常量
 `Object.defineProperty`
 
-```JavaScript
+```js
 // 定义常量PI
 Object.defineProperty(window,'PI',{
     value:3.14,
@@ -324,7 +325,7 @@ ES6运行按照一一对应的方式，从数组或者对象中提取值，再�
 ### 数组解构赋值
 
 ES6之前
-```JavaScript
+```js
 var a=1
 var b=2
 var c=3
@@ -335,7 +336,7 @@ var c=arr[2]
 ```
 
 ES6之后
-```JavaScript
+```js
 let [a,b,c]=[1,2,3]
 
 // 未匹配到的情况
@@ -367,7 +368,7 @@ null：相当于有值，但值为null
 将对象中的值按照属性匹配的方式提取出来，然后赋值给变量。
 
 es6之前
-```javascript
+```js
 var name = json.name;
 
 var age = json.age;
@@ -377,7 +378,7 @@ var sex = json.sex;
 
 ES6
 
-```JavaScript
+```js
 const person = { name: 'qianguyihao', age: 28, sex: '男' };
 let { name, age, sex } = person; // 对象的结构赋值
 
@@ -390,7 +391,7 @@ console.log(sex); // 打印结果：男
 
 **给左边的变量自定义命名**
 
-```JavaScript
+```js
 const person = { name: 'qianguyihao', age: 28 };
 let { name: myName, age: myAge } = person; // 对象的结构赋值
 
@@ -405,7 +406,7 @@ console.log(age); // 打印报错：Uncaught ReferenceError: age is not defined
 
 如果变量 foo 在解构之前就已经定义了，此时再去解构，就会出现问题。
 
-```JavaScript
+```js
 	let foo = 'haha';
 	{ foo } = { foo: 'smyhvae' };
 	console.log(foo);
@@ -420,7 +421,7 @@ console.log(foo); //输出结果：smyhvae
 
 ### 字符串结构
 
-```JavaScript
+```js
 const [a, b, c, d] = 'hello';
 console.log(a);
 console.log(b);
@@ -438,7 +439,7 @@ console.log(typeof a); //输出结果：string
 
 语法：
 
-```JavaScript
+```js
 (参数1, 参数2 ...) => { 函数体 }
 ```
 
@@ -448,7 +449,7 @@ console.log(typeof a); //输出结果：string
 
 定义和调用函数：（ES6 中的写法）
 
-```JavaScript
+```js
 const fn2 = (a, b) => {
     console.log('haha');
     return a + b;
@@ -458,7 +459,7 @@ console.log(fn2(1, 2)); //输出结果：3
 ```
 
 在箭头函数中，如果方法体内只有一句话，且这句话是 return 语句，那就可以把 {}省略。写法如下:
-```javascript
+```js
 const fn2 = (a, b) => a + b;
 
 console.log(fn2(1, 2)); //输出结果：3
@@ -470,7 +471,7 @@ ES6 之前的普通函数中：this 指向的是函数被调用的对象（也�
 
 而 ES6 的箭头函数中：箭头函数本身不绑定 this，this 指向的是箭头函数定义位置的 this（也就是说，箭头函数在哪个位置定义的，this 就跟这个位置的 this 指向相同）。
 
-```JavaScript
+```js
 const obj = { name: '千古壹号' };
 
 function fn1() {
@@ -489,7 +490,7 @@ fn2();
 
 上面的代码中，箭头函数是在 fn1()函数里面定义的，所以第二个 this 跟 第一个 this 指向的是同一个位置。又因为，在执行 fn1.call(obj)之后，第一个 this 就指向了 obj，所以第二个 this 也是指向 了 obj。
 
-```JavaScript
+```js
 var name = '许嵩';
 var obj = {
     name: '千古壹号',
@@ -508,7 +509,7 @@ obj.sayHello();
 ### 参数默认值
 
 传统：
-```JavaScript
+```js
 function fn(param) {
     let p = param || 'hello';
     console.log(p);
@@ -517,13 +518,13 @@ function fn(param) {
 函数体内的写法是：如果 param 不存在，就用 hello字符串做兜底。
 
 ES6：
-```JavaScript
+```js
 function fn(param = 'hello') {
     console.log(param);
 }
 ```
 
-```JavaScript
+```js
 let x = 'smyh';
 function fn(x, y = x) {
     console.log(x, y);
@@ -533,7 +534,7 @@ fn('vae');
 // vae
 ```
 
-```JavaScript
+```js
 let x = 'smyh';
 function fn(z, y = x) {
     console.log(z, y);
@@ -552,7 +553,7 @@ fn('vae');
 
 定义方法中，参数要确定个数
 
-```JavaScript
+```js
 function fn(a,b,c){
     console.log(a)
     console.log(b)
@@ -564,7 +565,7 @@ fn(1,2,3)
 ```
 
 ES6写法：
-```JavaScript
+```js
 const fn=(...args)=>{
     console.log(args[0])
     console.log(args[1])
@@ -581,7 +582,7 @@ fn(1,2)
 args之后不能再加别的参数，否则编译报错。
 
 但可以在前面加：
-```JavaScript
+```js
 function fn(first,...args){
     console.log(first)
     console.log(args)
@@ -591,7 +592,7 @@ fn(10,20,30)
 ```
 
 示例：参数求和
-```javascript
+```js
 const sum=(...args)=>{
     let total=0
     args.forEach(item=>total+=item)
@@ -602,7 +603,7 @@ console.log(sum(10,20,30))
 ```
 
 示例：解构赋值
-```javascript
+```js
 const students = ['张三', '李四', '王五'];
 let [s1, ...s2] = students;
 
@@ -613,7 +614,7 @@ console.log(s2); // ['李四', '王五']
 ### 扩展运算符（展开语法）
 剩余参数是将剩余的元素放到一个数组中；而扩展运算符是将数组或者对象拆分成逗号分隔的参数序列。
 
-```JavaScript
+```js
 const arr = [10, 20, 30];
 ...arr // 10, 20, 30      注意，这一行是伪代码，这里用到了扩展运算符
 console.log(...arr); // 10 20 30
@@ -623,7 +624,7 @@ console.log(10, 20, 30); // 10 20 30
 
 #### 数组赋值
 
-```javascript
+```js
 let arr1 = ['www', 'smyhvae', 'com'];
 let arr2 = arr1; // 将 arr1 赋值给 arr2，其实是让 arr2 指向 arr1 的内存地址
 console.log('arr1:' + arr1);
@@ -642,7 +643,7 @@ let arr2 = arr1;其实是让 arr2 指向 arr1 的地址。也就是说，二者�
 
 如果不想让 arr1 和 arr2 指向同一个内存地址，可以借助扩展运算符来做：
 
-```JavaScript
+```js
 let arr1 = ['www', 'smyhvae', 'com'];
 let arr2 = [...arr1]; //【重要代码】arr2 会重新开辟内存地址
 console.log('arr1:' + arr1);
@@ -659,7 +660,7 @@ console.log('arr2:' + arr2);
 ```
 
 #### 合并数组
-```JavaScript
+```js
 let arr1 = ['王一', '王二', '王三'];
 let arr2 = ['王四', '王五', '王六'];
 // ...arr1  // '王一','王二','王三'
@@ -676,13 +677,13 @@ console.log(arr1); // ["王一", "王二", "王三", "王四", "王五", "王六
 
 
 #### 将伪数组或者可遍历对象转换为真正的数组
-```JavaScript
+```js
 const myDivs = document.getElementsByClassName('div');
 const divArr = [...myDivs]; // 利用扩展运算符，将伪数组转为真正的数组
 ```
 
 **另外一种方式，将伪数组转换为真正的数组**
-```JavaScript
+```js
 let arr2=Array.from(arrayLike)
 ```
 
@@ -700,7 +701,7 @@ let arr2=Array.from(arrayLike)
 ### Number
 二进制与八进制数值表示法: 二进制用`0b`, 八进制用`0o`。
 
-```JavaScript
+```js
 console.log(0b1010); //10
 console.log(0o56); //46
 ```
@@ -727,7 +728,7 @@ console.log(0o56); //46
 
 - Object.is(v1,v2)：判断两个数据是否完全相等，底层是通过字符串来判断的
 
-```JavaScript
+```js
 console.log(0 == -0);
 console.log(NaN == NaN);
 // true
@@ -735,7 +736,7 @@ console.log(NaN == NaN);
 ```
 NaN和任何值都不相等
 
-```JavaScript
+```js
 console.log(Object.is(0, -0));
 console.log(Object.is(NaN, NaN));
 // false
@@ -745,7 +746,7 @@ console.log(Object.is(NaN, NaN));
 - Object.assign()：浅拷贝
 
 -`__proto__`属性
-```JavaScript
+```js
 let obj1 = { name: 'smyhvae' };
 let obj2 = {};
 
@@ -757,19 +758,20 @@ console.log(obj2.name);
 ```
 ![Alt text](./images/image20.png)
 
-## Set数据结构
+## Set和Map数据结构
 
-ES6 提供了 新的数据结构 Set。Set 类似于数组，但成员的值都是唯一的，没有重复的值。
+### Set
+Set 类似于数组，但成员的值都是唯一的，没有重复的值。
 
 Set 本身就是一个构造函数，可通过 new Set() 生成一个 Set 的实例。
 
-```JavaScript
+```js
 const set1 = new Set();
 console.log(set1.size); // 打印结果：0
 ```
 
 可以接收一个数组作为参数，实现数组去重：
-```JavaScript
+```js
 const set2 = new Set(['张三', '李四', '王五', '张三']); // 注意，这个数组里有重复的值
 
 // 注意，这里的 set2 并不是数组，而是一个单纯的 Set 数据结构
@@ -781,3 +783,110 @@ console.log(set2); // {"张三", "李四", "王五"}
 // 注意，到这一步，才获取到了真正的数组
 console.log([...set2]); // ["张三", "李四", "王五"]
 ```
+
+### Map
+
+
+
+### WeakSet
+
+
+
+### WeakMap
+
+
+## Proxy
+Proxy用于修改某些操作的默认行为，等同于在语言层面做出修改。
+
+> 在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写
+
+### Proxy构造函数
+
+```js
+var proxy=new Proxy(target, handler);
+```
+
+- target表示所要拦截的目标对象
+
+- handler也是一个对象，用来定制拦截行为
+
+要使Proxy起作用，必须针对Proxy实例进行操作，而不是针对目标对象target进行操作
+
+如果handler没有设置任何拦截，就等同于直接通向原对象
+
+### 示例
+```js
+var obj = new Proxy({}, {
+  get: function (target, propKey, receiver) {
+    console.log(`getting ${propKey}!`);
+    return Reflect.get(target, propKey, receiver);
+  },
+  set: function (target, propKey, value, receiver) {
+    console.log(`setting ${propKey}!`);
+    return Reflect.set(target, propKey, value, receiver);
+  }
+});
+// 对一个空对象架设了一层拦截，重定义了属性的读取（get）和设置（set）行为
+
+obj.count = 1
+//  setting count!
+++obj.count
+//  getting count!
+//  setting count!
+//  2
+
+var proxy = new Proxy({}, {
+  get: function(target, propKey) {
+    return 35;
+  }
+});
+
+proxy.time // 35
+proxy.name // 35
+proxy.title // 35
+// 配置对象有一个get方法，用来拦截对目标对象属性的访问请求
+// get方法的两个参数分别是目标对象和所要访问的属性。
+// 由于拦截函数总是返回35，所以访问任何属性都得到35
+```
+
+### 支持的拦截操作
+- `get(target, propKey, receiver)`：拦截对象属性的读取，比如proxy.foo和proxy['foo']。
+
+- `set(target, propKey, value, receiver)`：拦截对象属性的设置，比如`proxy.foo = v`或`proxy['foo'] = v`，返回一个布尔值。
+
+- `has(target, propKey)`：拦截`propKey in proxy`的操作，返回一个布尔值。
+
+- `deleteProperty(target, propKey)`：拦截`delete proxy[propKey]`的操作，返回一个布尔值。
+
+- `ownKeys(target)`：拦截`Object.getOwnPropertyNames(proxy)`、`Object.getOwnPropertySymbols(proxy)`、`Object.keys(proxy)`、`for...in`循环，返回一个数组。该方法返回目标对象所有自身的属性的属性名，而`Object.keys()`的返回结果仅包括目标对象自身的可遍历属性。
+
+- `getOwnPropertyDescriptor(target, propKey)`：拦截`Object.getOwnPropertyDescriptor(proxy, propKey)`，返回属性的描述对象。
+
+- `defineProperty(target, propKey, propDesc)`：拦截`Object.defineProperty(proxy, propKey, propDesc）`、`Object.defineProperties(proxy, propDescs)`，返回一个布尔值。
+
+- `preventExtensions(target)`：拦截`Object.preventExtensions(proxy)`，返回一个布尔值。
+
+- `getPrototypeOf(target)`：拦截`Object.getPrototypeOf(proxy)`，返回一个对象。
+
+- `isExtensible(target)`：拦截`Object.isExtensible(proxy)`，返回一个布尔值。
+
+- `setPrototypeOf(target, proto)`：拦截`Object.setPrototypeOf(proxy, proto)`，返回一个布尔值。如果目标对象是函数，那么还有两种额外操作可以拦截。
+
+- `apply(target, object, args)`：拦截 `Proxy` 实例作为函数调用的操作，比如`proxy(...args)`、`proxy.call(object, ...args)`、`proxy.apply(...)`。
+
+- `construct(target, args)`：拦截 `Proxy` 实例作为构造函数调用的操作，比如`new proxy(...args)`。
+
+## Reflect
+
+和Proxy对象类似，也是ES6为了操作对象而提供的新API
+
+1、将Object对象的一些明显属于语言内部的方法放到Reflect对象上
+
+2、修改某些Obejct方法的返回结果，让其变得更合理
+
+3、
+
+4、
+
+
+

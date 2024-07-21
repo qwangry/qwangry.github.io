@@ -26,47 +26,9 @@
 - JavaScript框架——从库开始的下一步，JavaScript框架视图把HTML, CSS, JavaScript和其他安装的技术打包在一起，然后用来从头编写一个完整的web应用
 
 
-## 常见的浏览器API
 
-- **操作文档的API**内置于浏览器中。如DOM API，允许操作HTML和CSS的创建、移除以及修改HTML，动态地将新样式应用到页面等等。
 
-- **从服务器获取数据的API**用于更新网页的一小部分。如XMLHttpRequest和Fetch API，Ajax等。
 
-- **用于绘制和操作图形的API**允许以编程方式更新包含在HTML `<canvas>`元素中的像素数据以创建2D和3D场景的Canvas和WebGL。
-
-- **音频和视频API**如 HTMLMediaElement、Web Audio API 和 WebRTC 允许使用多媒体来做一些非常有趣的事情，比如创建用于播放音频和视频的自定义 UI 控件，显示字幕字幕和视频，从网络摄像机抓取视频，通过画布操纵（见上），或在网络会议中显示在别人的电脑上，或者添加效果到音轨（如增益、失真、平移等） 。
-
-- **设备 API**基本上是以对网络应用程序有用的方式操作和检索现代设备硬件中的数据的 API。
-
-- **客户端存储 API**在 Web 浏览器中的使用变得越来越普遍 - 如果想创建一个应用程序来保存页面加载之间的状态，甚至让设备在处于脱机状态时可用，那么在客户端存储数据将会是非常有用的。例如使用Web Storage API的简单的键 - 值存储以及使用IndexedDB API的更复杂的表格数据存储。
-
-## API工作原理
-- API是基于对象的
-
-API使用一个或多个JavaScript objects在代码中进行交互，这些对象用作API使用的数据（包含在对象属性中）的容器以及API提供的功能
-
-- 有可识别的入口点
-
-使用API时，应确保知道API入口点的位置
-
-文档对象模型DOM API有一个简单的入口点，它的功能往往被发现挂在Document对象，或任何想影响的HTML元素的实例
-
-```JavaScript
-var em = document.createElement("em"); // create a new em element
-var para = document.querySelector("p"); // reference an existing p element
-em.textContent = "Hello there!"; // give em some text content
-para.appendChild(em); // embed em inside para
-```
-
-- 使用事件来处理状态的变化
-
-当事件触发时，允许运行函数的处理程序属性通常在单独的“Event handlers”（事件处理程序）部分的参考资料中列出。
-
-- 在适当的地方有额外的安全机制
-
-WebAPI功能受到与JavaScript和其他Web技术（如同源策略）相同的安全考虑，但有时会有额外的安全机制
-
-一旦调用web API请求，用户就可以在代码中启用一些权限
 
 ## DOM 操作文档
 出于安全考虑，web浏览器许多部件不能由web开发者用JavaScript控制或操纵。

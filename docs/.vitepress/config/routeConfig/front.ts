@@ -1,5 +1,5 @@
-export const front=[
-    { text: 'Welcome',link: '/前端开发/' },
+export const front = [
+    { text: 'Welcome', link: '/前端开发/' },
     {
         text: '基础',
         collapsed: false,
@@ -28,18 +28,12 @@ export const front=[
                 collapsed: false,
                 items: [
                     { text: '简介', link: '/前端开发/基础/javascript/introduce' },
-                    { text: '定义', link: '/前端开发/基础/javascript/定义' },
-                    { text: '一些语法', link: '/前端开发/基础/javascript/一些语法' },
-                    { text: '字符串', link: '/前端开发/基础/javascript/字符串' },
-                    { text: '数组', link: '/前端开发/基础/javascript/数组' },
-                    { text: '代码块', link: '/前端开发/基础/javascript/代码块' },
-                    { text: 'js对象', link: '/前端开发/基础/javascript/js对象' },
-                    { text: '面向对象', link: '/前端开发/基础/javascript/面向对象' },
-                    { text: 'json', link: '/前端开发/基础/javascript/json' },
-                    { text: '异步', link: '/前端开发/基础/javascript/异步' },
-                    { text: '客户端WebAPI', link: '/前端开发/基础/javascript/客户端WebAPI' },
+                    { text: 'JavaScript语法', link: '/前端开发/基础/javascript/javascript语法' },
+                    { text: '数据类型', link: '/前端开发/基础/javascript/数据类型' },
                     { text: 'ES6', link: '/前端开发/基础/javascript/ES6' },
-                    { text: 'web表单', link: '/前端开发/基础/javascript/web表单' },
+                    { text: '面向对象', link: '/前端开发/基础/javascript/面向对象' },
+                    { text: '异步', link: '/前端开发/基础/javascript/异步' },
+                    // { text: 'web表单', link: '/前端开发/基础/javascript/web表单' },
                     { text: '客户端web开发工具', link: '/前端开发/基础/javascript/客户端web开发工具' },
                     { text: '客户端框架介绍', link: '/前端开发/基础/javascript/客户端框架介绍' },
                 ],
@@ -82,9 +76,9 @@ export const front=[
         ],
     },
     {
-        "text":"打包工具",
+        "text": "打包工具",
         collapsed: false,
-        items:[
+        items: [
             {
                 "text": 'webpack',
                 collapsed: false,

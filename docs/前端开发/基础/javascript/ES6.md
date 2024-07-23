@@ -800,6 +800,12 @@ Proxy用于修改某些操作的默认行为，等同于在语言层面做出修
 
 > 在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写
 
+> 可以用来拦截什么？
+>
+> - 对于对象的大多数操作，JavaScript规范中有一个所谓的“内部方法”，描述了最底层的工作方式，例如`[[Get]]`，用于读取属性的内部方法，`[[Set]]`用于写入属性的内部方法，这些方法只能在规范中使用，不能直接通过方法名调用。
+>
+> - Proxy捕捉器会拦截这些方法的调用，对于每个内部方法，都有一个捕捉器
+
 ### Proxy构造函数
 
 ```js
@@ -878,15 +884,125 @@ proxy.title // 35
 
 ## Reflect
 
-和Proxy对象类似，也是ES6为了操作对象而提供的新API
+和Proxy对象类似，也是ES6为了操作对象而提供的新API，可以简化Proxy的创建
 
 1、将Object对象的一些明显属于语言内部的方法放到Reflect对象上
 
 2、修改某些Obejct方法的返回结果，让其变得更合理
 
-3、
+3、让Object操作都变成函数行为。某些Object操作是命令式，比如`name in obj`和`delete obj[name]`，而`Reflect.has(obj,name)`和`Reflect.deleteProperty(obj,name)`让他们都变成了函数行为
 
-4、
+4、Reflect对象的方法与`Proxy`对象的方法一一对应，只要是Proxy对象的方法，就能在Reflect对象上找到对应的方法。
+> 对于每个可被Proxy捕获的内部方法，在Reflect中都有一个对应的方法，其名称和参数与Proxy捕捉器相同。所以可以使用Relect来将操作转发给原始对象
+
+有了Reflect对象，很多操作会更易读。
+```js
+// 老写法
+Function.prototype.apply.call(Math.floor,undefined,[1.75]);//1
+
+// 新写法
+Reflect.apply(Math.floor,undefined,[1.75]);//1
+```
+
+### 静态方法
+Relfect一共13个静态方法
 
 
+- `Reflect.apply(target, thisArg, args)`
 
+- `Reflect.construct(target, args)`
+
+- `Reflect.get(target, name, receiver)`
+
+- `Reflect.set(target, name, value, receiver)`
+
+- `Reflect.defineProperty(target, name, desc)`
+
+- `Reflect.deleteProperty(target, name)`
+
+- `Reflect.has(target, name)`
+
+- `Reflect.ownKeys(target)`
+
+- `Reflect.isExtensible(target)`
+
+- `Reflect.preventExtensions(target)`
+
+- `Reflect.getOwnPropertyDescriptor(target, name)`
+
+- `Reflect.getPrototypeOf(target)`
+
+- `Reflect.setPrototypeOf(target, prototype)`
+
+### 示例
+```js
+var myObject = {
+  foo: 1,
+  bar: 2,
+  get baz() {
+    return this.foo + this.bar;
+  },
+}
+
+Reflect.get(myObject, 'foo') // 1
+Reflect.get(myObject, 'bar') // 2
+Reflect.get(myObject, 'baz') // 3
+
+// 如果name属性部署了读取函数（getter），则读取函数的this绑定receiver
+var myObject = {
+  foo: 1,
+  bar: 2,
+  get baz() {
+    return this.foo + this.bar;
+  },
+};
+
+var myReceiverObject = {
+  foo: 4,
+  bar: 4,
+};
+
+Reflect.get(myObject, 'baz', myReceiverObject) // 8
+
+```
+
+#### 实例：使用Proxy实现观察者模式 
+观察者模式Observer mode指的是函数自动观察数据对象，一旦对象有变化，函数就会自动执行
+
+```js
+// 数据对象person是观察目标，函数print是观察者。一旦数据对象发生变化，print就会自动执行。
+
+const person=observable({
+    name:'张三',
+    age:20
+});
+
+function print(){
+    console.log(`${person.name},${person.age}`);
+}
+
+observe(print);
+
+person.name='李四';
+// 输出
+// 李四，20
+```
+
+使用Proxy实现上述功能，即实现observable和observe这两个函数
+> observable函数返回一个原始对象的Proxy代理，拦截赋值操作，触发充当观察者的各个函数
+
+```js
+const queueObservers = new Set();
+
+const observe = fn => queuedObservers.add(fn);
+const observable = obj => new Proxy(obj,{set});
+
+function set(target, key, value, receiver){
+    const result=Reflect.set(target, key, value, receiver);
+    queuedObservers.forEach(observer => observer());
+
+    return result;
+}
+
+// 先定义了一个Set集合，所有观察者函数都放进这个集合。然后，observable函数返回原始对象的代理，拦截赋值操作。拦截函数set之中，会自动执行所有观察者。
+```

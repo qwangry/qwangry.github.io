@@ -347,6 +347,7 @@ CSS中组成一个区块盒子：
 
 display: inline-block 是 display 的一个特殊值，它提供了介于 inline 和 block 之间的中间位置。如果不希望项目换行，但又希望它使用 width 和 height 值并避免出现上述重叠现象，请使用它
 
+![alt text](盒模型.png)
 
 ### 背景与边框
 ```css
@@ -619,7 +620,7 @@ transition: all 4s ease;
 
 `moz` (火狐浏览器)
 
-`o` (旧版 Opera 浏览器等
+`o` (旧版 Opera 浏览器等)
 
 `ms` (IE 浏览器 和 Edge 浏览器)
 

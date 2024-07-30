@@ -30,6 +30,8 @@ export const front = [
                     { text: '简介', link: '/前端开发/基础/javascript/introduce' },
                     { text: 'JavaScript语法', link: '/前端开发/基础/javascript/javascript语法' },
                     { text: '数据类型', link: '/前端开发/基础/javascript/数据类型' },
+                    { text: '事件', link: '/前端开发/基础/javascript/事件' },
+                    { text: '浏览器模型', link: '/前端开发/基础/javascript/浏览器模型' },
                     { text: 'ES6', link: '/前端开发/基础/javascript/ES6' },
                     { text: '面向对象', link: '/前端开发/基础/javascript/面向对象' },
                     { text: '异步', link: '/前端开发/基础/javascript/异步' },

@@ -95,7 +95,7 @@ export const front = [
                 "text": 'Vite',
                 collapsed: false,
                 items: [
-                    { text: 'xx', link: '/前端开发/打包工具/Vite/xx' },
+                    { text: '基础知识', link: '/前端开发/打包工具/Vite/基础知识' },
                 ]
             },
         ]

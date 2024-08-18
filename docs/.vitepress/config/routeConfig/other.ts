@@ -16,6 +16,7 @@ export const other = [
         text: '安全',
         collapsed: false,
         items: [
+            { text: 'web安全', link: '/杂项/安全/web安全' },
             { text: '同源策略', link: '/杂项/安全/同源策略' },
             { text: '内容安全策略', link: '/杂项/安全/CSP' },
             { text: 'XSS和CSRF', link: '/杂项/安全/XSS和CSRF' },

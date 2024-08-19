@@ -76,6 +76,8 @@ export const front = [
                     { text: 'Vue单元测试', link: '/前端开发/开发框架/Vue/Vue单元测试' },
                 ]
             },
+            { text: '页面渲染', link: '/前端开发/开发框架/页面渲染' },
+            { text: '优化', link: '/前端开发/开发框架/优化' },
         ],
     },
     {

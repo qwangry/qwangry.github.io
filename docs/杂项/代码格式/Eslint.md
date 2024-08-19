@@ -2,12 +2,19 @@
 
 ## 介绍
 
-Eslint是可组装的JavaScript和JSX检查工具
+Eslint 是可组装的 JavaScript 和 JSX 检查工具
 
-这句话的意思是，是用来检测js和jsx语法的工具，可以配置各项功能
+这句话的意思是，是用来检测 js 和 jsx 语法的工具，可以配置各项功能（是一个检测工具，包含 js 语法以及少部分格式问题，保证代码能正常运行，格式是其次）
 
-使用Eslint，关键是写Eslint配置文件，里面写上各种rules规则，将来运行Eslint时就会以写的规则对代码进行检查
+使用 Eslint，关键是写 Eslint 配置文件，里面写上各种 rules 规则，将来运行 Eslint 时就会以写的规则对代码进行检查
 
+```shell
+# 安装
+pnpm i eslint -D
+
+# 生成配置文件.eslint.cjs
+npx eslint --init
+```
 
 ## 配置文件
 
@@ -105,7 +112,16 @@ module.exports = {
 };
 ```
 
-## VSCode Eslint插件
+## package.json 运行脚本
+
+```json
+"scripts": {
+    "lint": "eslint src",
+    "fix": "eslint src --fix",
+}
+```
+
+## VSCode Eslint 插件
 
 打开 VSCode，下载 Eslint 插件，即可不用编译就能看到错误，可以提前解决
 

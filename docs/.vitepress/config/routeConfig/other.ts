@@ -38,6 +38,10 @@ export const other = [
         collapsed: false,
         items: [
             { text: 'Eslint', link: '/杂项/代码格式/Eslint' },
+            { text: 'prettier', link: '/杂项/代码格式/prettier' },
+            { text: 'stylelint', link: '/杂项/代码格式/stylelint' },
+            { text: 'husky', link: '/杂项/代码格式/husky' },
+            { text: 'commitlint', link: '/杂项/代码格式/commitlint' },
         ]
     },
     {

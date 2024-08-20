@@ -9,6 +9,11 @@ export const nav=[
         activeMatch: '/前端开发/',
         link: '/前端开发/'
     },
+    {
+        text: '面试',
+        activeMatch: '/前端面试/',
+        link: '/前端面试/'
+    },
     // {
     //     text: '文章记录',
     //     activeMatch: '/article/',

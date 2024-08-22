@@ -31,6 +31,9 @@ export const other = [
             { text: '防抖节流', link: '/杂项/手写代码/防抖节流' },
             { text: 'call-apply-bind', link: '/杂项/手写代码/call-apply-bind' },
             { text: '深拷贝和浅拷贝', link: '/杂项/手写代码/深拷贝和浅拷贝' },
+            { text: 'instanceOf', link: '/杂项/手写代码/instanceOf' },
+            { text: '数组扁平化', link: '/杂项/手写代码/数组扁平化' },
+            { text: '柯里化', link: '/杂项/手写代码/柯里化' },
         ]
     },
     {

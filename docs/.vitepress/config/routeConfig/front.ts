@@ -57,6 +57,7 @@ export const front = [
                     { text: 'day2', link: '/前端开发/开发框架/React/day2' },
                     { text: 'Hooks', link: '/前端开发/开发框架/React/Hooks' },
                     { text: '知识记录', link: '/前端开发/开发框架/React/知识记录' },
+                    { text: '生命周期', link: '/前端开发/开发框架/React/生命周期' },
                 ]
             },
             {

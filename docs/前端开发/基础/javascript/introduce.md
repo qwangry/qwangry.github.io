@@ -217,7 +217,6 @@ link 的 preload 属性，用于提前加载一些需要的依赖，这些资源
 
 ```js
 <link rel="prefetch" as="script" href="index.js">
-
 ```
 
 特点：

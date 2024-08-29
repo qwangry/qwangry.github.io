@@ -71,4 +71,18 @@ CSRF 跨站点伪造 Cross-site request forgery
 
 ### 防范 CSFR
 
-一般发生在第三方域名，攻击者无法获取 cookie
+1、同步令牌模式（Synchronizer Token Pattern）： 在服务器生成一个随机且难以预测的令牌（Token），并将其嵌入到表单或请求参数中，前端在提交表单或发送请求时，必须携带这个令牌。服务器端验证请求中的令牌是否有效，如果无效则拒绝请求。
+
+2、双重提交 Cookie 模式（Double Submit Cookie Pattern）： 服务器在用户登录成功后设置一个包含随机令牌的 Cookie，前端在发送请求时，将 Cookie 中的令牌值作为请求参数或请求头的一部分发送，服务器端验证这两个值是否一致来判断请求的合法性。
+
+3、添加验证码： 在关键操作（如修改密码、转账等）时要求用户输入验证码，这个虽不能直接防止，但可以增加攻击者自动执行请求的难度。
+
+4、限制请求来源（Origin 和 Referer 检查）： 检查请求的来源（Origin 头）或引用页面（Referer 头）是否合法，但需要注意，这些头信息可能会被伪造或不可靠。
+
+5、使用 SameSite 属性设置 Cookie： 将 Cookie 的 SameSite 属性设置为 Strict 或 Lax，以限制 Cookie 在跨站请求中的发送。
+
+6、避免使用 GET 请求进行重要操作： GET 请求的参数会显示在 URL 中，容易被利用，尽量使用 POST、PUT 等请求方法进行重要操作
+
+## 参考
+
+[https://mp.weixin.qq.com/s/pKfKqdsT99vibXNs-vciug](https://mp.weixin.qq.com/s/pKfKqdsT99vibXNs-vciug)

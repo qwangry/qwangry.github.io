@@ -7,6 +7,7 @@ export const other = [
       { text: "http", link: "/杂项/浏览器-协议/http" },
       { text: "tcp", link: "/杂项/浏览器-协议/tcp" },
       { text: "websocket", link: "/杂项/浏览器-协议/websocket" },
+      { text: "dns", link: "/杂项/浏览器-协议/dns" },
       { text: "服务端推送", link: "/杂项/浏览器-协议/服务端推送" },
       { text: "浏览器进程", link: "/杂项/浏览器-协议/浏览器进程" },
       { text: "浏览器渲染网页", link: "/杂项/浏览器-协议/浏览器渲染网页" },

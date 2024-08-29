@@ -104,6 +104,26 @@ if (window.top!== window.self) {
   window.top.location.href = window.location.href;
 ```
 
+## 中间人攻击
+
+中间⼈ (Man-in-the-middle attack, MITM) 是指攻击者与通讯的两端分别创建独⽴的联系, 并交换其所收到的数据, 使通讯的两端认为他们正在通过⼀个私密的连接与对⽅直接对话, 但事实上整个会话都被攻击者完全控制。在中间⼈攻击中，攻击者可以拦截通讯双⽅的通话并插⼊新的内容。
+
+攻击过程如下:
+
+- 客户端发送请求到服务端，请求被中间⼈截获
+
+- 服务器向客户端发送公钥
+
+- 中间⼈截获公钥，保留在⾃⼰⼿上。然后⾃⼰⽣成⼀个伪造的公钥，发给客户端
+
+- 客户端收到伪造的公钥后，⽣成加密 hash 值发给服务器
+
+- 中间⼈获得加密 hash 值，⽤⾃⼰的私钥解密获得真秘钥,同时⽣成假的加密 hash 值，发给服务器
+
+- 服务器⽤私钥解密获得假密钥,然后加密数据传输给客户端
+
 ## 参考链接
 
 [https://www.xiaohongshu.com/explore/66b4817b000000002503097d?xsec_token=ABR2n4dHhFLC6QMxYit0DksO4-FJnHiHsXpbFd0pkpsKU=&xsec_source=pc_user](https://www.xiaohongshu.com/explore/66b4817b000000002503097d?xsec_token=ABR2n4dHhFLC6QMxYit0DksO4-FJnHiHsXpbFd0pkpsKU=&xsec_source=pc_user)
+
+[https://juejin.cn/post/7142375101399302151](https://juejin.cn/post/7142375101399302151)

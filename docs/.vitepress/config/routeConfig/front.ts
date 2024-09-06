@@ -40,6 +40,10 @@ export const front = [
           { text: "面向对象", link: "/前端开发/基础/javascript/面向对象" },
           { text: "异步", link: "/前端开发/基础/javascript/异步" },
           { text: "前后端交互", link: "/前端开发/基础/javascript/前后端交互" },
+          {
+            text: "JS执行上下文和执行栈",
+            link: "/前端开发/基础/javascript/JS执行堆栈",
+          },
           // { text: 'web表单', link: '/前端开发/基础/javascript/web表单' },
           {
             text: "客户端web开发工具",

@@ -5,6 +5,10 @@ export const other = [
     collapsed: false,
     items: [
       { text: "http", link: "/杂项/浏览器-协议/http" },
+      {
+        text: "对称加密和非对称加密",
+        link: "/杂项/浏览器-协议/对称加密和非对称加密",
+      },
       { text: "tcp", link: "/杂项/浏览器-协议/tcp" },
       { text: "websocket", link: "/杂项/浏览器-协议/websocket" },
       { text: "dns", link: "/杂项/浏览器-协议/dns" },
@@ -13,7 +17,13 @@ export const other = [
       { text: "浏览器渲染网页", link: "/杂项/浏览器-协议/浏览器渲染网页" },
       { text: "DOM树", link: "/杂项/浏览器-协议/DOM树" },
       { text: "浏览器存储", link: "/杂项/浏览器-协议/浏览器存储" },
+      { text: "浏览器窗口间通信", link: "/杂项/浏览器-协议/浏览器窗口间通信" },
     ],
+  },
+  {
+    text: "操作系统",
+    collapsed: false,
+    items: [{ text: "死锁", link: "/杂项/操作系统/死锁" }],
   },
   {
     text: "安全",

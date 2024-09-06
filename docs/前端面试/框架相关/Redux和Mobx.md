@@ -1,6 +1,6 @@
 # Redux 和 Mobx
 
-redux 是一个使用叫做爱吃体哦弄的时间来管理和更新应用状态的模式和工具库，以集中式 store 的方式对整个应用使用的状态进行集中管理，其规则确保状态只能以可预测的方式更新。
+redux 是一个使用叫做 action 的事件来管理和更新应用状态的模式和工具库，以集中式 store 的方式对整个应用使用的状态进行集中管理，其规则确保状态只能以可预测的方式更新。
 
 mobx 通过运用透明的函数式响应代理使状态管理变得简单和可扩展
 
@@ -59,7 +59,7 @@ Redux：
 
 > 1、点击按钮
 >
-> 2、dispatch 一个 dispatch 一个 action 到 Redux store
+> 2、dispatch 一个 action 到 Redux store
 >
 > 3、store 用之前的 state 和当前的 action 再次运行 reducer 函数，并将返回值保存为新的 state
 >

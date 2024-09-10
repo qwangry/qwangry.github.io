@@ -30,6 +30,7 @@ export const front_preview = [
     collapsed: false,
     items: [
       { text: "汇总1", link: "/前端面试/框架相关/汇总1" },
+      { text: "Hooks", link: "/前端面试/框架相关/Hooks" },
       { text: "React组件通信", link: "/前端面试/框架相关/React组件通信" },
       { text: "前端路由", link: "/前端面试/框架相关/前端路由" },
       { text: "Redux和Mobx", link: "/前端面试/框架相关/Redux和Mobx" },

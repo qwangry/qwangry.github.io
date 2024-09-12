@@ -350,8 +350,46 @@ var v = fn_a(fn_b);
 
 并不是说明这样做就一定比闭包好，闭包也有其好处，只是需要我们分清何时何地去使用才是恰当的。
 
+## 内存泄漏
+
+### 意外的全局变量
+
+1、未声明的变量：在函数中给一个变量赋值但没有声明它，此时相当于是 window 对象下的一个变量，全局变量很难被垃圾回收
+
+2、使用 this 创建的变量：函数中使用 this.xx 赋值，但此时 this 指向的是 window
+
+避免此情况的解决办法是`在JavaScript文件头部或者函数的顶部加上 use strict`，开启严格模式，使得 this 的指向为 undefined
+
+### 被遗忘的计时器或回调函数
+
+1、定时器引起：当定时器里面的数据不再需要时，定时器依旧只想这些数据
+
+2、对象观察者：(未销毁的事件监听器)
+
+```js
+var btn = document.getElementById("btn");
+function onClick(element) {
+  element.innerHTMl = "I'm innerHTML";
+}
+btn.addEventListener("click", onClick);
+```
+
+对于上面观察者的例子，一旦它们不再需要（或者关联的对象变成不可达），明确地移除它们非常重要。老的 IE 6 是无法处理循环引用的。因为老版本的 IE 是无法检测 DOM 节点与 JavaScript 代码之间的循环引用，会导致内存泄漏。
+
+但是，现代的浏览器（包括 IE 和 Microsoft Edge）使用了更先进的垃圾回收算法（标记清除），已经可以正确检测和处理循环引用了。即回收节点内存时，不必非要调用 removeEventListener 了。
+
+### 脱离 DOM 的引用
+
+如果把 DOM 存成字典（JSON 键值对）或者数组，此时，同样的 DOM 元素存在两个引用：一个在 DOM 树中，另一个在字典中。那么将来需要把两个引用都清除。
+
+### 闭包
+
+闭包的关键就是匿名函数能够访问父级作用域中的变量
+
 ## 参考
 
 [https://wuch886.gitbooks.io/front-end-handbook/content/jszhong-de-nei-cun-guan-li-ff08-zhan-he-dui-ff09.html](https://wuch886.gitbooks.io/front-end-handbook/content/jszhong-de-nei-cun-guan-li-ff08-zhan-he-dui-ff09.html)
 
 [https://muyiy.cn/blog/1/1.1.html#%E6%89%A7%E8%A1%8C%E6%A0%88](https://muyiy.cn/blog/1/1.1.html#%E6%89%A7%E8%A1%8C%E6%A0%88)
+
+[https://juejin.cn/post/6844904038064979981?searchId=2024091122154056F941DE48ADB1B375BE](https://juejin.cn/post/6844904038064979981?searchId=2024091122154056F941DE48ADB1B375BE)

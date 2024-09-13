@@ -3,7 +3,17 @@ export const front_preview = [
   {
     text: "HTML与CSS",
     collapsed: false,
-    items: [{ text: "汇总1", link: "/前端面试/HTML与CSS/汇总1" }],
+    items: [
+      { text: "前端页面组成", link: "/前端面试/HTML与CSS/前端页面组成" },
+      { text: "盒模型", link: "/前端面试/HTML与CSS/盒模型" },
+      {
+        text: "CSS预处理器-后处理器",
+        link: "/前端面试/HTML与CSS/CSS预处理器-后处理器",
+      },
+      { text: "CSS3动画", link: "/前端面试/HTML与CSS/CSS3动画" },
+      { text: "css隐藏页面元素", link: "/前端面试/HTML与CSS/css隐藏页面元素" },
+      { text: "css绘制各种图形", link: "/前端面试/HTML与CSS/css绘制各种图形" },
+    ],
   },
   {
     text: "JavaScript",

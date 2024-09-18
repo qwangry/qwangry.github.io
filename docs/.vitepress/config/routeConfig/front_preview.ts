@@ -14,16 +14,23 @@ export const front_preview = [
       { text: "css隐藏页面元素", link: "/前端面试/HTML与CSS/css隐藏页面元素" },
       { text: "css绘制各种图形", link: "/前端面试/HTML与CSS/css绘制各种图形" },
       { text: "css实现0.5", link: "/前端面试/HTML与CSS/css实现0.5" },
-      { text: "css实现0.5", link: "/前端面试/HTML与CSS/css实现0.5" },
-      { text: "css实现0.5", link: "/前端面试/HTML与CSS/css实现0.5" },
-      { text: "css实现0.5", link: "/前端面试/HTML与CSS/css实现0.5" },
+      {
+        text: "css实现主题切换",
+        link: "/前端面试/HTML与CSS/css实现主题切换",
+      },
     ],
   },
   {
     text: "JavaScript",
     collapsed: false,
     items: [
-      { text: "汇总1", link: "/前端面试/JavaScript/汇总1" },
+      {
+        text: "单线程的JavaScript",
+        link: "/前端面试/JavaScript/单线程的JavaScript",
+      },
+      { text: "this关键字", link: "/前端面试/JavaScript/this关键字" },
+      { text: "作用域/变量提升", link: "/前端面试/JavaScript/作用域" },
+      { text: "类型转换", link: "/前端面试/JavaScript/类型转换" },
       {
         text: "箭头函数和普通函数",
         link: "/前端面试/JavaScript/箭头函数和普通函数",
@@ -82,6 +89,7 @@ export const front_preview = [
       { text: "性能优化概览", link: "/前端面试/性能优化/性能优化概览" },
       { text: "汇总1", link: "/前端面试/性能优化/汇总1" },
       { text: "页面监控", link: "/前端面试/性能优化/页面监控" },
+      { text: "性能优化方案", link: "/前端面试/性能优化/性能优化方案" },
     ],
   },
   {

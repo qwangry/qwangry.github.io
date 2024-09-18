@@ -6,15 +6,15 @@ mobx 通过运用透明的函数式响应代理使状态管理变得简单和可
 
 ## Redux
 
-1、action:action  是一个具有  type  字段的普通 JavaScript 对象。你可以将 action 视为描述应用程序中发生了什么的事件。
+1、action:action 是一个具有  type 字段的普通 JavaScript 对象。你可以将 action 视为描述应用程序中发生了什么的事件。
 
-2、reducer:reducer  是一个函数，接收当前的  state  和一个  action  对象，必要时决定如何更新状态，并返回新状态。
+2、reducer:reducer 是一个函数，接收当前的  state 和一个  action 对象，必要时决定如何更新状态，并返回新状态。
 
-3、store:当前 Redux 应用的状态存在于一个名为  store  的对象中。
+3、store:当前 Redux 应用的状态存在于一个名为  store 的对象中。
 
 **原则**
 
-- 单一数据源。整个应用的  state  被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个  store 中。
+- 单一数据源。整个应用的  state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个  store 中。
 
 - State 是只读的。唯一改变 state 的方法就是触发  action，action 是一个用于描述已发生事件的普通对象。
 
@@ -22,11 +22,11 @@ mobx 通过运用透明的函数式响应代理使状态管理变得简单和可
 
 ## mobx
 
-1、State(状态): State   是驱动你的应用程序的数据。
+1、State(状态): State 是驱动你的应用程序的数据。
 
-2、Actions(动作): Action   是任意可以改变  State   的代码，比如用户事件处理、后端推送数据处理、调度器事件处理等等。
+2、Actions(动作): Action 是任意可以改变  State 的代码，比如用户事件处理、后端推送数据处理、调度器事件处理等等。
 
-3、Derivations(派生): 任何   来源是 State   并且不需要进一步交互的东西都是 Derivation。Mobx 区分了以下两种 Derivation:
+3、Derivations(派生): 任何 来源是 State 并且不需要进一步交互的东西都是 Derivation。Mobx 区分了以下两种 Derivation:
 
 - Computed values,总是可以通过纯函数从当前的可观测 State 中派生。
 

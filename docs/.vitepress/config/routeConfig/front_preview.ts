@@ -10,6 +10,7 @@ export const front_preview = [
         text: "CSS预处理器-后处理器",
         link: "/前端面试/HTML与CSS/CSS预处理器-后处理器",
       },
+      { text: "css可继承属性", link: "/前端面试/HTML与CSS/css可继承属性" },
       { text: "CSS3动画", link: "/前端面试/HTML与CSS/CSS3动画" },
       { text: "css隐藏页面元素", link: "/前端面试/HTML与CSS/css隐藏页面元素" },
       { text: "css绘制各种图形", link: "/前端面试/HTML与CSS/css绘制各种图形" },

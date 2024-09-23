@@ -4,8 +4,8 @@ import { nav } from "./config/nav";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "title",
-  titleTemplate: "title | :title",
+  title: "wangry",
+  titleTemplate: "wangry | :title",
   description: "...",
   head: [["link", { rel: "icon", href: "/logo.jpg" }]],
   cleanUrls: true,

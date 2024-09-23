@@ -7,9 +7,12 @@ hero:
     src: /logo.jpg
     alt: "..."
 
-  name: "..."
+  # name: "..."
+  # text: "..."
+  # title: "..."
+  name: "wangry's blog"
   text: "..."
-  title: "..."
+  title: "@wangry"
   tagline: 学习记录，也许坚持就会成功吧
 
   actions:
@@ -26,9 +29,12 @@ hero:
 
 features:
   - title: 👋 文档
-    details: Linux指令，数据库，docker，leetcode
+    details: Linux指令，数据库，docker，leetcode，Git操作
   - title: 🌱 前端
-    details: HTML、CSS、JavaScript，React，Webpack，NodeJS
+    details: HTML、CSS、JavaScript，React，Webpack，Vite，Redux，Mobx，NodeJS
+
+  - title: 😎 面试
+    details: 可能的面试题
   - title: 🙌 杂项
-    details: 浏览器，协议，安全
+    details: 浏览器，协议，安全，代码规范
 ---

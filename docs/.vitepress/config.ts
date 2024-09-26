@@ -40,5 +40,6 @@ export default defineConfig({
   metaChunk: true,
   sitemap: {
     hostname: "https://qwangry.github.io/",
+    lastmodDateOnly: false,
   },
 });

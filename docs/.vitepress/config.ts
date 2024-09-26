@@ -1,7 +1,6 @@
 import { defineConfig } from "vitepress";
 import { sidebar } from "./config/sidebar";
 import { nav } from "./config/nav";
-import sitemap from "vite-plugin-sitemap";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -40,6 +39,5 @@ export default defineConfig({
   metaChunk: true,
   sitemap: {
     hostname: "https://qwangry.github.io/",
-    lastmodDateOnly: false,
   },
 });

@@ -7,7 +7,16 @@ export default defineConfig({
   title: "wangry",
   titleTemplate: "wangry | :title",
   description: "...",
-  head: [["link", { rel: "icon", href: "/logo.jpg" }]],
+  head: [
+    ["link", { rel: "icon", href: "/logo.jpg" }],
+    [
+      "meta",
+      {
+        name: "google-site-verification",
+        content: "MX1eK0VRiaFy3YQBfQ7A6QjscbHdiEyTAj10C2-UBu0",
+      },
+    ],
+  ],
   cleanUrls: true,
   lastUpdated: true,
   themeConfig: {

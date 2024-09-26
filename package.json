@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "vite-plugin-sitemap": "^0.7.1",
     "vitepress": "^1.0.0-beta.7"
   },
   "scripts": {

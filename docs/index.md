@@ -26,6 +26,9 @@ hero:
     - theme: alt
       text: Github
       link: https://github.com/qwangry
+    - theme: alt
+      text: CSDN
+      link: https://blog.csdn.net/wwang_123?spm=1000.2115.3001.5343
 
 features:
   - title: 👋 文档

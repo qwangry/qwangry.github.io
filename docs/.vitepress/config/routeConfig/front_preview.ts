@@ -98,9 +98,14 @@ export const front_preview = [
     text: "项目",
     collapsed: false,
     items: [
+      { text: "技术选型", link: "/前端面试/项目/技术选型" },
       { text: "统一身份认证", link: "/前端面试/项目/统一身份认证" },
       { text: "组件化", link: "/前端面试/项目/组件化" },
       { text: "在线聊天", link: "/前端面试/项目/在线聊天" },
+      { text: "pdf预览实现", link: "/前端面试/项目/pdf预览实现" },
+      { text: "html5的video", link: "/前端面试/项目/html5的video" },
+      { text: "开发效率", link: "/前端面试/项目/开发效率" },
+      { text: "用户体验", link: "/前端面试/项目/用户体验" },
     ],
   },
 ];

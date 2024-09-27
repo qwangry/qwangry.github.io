@@ -4,7 +4,7 @@
 
 `<video>`用于在文档中嵌入媒体播放器，用于支持文档内的视频播放
 
-在不支持 video 元素的浏览器中，<video></video> 标签中间的内容会显示，作为降级处理
+在不支持 video 元素的浏览器中，`<video></video>` 标签中间的内容会显示，作为降级处理
 
 ```js
 <video controls width="250">

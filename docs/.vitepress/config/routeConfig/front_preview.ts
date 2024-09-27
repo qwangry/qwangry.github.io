@@ -104,6 +104,7 @@ export const front_preview = [
       { text: "在线聊天", link: "/前端面试/项目/在线聊天" },
       { text: "pdf预览实现", link: "/前端面试/项目/pdf预览实现" },
       { text: "html5的video", link: "/前端面试/项目/html5的video" },
+      { text: "CI-CD配置", link: "/前端面试/项目/CI-CD配置" },
       { text: "开发效率", link: "/前端面试/项目/开发效率" },
       { text: "用户体验", link: "/前端面试/项目/用户体验" },
     ],

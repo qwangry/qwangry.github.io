@@ -24,7 +24,66 @@ Hooks 优势：
 
 - 副作用的关注点分离
 
-> 副作用指哪些没有发生在数据向视图转换过程中的逻辑，如 ajax、访问原生 dom、本地持久化缓存、绑定/解绑事件、添加订阅、设置定时器、记录日志等。
+> 副作用指那些没有发生在数据向视图转换过程中的逻辑，如 ajax、访问原生 dom、本地持久化缓存、绑定/解绑事件、添加订阅、设置定时器、记录日志等。
+
+### 副作用
+
+React 中，副作用通常指的是那些无法再组件渲染时同步完成的操作，例如：
+
+- 数据获取（Ajax，API 请求）
+
+- 手动 DOM 操作
+
+- 订阅事件或计时器
+
+- 修改浏览器的标题或 URL
+
+这些副作用不能直接写在组件的渲染逻辑中，因为 React 的渲染逻辑应该是“纯”的——渲染过程不应该影响外部世界，而是根据 props 和 state 渲染 UI
+
+React 提供了 useEffect 钩子来处理这些副作用
+
+> 数据获取、订阅、修改 DOM 等
+
+**副作用的清理**
+
+- 某些副作用需要在组件卸载，例如设置了一个计时器或事件监听时，在组件销毁时应该移除它们，否则会引发内存泄漏
+
+```js
+import React, { useEffect } from "react";
+
+function TimerComponent() {
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log("Tick");
+    }, 1000);
+
+    // 清理副作用
+    return () => {
+      clearInterval(timer); // 组件卸载或更新时清除计时器
+    };
+  }, []); // 空数组意味着该副作用只在组件挂载和卸载时执行
+
+  return <div>Timer</div>;
+}
+```
+
+#### 无副作用的纯函数
+
+在函数式编程中，纯函数 是没有副作用的函数。这意味着，纯函数：
+
+- 只依赖于输入参数，且不会改变输入参数。
+
+- 不会修改外部状态（如全局变量、外部数据等）。
+
+- 多次调用纯函数，返回值始终相同。
+
+纯函数没有副作用，因此更加可预测、容易测试，并且代码的行为不会依赖外部环境的变化。
+
+#### 副作用的利弊
+
+优点：副作用可以与外部世界进行交互，如网络请求、修改 DOM 等，是实际开发中不可避免的。
+
+缺点：副作用会增加程序的复杂性，因为它们会导致函数的行为依赖于外部状态，进而影响可预测性和可测试性。
 
 ## useState & useMemo & useCallback
 
@@ -182,6 +241,74 @@ function render() {
 render();
 ```
 
+### useMemo 场景
+
+缓存某个计算结果，只有当依赖项发生变化时，才能重新进行计算，通常用于避免重复执行开销大的计算
+
+1、复杂运算：计算耗时（处理大量数据、复杂的数学计算等）
+
+2、依赖于复杂计算的数据：当某些计算结果需要基于多个依赖项组合得出时，可以确保仅在相关依赖项变化时才能重新计算
+
+```js
+const area = useMemo(() => width * height, [width, height]);
+```
+
+3、避免子组件不必要的重新渲染 React.memo
+
+### useCallback 场景
+
+作用是缓存函数，只要当其依赖项发生变化时，才重新创建该函数，`主要用于优化传递给子组件的回调函数，避免子组件不必要的重渲染`
+
+1、避免子组件不必要的重渲染：在 React 中，函数每次渲染都会重新创建，如果将函数作为子组件的道具传递，子组件会因为函数引用的变化而重新渲染。使用 useCallback 可以缓存函数，避免子组件重渲染。
+
+```js
+const Parent = () => {
+  const [count, setCount] = useState(0);
+
+  // 使用 useCallback 缓存 increment 函数，避免 Parent 重渲染时生成新函数
+  const increment = useCallback(() => {
+    setCount((c) => c + 1);
+  }, []);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <Child onIncrement={increment} />
+    </div>
+  );
+};
+
+const Child = React.memo(({ onIncrement }) => {
+  console.log("Child rendered");
+  return <button onClick={onIncrement}>Increment</button>;
+});
+```
+
+2、事件处理函数的优化：如果有多个事件处理函数，且这些函数在组件重渲染时并不会发生变化，可以使用 useCallback 来缓存这些事件处理函数，避免每次渲染时重新创建。
+
+```js
+const Example = () => {
+  const handleClick = useCallback(() => {
+    console.log("Button clicked");
+  }, []);
+
+  return <button onClick={handleClick}>Click Me</button>;
+};
+```
+
+3、依赖复杂数据的回调函数：如果一个回调函数依赖于某些复杂的数据，可以使用 useCallback，确保该回调函数只有在依赖项变化时才重新创建
+
+```js
+const Example = ({ data }) => {
+  const processData = useCallback(() => {
+    // 假设处理 data 的逻辑很复杂
+    return data.map((item) => item.value * 2);
+  }, [data]);
+
+  return <button onClick={processData}>Process Data</button>;
+};
+```
+
 ## useReducer
 
 - useReducer 和 redux 中 reducer 很像
@@ -246,6 +373,24 @@ function Counter() {
 - 在浏览器执行绘制之前 useLayoutEffect 内部的更新计划将被同步刷新
 
 - 尽可能使用标准的 useEffect 以避免阻塞视图更新
+
+### useEffect 场景
+
+用于在组件选然后执行副作用（数据获取、订阅、手动 DOM 等），会在组件渲染完成后异步执行，确保副作用不会阻塞渲染过程
+
+适用于需要与外部系统交互（如发起网络请求、操作 DOM、设置事件监听器等）的场景
+
+### 依赖项
+
+1、没有：每次渲染后都执行，不推荐
+
+2、空依赖数组：只在组件挂载和卸载时执行
+
+> 获取初始数据；订阅 websocket 或事件监听器；初始化第三方库
+
+3、带有依赖项数组：依赖项的值变化时（在内存中的引用不同、或值不同），才会执行
+
+> 基于状态或道具变化发起网络请求；监听某个状态的变化并执行相应的操作
 
 ## 自定义 Hook
 

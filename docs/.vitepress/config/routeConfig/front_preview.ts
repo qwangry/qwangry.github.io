@@ -38,6 +38,10 @@ export const front_preview = [
         link: "/前端面试/JavaScript/箭头函数和普通函数",
       },
       { text: "Object-Set-Map", link: "/前端面试/JavaScript/Object-Set-Map" },
+      {
+        text: "函数-变量代码输出",
+        link: "/前端面试/JavaScript/函数-变量代码输出",
+      },
     ],
   },
   {
@@ -104,7 +108,9 @@ export const front_preview = [
       { text: "在线聊天", link: "/前端面试/项目/在线聊天" },
       { text: "pdf预览实现", link: "/前端面试/项目/pdf预览实现" },
       { text: "html5的video", link: "/前端面试/项目/html5的video" },
+      { text: "测试", link: "/前端面试/项目/测试" },
       { text: "CI-CD配置", link: "/前端面试/项目/CI-CD配置" },
+      { text: "版本部署", link: "/前端面试/项目/版本部署" },
       { text: "开发效率", link: "/前端面试/项目/开发效率" },
       { text: "用户体验", link: "/前端面试/项目/用户体验" },
     ],

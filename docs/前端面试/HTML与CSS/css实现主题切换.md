@@ -552,6 +552,10 @@ export default ThemeToggle;
 
 - 性能问题：切换主题时可能引起页面重绘，影响性能。
 
+## 看一看
+
+[https://mp.weixin.qq.com/s/BiPh6cytrUTp8tupnz9M7A](https://mp.weixin.qq.com/s/BiPh6cytrUTp8tupnz9M7A)
+
 ## 参考
 
 [https://zhuanlan.zhihu.com/p/699451643](https://zhuanlan.zhihu.com/p/699451643)

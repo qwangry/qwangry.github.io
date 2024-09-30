@@ -221,3 +221,7 @@ docker rm react-app || true
 docker run -d --name react-app -p 80:80 $CI_REGISTRY_IMAGE:latest
 EOF
 ```
+
+## 看一看
+
+[https://guide.duanhl.com/project/deploy/gitlabCI.html](https://guide.duanhl.com/project/deploy/gitlabCI.html)

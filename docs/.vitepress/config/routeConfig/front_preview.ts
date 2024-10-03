@@ -42,6 +42,10 @@ export const front_preview = [
         text: "函数-变量代码输出",
         link: "/前端面试/JavaScript/函数-变量代码输出",
       },
+      {
+        text: "你不知道的JavaScript",
+        link: "/前端面试/JavaScript/你不知道的JavaScript",
+      },
     ],
   },
   {

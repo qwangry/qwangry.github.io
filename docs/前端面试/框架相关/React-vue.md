@@ -1,178 +1,4 @@
-# 汇总 1
-
-## 架构 --- MVC/MVP/MVVM
-
-### MVC
-
-Model-View-Controller 是最常见的软件架构之一
-
-MVC 模式的意思是软件可以分为三个部门
-
-- View 视图：用户界面
-
-- Controller 控制器：业务逻辑
-
-- Model 模型：数据保存
-
-![alt text](image-1.png)
-
-各部分通信都是单向的：
-
-1、View 传送指令到 Controller
-
-2、Controller 完成业务逻辑后，要求 Model 改变状态
-
-3、Model 将新的数据发送到 View，用户得到反馈
-
-#### MVC 互动模式
-
-接收用户指令时，MVC 可以分成两种方式，一种是通过 View 接受指令，传递给 Controller
-
-![alt text](image-2.png)
-
-另一种是直接通过 controller 接受指令
-
-![alt text](image-3.png)
-
-#### 实际项目更加灵活：Backbone
-
-![alt text](image-4.png)
-
-1、用户可以向 View 发送指令（DOM 事件），再由 View 直接要求 Model 改变状态
-
-2、用户也可以直接向 Controller 发送指令（改变 URL 触发 hashChange 事件），再由 Controller 发送给 View
-
-3、`Controller非常薄，只起到路由的作用，而View非常厚，业务逻辑都部署在View。所以，Backbone 索性取消了 Controller，只保留一个 Router（路由器）`
-
-### MVP
-
-MVP 是将 Controller 改为 Presenter，同时改变了通信方向
-
-![alt text](image-5.png)
-
-1、各部分之间的通信，都是双向的
-
-2、View 与 Model 不发生联系，都通过 Presenter 传递
-
-3、View 非常薄，不部署任何业务逻辑，称为"被动视图"（Passive View），即没有任何主动性，而 Presenter 非常厚，所有逻辑都部署在那里
-
-### MVVM
-
-MVVM 模式将 Presenter 改为 ViewModel，基本上与 MVP 一致
-
-![alt text](image-6.png)
-
-唯一的区别是，采用双向绑定 data-binding：View 的变动，自动反映在 ViewModel，反之亦然
-
-### Flux 架构
-
-Flux 是一种架构思想，专门解决软件的结构问题，它跟 MVC 架构是同一类东西，但是更加简洁清晰
-
-**Vuex 和 Redux 都是从 Flux 中衍生出来**
-
-Flux 将一个应用分为四个部分
-
-- View：视图层
-
-- Action（动作）：视图层发出的消息
-
-- Dispatcher（派发器）：用来接收 actions、执行回调函数
-
-- Store（数据层）：用来存放应用的状态，一旦发生变动，就提醒 Views 要更新页面
-
-![alt text](image-7.png)
-
-最大的特点是数据的“单向流动”
-
-1、用户访问 View
-
-2、View 发出用户的 Action
-
-3、Dispatcher 收到 Action，要求 Store 进行相应的更新
-
-4、Store 更新后，发出一个“change”事件
-
-5、View 收到“change”事件后，更新页面
-
-> Flux 单向数据流，在单向数据流下，状态的变化是可预测的：如果 store 中的数据发生了变化，那么一定是由 Dispatcher 派生的 Action 触发的，这样的关系非常有助于 debug 以及避免混乱的数据关系
-
-### Redux
-
-- Store：存储应用 state 以及用于触发 state 更新的 dispatch 方法等，整个应用仅有单一的 store。store 提供几个 API：
-
-> - store.getState()：获取当前 state
->
-> - store.dispatch(action)：用于 View 发出 Action
->
-> - store.subscribe(listener)：设置监听函数，一旦 state 变化则执行该函数，若把视图更新函数作为 listener 传入，则可触发视图自动渲染
-
-- Action：同 Flux，action 是用于更新 state 的消息对象，由 view 发出
-
-- Reducer：是一个用于改变 state 的纯函数（对于相同的参数返回相同的返回结果，不修改参数，不依赖外部变量），即通过应用状态与 action 推导出新的 state：`(previousState, action)=>newState`，Reducer 返回一个新的 state。
-
-![alt text](image-9.png)
-
-特点：
-
-- 单向数据流
-
-- 单一数据源
-
-- state 是制度的，每次状态更新之后只能返回一个新的 state
-
-- 没有 dispatcher，而是在 store 中继承了 dispatch 方法，`store.dispatch()`是 view 发出 action 的唯一途径
-
-#### Middleware
-
-即中间件，在 Redux 中应用于异步数据流
-
-Redux 的 middleware 是对 store.dispatch()进行了封装之后的方法，可以使 dispatch 传递 action 以外的函数或者 promise，通过 applyMiddleware 方法应用中间件（middleware 链中的最后一个 middleware 开始 dispatch action 时，这个 action 必须是一个普通对象）
-
-```js
-const store = createStore(
-  reducer,
-  // 依次执行
-  applyMiddleware(thunk, promise, logger)
-);
-```
-
-### Vuex
-
-Vuex 是一个 vue.js 的状态管理模式
-
-- Store：采用单一状态树，每个应用仅有一个 store 实例，在该实例下包含了 state，actions，mutations，getters，modules
-
-- State：Vuex 为单一数据源
-
-- Getter：Getter 的作用与 filters 有一些相似，可以将 state 进行过滤后输出
-
-- Mutation：Mutation 是 vuex 中改变 State 的唯一途径（严格模式下），并且只能是同步操作。Vuex 中通过 store.commit()调用 Mutation
-
-- Action：一些对 state 的异步操作可以放在 action 中，并通过在 action 提交 mutation 变更状态
-
-- Module：当 Store 对象过于庞大时，可根据具体的业务需求分为多个 Module ，每个 Module 都具有自己的 state 、mutation 、action 、getter
-
-![alt text](image-10.png)
-
-### Mobx
-
-MobX 背后的哲学是:
-
-任何源自应用状态的东西都应该自动地获得
-
-意思就是，当状态改变时，所有应用到状态的地方都会自动更新。
-
-- State: 驱动应用的数据
-
-- Computed values: 计算值。如果你想创建一个基于当前状态的值时，请使用 computed
-
-- Reactions: 反应，当状态改变时自动发生
-
-- Actions: 动作，用于改变 State
-
-- 依赖收集（autoRun）: MobX 中的数据以来基于观察者模式，通过 autoRun 方法添加观察者
-
-![alt text](image-11.png)
+# React/vue
 
 ## Vue 与 React
 
@@ -432,8 +258,28 @@ react 官网对应 setState 的说明：将 setState 认为是一次请求而不
 
 setTimeout 和 DOM 原生事件里，此时没有开启事务，直接同步更新组件 + 修改为最新的 this.state
 
-（并不是 setTimeout 改变了 setState，而是 setTimeout 帮助 setState“逃脱”了 react 对它的管控，只要实在 react 管控下
+（并不是 setTimeout 改变了 setState，而是 setTimeout 帮助 setState“逃脱”了 react 对它的管控，只要是在 react 管控下
 的 setState，一定是异步的）
+
+### 回调函数写法
+
+回调函数写法可以确保状态更新基于最新的状态，而不是旧的状态
+
+```js
+setState(prevState=>newState)
+```
+
+当使用回调函数传递给setState，React会确保这个回调接收到的是最新的状态值，避免了多个状态更新之间的竞态条件，这种方式主要用于基于当前的状态来计算下一个状态的场景
+
+:::info
+**竞态条件**是并发编程中常见的一种问题，指的是两个或多个操作并发执行时，结果依赖于这些操作执行的顺序，而这种顺序可能是不可控或不可预测的，从而导致程序产生错误的行为或结果
+
+关键点：1、并发执行；2、不确定的执行顺序；3、共享资源
+
+解决办法：1、锁机制；2、状态更新回调；3、事务处理
+:::
+
+假设在一个函数中连续多次调用 setState，如果直接传入值的话，后面的 setState 可能会基于之前的状态更新，导致状态更新不符合预期。但使用回调函数可以确保状态总是基于最新的状态值进行更新
 
 ## React 合成事件
 
@@ -662,6 +508,24 @@ function App() {
 
 `fallback` 属性指定了在组件加载完成之前显示的内容，当组件加载完成后，`Suspense` 会移除`fallback`并渲染实际组件。
 
+## fiber架构
+
+fiber是为了解决react在渲染性能、可中断渲染和调度任务方面的局限性而设计的，是react 16开始引入的新渲染引擎，主要目的是优化和提升react应用在复杂UI更新中的性能表现
+
+fiber架构的核心思想是将渲染工作拆分成更小的任务快，允许渲染过程被中断，然后在适当的时候恢复。这种机制使得react在渲染复杂组件树时，能够保持界面的流畅性，并有机会处理高优先级任务
+
+### 核心概念
+
+1、fiber节点：每个组件对应一个fiber对象（fiber节点）
+
+
+2、时间分片（Time Slicing）：将大的渲染任务拆分成更小的单元，并使用时间切片机制来执行这些单元
+
+3、可中断的渲染：fiber支持可中断的渲染
+
+4、优先级调度：为不同类型的更新任务分配不同的优先级
+
+![alt text](image-16.png)
 ## 参考
 
 [https://blog.3vyd.com/blog/posts-output/2024-04-11-Vue%E4%B8%8EReact%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8C%BA%E5%88%AB/](https://blog.3vyd.com/blog/posts-output/2024-04-11-Vue%E4%B8%8EReact%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8C%BA%E5%88%AB/)

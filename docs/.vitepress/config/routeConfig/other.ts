@@ -50,6 +50,7 @@ export const other = [
       { text: "柯里化", link: "/杂项/手写代码/柯里化" },
       { text: "数组reduce", link: "/杂项/手写代码/数组reduce" },
       { text: "代码片段", link: "/杂项/手写代码/代码片段" },
+      { text: "React写一个倒计时", link: "/杂项/手写代码/React写一个倒计时" },
     ],
   },
   {

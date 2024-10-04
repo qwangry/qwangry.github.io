@@ -17,6 +17,10 @@ export const front_preview = [
       { text: "css绘制各种图形", link: "/前端面试/HTML与CSS/css绘制各种图形" },
       { text: "css实现0.5", link: "/前端面试/HTML与CSS/css实现0.5" },
       {
+        text: "flex最后一行的问题",
+        link: "/前端面试/HTML与CSS/flex最后一行的问题",
+      },
+      {
         text: "css实现主题切换",
         link: "/前端面试/HTML与CSS/css实现主题切换",
       },
@@ -73,13 +77,15 @@ export const front_preview = [
     text: "框架相关",
     collapsed: false,
     items: [
-      { text: "汇总1", link: "/前端面试/框架相关/汇总1" },
+      { text: "React/vue", link: "/前端面试/框架相关/React-vue" },
+      { text: "架构", link: "/前端面试/框架相关/架构" },
       { text: "Hooks", link: "/前端面试/框架相关/Hooks" },
       { text: "React组件通信", link: "/前端面试/框架相关/React组件通信" },
       { text: "前端路由", link: "/前端面试/框架相关/前端路由" },
       { text: "Redux和Mobx", link: "/前端面试/框架相关/Redux和Mobx" },
       { text: "React性能优化", link: "/前端面试/框架相关/React性能优化" },
       { text: "React-key属性", link: "/前端面试/框架相关/React-key属性" },
+      { text: "markdown转换html", link: "/前端面试/框架相关/markdown转换html" },
     ],
   },
   {

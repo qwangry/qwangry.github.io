@@ -18,6 +18,10 @@ export const docx = [
     items: [
       { text: "Shell基本语法", link: "/docx/Shell/Shell基本语法" },
       { text: "Linux指令", link: "/docx/Shell/Linux指令" },
+      {
+        text: "虚拟机挂载新添加硬盘",
+        link: "/docx/Shell/虚拟机挂载新添加硬盘",
+      },
     ],
   },
   {

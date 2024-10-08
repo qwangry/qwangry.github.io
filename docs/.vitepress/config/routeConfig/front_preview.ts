@@ -47,6 +47,10 @@ export const front_preview = [
         link: "/前端面试/JavaScript/函数-变量代码输出",
       },
       {
+        text: "Promise并发问题",
+        link: "/前端面试/JavaScript/Promise并发问题",
+      },
+      {
         text: "你不知道的JavaScript",
         link: "/前端面试/JavaScript/你不知道的JavaScript",
       },
@@ -57,7 +61,7 @@ export const front_preview = [
     collapsed: false,
     items: [
       { text: "汇总1", link: "/前端面试/浏览器相关/汇总1" },
-      { text: "汇总1", link: "/前端面试/浏览器相关/汇总1" },
+      { text: "浏览器长任务", link: "/前端面试/浏览器相关/浏览器长任务" },
     ],
   },
   {
@@ -103,9 +107,13 @@ export const front_preview = [
     collapsed: false,
     items: [
       { text: "性能优化概览", link: "/前端面试/性能优化/性能优化概览" },
-      { text: "汇总1", link: "/前端面试/性能优化/汇总1" },
+      { text: "DNS解析优化", link: "/前端面试/性能优化/DNS解析优化" },
       { text: "页面监控", link: "/前端面试/性能优化/页面监控" },
       { text: "性能优化方案", link: "/前端面试/性能优化/性能优化方案" },
+      {
+        text: "JS执行100万个函数",
+        link: "/前端面试/性能优化/JS执行100万个函数",
+      },
     ],
   },
   {
@@ -123,6 +131,7 @@ export const front_preview = [
       { text: "版本部署", link: "/前端面试/项目/版本部署" },
       { text: "开发效率", link: "/前端面试/项目/开发效率" },
       { text: "用户体验", link: "/前端面试/项目/用户体验" },
+      { text: "大文件上传", link: "/前端面试/项目/大文件上传" },
     ],
   },
 ];

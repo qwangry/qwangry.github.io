@@ -8,6 +8,13 @@ export const docx = [
     ],
   },
   {
+    text: "网络流量处理",
+    collapsed: false,
+    items: [
+      { text: "大型pcap的读写", link: "/docx/网络流量处理/大型pcap的读写" },
+    ],
+  },
+  {
     text: "数据库",
     collapsed: false,
     items: [{ text: "数据库", link: "/docx/数据库/数据库指令" }],
@@ -22,6 +29,7 @@ export const docx = [
         text: "虚拟机挂载新添加硬盘",
         link: "/docx/Shell/虚拟机挂载新添加硬盘",
       },
+      { text: "nginx", link: "/docx/Shell/nginx" },
     ],
   },
   {

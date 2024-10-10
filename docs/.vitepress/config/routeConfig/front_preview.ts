@@ -37,6 +37,7 @@ export const front_preview = [
       { text: "this关键字", link: "/前端面试/JavaScript/this关键字" },
       { text: "作用域/变量提升", link: "/前端面试/JavaScript/作用域" },
       { text: "类型转换", link: "/前端面试/JavaScript/类型转换" },
+      { text: "等式判断", link: "/前端面试/JavaScript/等式判断" },
       {
         text: "箭头函数和普通函数",
         link: "/前端面试/JavaScript/箭头函数和普通函数",
@@ -110,6 +111,7 @@ export const front_preview = [
       { text: "DNS解析优化", link: "/前端面试/性能优化/DNS解析优化" },
       { text: "页面监控", link: "/前端面试/性能优化/页面监控" },
       { text: "性能优化方案", link: "/前端面试/性能优化/性能优化方案" },
+      { text: "长列表展示", link: "/前端面试/性能优化/长列表展示" },
       {
         text: "JS执行100万个函数",
         link: "/前端面试/性能优化/JS执行100万个函数",

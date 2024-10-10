@@ -25,7 +25,10 @@ export const other = [
   {
     text: "操作系统",
     collapsed: false,
-    items: [{ text: "死锁", link: "/杂项/操作系统/死锁" }],
+    items: [
+      { text: "进程和线程", link: "/杂项/操作系统/进程和线程" },
+      { text: "死锁", link: "/杂项/操作系统/死锁" },
+    ],
   },
   {
     text: "安全",

@@ -58,6 +58,25 @@ export const front_preview = [
     ],
   },
   {
+    text: "手写代码",
+    collapsed: false,
+    items: [
+      { text: "Promise", link: "/前端面试/手写代码/Promise" },
+      { text: "防抖节流", link: "/前端面试/手写代码/防抖节流" },
+      { text: "call-apply-bind", link: "/前端面试/手写代码/call-apply-bind" },
+      { text: "深拷贝和浅拷贝", link: "/前端面试/手写代码/深拷贝和浅拷贝" },
+      { text: "instanceOf", link: "/前端面试/手写代码/instanceOf" },
+      { text: "数组扁平化", link: "/前端面试/手写代码/数组扁平化" },
+      { text: "柯里化", link: "/前端面试/手写代码/柯里化" },
+      { text: "数组reduce", link: "/前端面试/手写代码/数组reduce" },
+      { text: "代码片段", link: "/前端面试/手写代码/代码片段" },
+      {
+        text: "React写一个倒计时",
+        link: "/前端面试/手写代码/React写一个倒计时",
+      },
+    ],
+  },
+  {
     text: "浏览器相关",
     collapsed: false,
     items: [

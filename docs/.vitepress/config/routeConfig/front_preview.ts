@@ -6,7 +6,13 @@ export const front_preview = [
     items: [
       { text: "前端页面组成", link: "/前端面试/HTML与CSS/前端页面组成" },
       { text: "iframe介绍", link: "/前端面试/HTML与CSS/iframe介绍" },
+      { text: "替换型标签", link: "/前端面试/HTML与CSS/替换型标签" },
+      {
+        text: "HTML5辅助交互的属性",
+        link: "/前端面试/HTML与CSS/HTML5辅助交互的属性",
+      },
       { text: "盒模型", link: "/前端面试/HTML与CSS/盒模型" },
+      { text: "BFC", link: "/前端面试/HTML与CSS/BFC" },
       {
         text: "CSS预处理器-后处理器",
         link: "/前端面试/HTML与CSS/CSS预处理器-后处理器",
@@ -143,6 +149,7 @@ export const front_preview = [
     items: [
       { text: "技术选型", link: "/前端面试/项目/技术选型" },
       { text: "统一身份认证", link: "/前端面试/项目/统一身份认证" },
+      { text: "权限管理", link: "/前端面试/项目/权限管理" },
       { text: "组件化", link: "/前端面试/项目/组件化" },
       { text: "在线聊天", link: "/前端面试/项目/在线聊天" },
       { text: "pdf预览实现", link: "/前端面试/项目/pdf预览实现" },

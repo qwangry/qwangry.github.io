@@ -419,7 +419,7 @@ let foo = 'haha';
 console.log(foo); //输出结果：smyhvae
 ```
 
-### 字符串结构
+### 字符串解构
 
 ```js
 const [a, b, c, d] = 'hello';

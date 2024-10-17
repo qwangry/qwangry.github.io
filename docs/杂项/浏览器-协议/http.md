@@ -6,21 +6,29 @@
 
 HTTP 是超文本传输协议，HyperText Transfer Protocol
 
-- 超文本: 文字， 图片， 视频等的混合体
+- 超文本： 文字， 图片， 视频等的混合体
 
-- 传输: 两点之间传输数据
+- 传输： 两点之间传输数据
 
-- 协议: 使用计算机能理解的语言确立一种计算机之间交流通信的规范，以及相关的各种控制和错误处理方式
+- 协议： 使用计算机能理解的语言确立一种计算机之间交流通信的规范，以及相关的各种控制和错误处理方式
 
 ### 状态码
 
-1xx 提示信息， 表示目前是协议处理的中间状态，还需要后续的操作
+1xx 提示信息， 表示目前是`协议处理的中间状态`，还需要后续的操作
+
+- `100 Continue`：客户端继续请求
+
+- `101 Switching Protocols`：服务器同意切换协议
+
+- `102 Processing`：服务器已收到并正在处理请求
 
 2xx 成功， 报文已经成功收到并被正确处理
 
 - `200 OK` 表示一切正常， 非`HEAD`请求，服务器返回的响应头都会有 body 数据
 
 - `200 No Content` 与 200 OK 基本相同，但响应头没有 body 数据
+
+- `204 No Content`：请求成功，但没有内容返回
 
 - `206 Partial Content` 是应用于 HTTP 分块下载或断点续传，表示响应返回的 body 并不是资源的全部，而是其中的一部分，也是服务器处理成功的状态
 
@@ -38,6 +46,8 @@ HTTP 是超文本传输协议，HyperText Transfer Protocol
 
 - `400 Bad Request` 表示客户端请求的报文有错误，但只是个笼统的错误
 
+- `401 Unauthorized`：请求未通过身份验证
+
 - `403 Forbidden` 表示服务器禁止访问资源，并不是客户端的请求出错
 
 - `404 Not Found` 表示请求的资源在服务器上不存在或未找到，所以无法提供给客户端
@@ -54,11 +64,11 @@ HTTP 是超文本传输协议，HyperText Transfer Protocol
 
 ### 请求方法
 
-> HTTP/1.0 定义三种: GET， POST， HEAD
+> HTTP/1.0 定义三种： GET， POST， HEAD
 >
-> HTTP/1.1 新增五种: OPTIONS， PUT， DELETE， TRACE， CONNECT
+> HTTP/1.1 新增五种： OPTIONS， PUT， DELETE， TRACE， CONNECT
 
-- `GET` 从服务器获取指定的资源，可以是静态的文本， 页面， 图片视频等， 请求的参数位置一般写在 URL， URL 规定只能支持 ASCII， 所以 GET 请求参数只允许 ASCII 字符，而且浏览器会对 URL 的长度有限制
+- `GET` 从服务器获取指定的资源，可以是静态的文本， 页面， 图片视频等， 请求的参数位置一般写在 URL， URL 规定只能支持 ASCII， 所以 GET 请求参数只允许 ASCII 字符，而且`浏览器`会对 URL 的长度有限制
 
 > 从规范定义来看，GET 是安全且幂等的(安全是指请求方法不会破坏服务器上的资源; 幂等是指多次执行相同的操作，结果都是相同的)， 因为是只读操作， 所以可以对 GET 请求的数据做缓存，这个缓存可以做到浏览器本身上，也可以做到代理上(如 nginx)， 而且在浏览器中 GET 请求可以保存为书签
 >
@@ -92,27 +102,27 @@ HTTP 是超文本传输协议，HyperText Transfer Protocol
 
 `Connection` 客户端要求服务器使用`HTTP长连接`机制，以便其他请求复用
 
-> `Keep-Alive: timeout=10， max=500`
+> `Keep-Alive： timeout=10， max=500`
 >
-> `Connection: Keep-Alive`
+> `Connection： Keep-Alive`
 
 > HTTP/1.1 版本的默认连接都是长连接，但为了兼容老版本的 HTTP，需要指定 Connection 首部字段的值为`Keep-Alive`
 
 - `Content-Type` 用于服务器回应时告诉客户端本次数据的格式
 
-> `Content-Type: text/html; Charset=utf-8`
+> `Content-Type： text/html; Charset=utf-8`
 >
 > 客户端请求时，可以使用`Accept`字段生命自己可以接受哪些数据类型
 >
-> `Accept: */*`
+> `Accept： */*`
 
 - `Content-Encoding` 说明数据的压缩方法，表示服务器返回的数据使用了什么压缩格式
 
-> `Content-Encoding: gzip`
+> `Content-Encoding： gzip`
 >
 > 客户端请求时，用`Accept-Encoding`字段说明自己可以接受哪些压缩方法
 >
-> `Accept-Encoding: gzip， deflate`
+> `Accept-Encoding： gzip， deflate`
 
 ## 特性
 
@@ -142,7 +152,7 @@ HTTP 是超文本传输协议，HyperText Transfer Protocol
 >
 > 完成关联性的操作时，每次都要问一遍身份信息
 >
-> 解决方案:
+> 解决方案：
 >
 > 可以使用 Cookie，第一次请求时，服务器返回，后续客户端请求，带上
 
@@ -150,7 +160,7 @@ HTTP 是超文本传输协议，HyperText Transfer Protocol
 
 - 不安全
 
-> 解决方案: HTTPS
+> 解决方案： HTTPS
 
 #### 性能
 
@@ -160,7 +170,7 @@ HTTP 是超文本传输协议，HyperText Transfer Protocol
 >
 > HTTP/1.1 提出了`长连接`的通信方式，也叫做`持久连接`，减少了 TCP 连接的重复建立和断开所造成的额外开销，减轻了服务器端的负载
 >
-> 持久连接的特点是:只要任意一端没有明确提出断开连接，则保持 TCP 连接状态
+> 持久连接的特点是：只要任意一端没有明确提出断开连接，则保持 TCP 连接状态
 
 - 管道网络传输
 
@@ -186,19 +196,19 @@ HTTPS 在 HTTP 与 TCP 之间加入了 SSL/TLS 协议，可以解决上述风险
 
 如何解决的?
 
-- `混合加密`:实现信息的`机密性`，解决了窃听风险
+- `混合加密`：实现信息的`机密性`，解决了窃听风险
 
 > 通信建立前使用`非对称加密`，交换会话密钥
 >
 > 通信过程中全部使用`对称加密`的会话密钥的方式加密明文数据
 >
-> 采用混合加密的方式的原因:
+> 采用混合加密的方式的原因：
 >
-> - 对称加密 只使用一个密钥，运算速度快，密钥必须保密，无法做到安全的密钥交换
+> - 对称加密：只使用一个密钥，运算速度快，密钥必须保密，无法做到安全的密钥交换
 >
-> - 非对称加密使用两个密钥：公钥和私钥，公钥可以任意分发而私钥保密，解决了密钥交换问题但速度慢
+> - 非对称加密：使用两个密钥：公钥和私钥，公钥可以任意分发而私钥保密，解决了密钥交换问题但速度慢
 
-- `摘要算法`:实现`完整性`，生成独一无二的指纹，解决了篡改的风险
+- `摘要算法`：实现`完整性`，生成独一无二的指纹，解决了篡改的风险
 
 - 服务器公钥放入`数字证书`中，解决了冒充风险
 
@@ -326,13 +336,13 @@ HTTP 缓存会存储与请求关联的响应，并将存储的响应复用于后
 
 只要浏览器判断缓存没有过期，则直接使用浏览器的本地缓存，决定是否使用缓存的主动性在浏览器这边
 
-使用的字段(Cache-Control 的优先级高于 Expires):
+使用的字段(Cache-Control 的优先级高于 Expires)：
 
 - 响应头部`Cache-Control`，相对时间
 
 - 响应头部`Expires`，绝对时间
 
-具体过程:
+具体过程：
 
 - 浏览器第一次请求访问浏览器资源时，服务器返回资源的同时，在 Response 头部加上 Cache-Control，设置过期时间大小;
 
@@ -354,7 +364,7 @@ Cache-Control 的设置：
 
 协商缓存就是与服务端协商之后，通过协商结果来判断是否使用本地缓存
 
-使用的字段:
+使用的字段：
 
 - 请求头部`If-Modified-Since`与响应头部`Last-Modified`
 
@@ -406,4 +416,4 @@ ETag 主要能解决 Last-Modified 几个比较难以解决的问题：
 
 ## 参考链接
 
-[https://xiaolincoding.com/network/2_http/http_interview.html#http-%E6%98%AF%E4%BB%80%E4%B9%88](https://xiaolincoding.com/network/2_http/http_interview.html#http-%E6%98%AF%E4%BB%80%E4%B9%88)
+[https：//xiaolincoding.com/network/2_http/http_interview.html#http-%E6%98%AF%E4%BB%80%E4%B9%88](https：//xiaolincoding.com/network/2_http/http_interview.html#http-%E6%98%AF%E4%BB%80%E4%B9%88)

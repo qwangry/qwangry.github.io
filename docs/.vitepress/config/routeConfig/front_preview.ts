@@ -101,7 +101,7 @@ export const front_preview = [
   {
     text: "安全相关",
     collapsed: false,
-    items: [{ text: "汇总1", link: "/前端面试/安全相关/汇总1" }],
+    items: [{ text: "前端攻击", link: "/前端面试/安全相关/前端攻击" }],
   },
   {
     text: "框架相关",
@@ -133,6 +133,7 @@ export const front_preview = [
     collapsed: false,
     items: [
       { text: "性能优化概览", link: "/前端面试/性能优化/性能优化概览" },
+      { text: "HTTP缓存", link: "/前端面试/性能优化/HTTP缓存" },
       { text: "DNS解析优化", link: "/前端面试/性能优化/DNS解析优化" },
       { text: "页面监控", link: "/前端面试/性能优化/页面监控" },
       { text: "性能优化方案", link: "/前端面试/性能优化/性能优化方案" },
@@ -160,6 +161,7 @@ export const front_preview = [
       { text: "开发效率", link: "/前端面试/项目/开发效率" },
       { text: "用户体验", link: "/前端面试/项目/用户体验" },
       { text: "大文件上传", link: "/前端面试/项目/大文件上传" },
+      { text: "代码迁移", link: "/前端面试/项目/代码迁移" },
     ],
   },
 ];

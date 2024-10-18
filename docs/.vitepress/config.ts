@@ -25,10 +25,10 @@ export default defineConfig({
     nav,
     sidebar,
     socialLinks: [{ icon: "github", link: "https://github.com/qwangry" }],
-    editLink: {
-      pattern: "https://github.com/qwangry/qwangry.github.io/docs/:path",
-      text: "Edit this page on GitHub",
-    },
+    // editLink: {
+    //   pattern: "https://github.com/qwangry/qwangry.github.io/docs/:path",
+    //   text: "Edit this page on GitHub",
+    // },
     outline: [2, 3],
     docFooter: {
       prev: "上一篇：",

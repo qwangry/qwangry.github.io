@@ -134,7 +134,12 @@ export const front_preview = [
     items: [
       { text: "性能优化概览", link: "/前端面试/性能优化/性能优化概览" },
       { text: "HTTP缓存", link: "/前端面试/性能优化/HTTP缓存" },
+      {
+        text: "prefetch和preload",
+        link: "/前端面试/性能优化/prefetch和preload",
+      },
       { text: "DNS解析优化", link: "/前端面试/性能优化/DNS解析优化" },
+      { text: "webpack性能优化", link: "/前端面试/性能优化/webpack性能优化" },
       { text: "页面监控", link: "/前端面试/性能优化/页面监控" },
       { text: "性能优化方案", link: "/前端面试/性能优化/性能优化方案" },
       { text: "长列表展示", link: "/前端面试/性能优化/长列表展示" },
@@ -162,6 +167,13 @@ export const front_preview = [
       { text: "用户体验", link: "/前端面试/项目/用户体验" },
       { text: "大文件上传", link: "/前端面试/项目/大文件上传" },
       { text: "代码迁移", link: "/前端面试/项目/代码迁移" },
+    ],
+  },
+  {
+    text: "设计模式",
+    collapsed: false,
+    items: [
+      { text: "发布订阅和观察者", link: "/前端面试/设计模式/发布订阅和观察者" },
     ],
   },
 ];

@@ -4,6 +4,7 @@ export const front_preview = [
     text: "HTML与CSS",
     collapsed: false,
     items: [
+      { text: "DOM操作", link: "/前端面试/HTML与CSS/DOM操作" },
       { text: "前端页面组成", link: "/前端面试/HTML与CSS/前端页面组成" },
       { text: "iframe介绍", link: "/前端面试/HTML与CSS/iframe介绍" },
       { text: "替换型标签", link: "/前端面试/HTML与CSS/替换型标签" },
@@ -40,10 +41,12 @@ export const front_preview = [
         text: "单线程的JavaScript",
         link: "/前端面试/JavaScript/单线程的JavaScript",
       },
+      { text: "精度问题", link: "/前端面试/JavaScript/精度问题" },
       { text: "this关键字", link: "/前端面试/JavaScript/this关键字" },
       { text: "作用域/变量提升", link: "/前端面试/JavaScript/作用域" },
       { text: "类型转换", link: "/前端面试/JavaScript/类型转换" },
       { text: "等式判断", link: "/前端面试/JavaScript/等式判断" },
+      { text: "柯里化", link: "/前端面试/JavaScript/柯里化" },
       {
         text: "箭头函数和普通函数",
         link: "/前端面试/JavaScript/箭头函数和普通函数",

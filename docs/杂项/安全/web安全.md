@@ -12,7 +12,7 @@
 
 4、CSP
 
-5、HSTS，强制客户端使用 HTTPS 与服务端建立历连接
+5、HSTS，强制客户端使用 HTTPS 与服务端建立连接
 
 6、X-Frame-Options，控制当前页面是否可以被嵌入到 iframe 中
 

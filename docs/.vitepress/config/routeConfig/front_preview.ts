@@ -23,6 +23,7 @@ export const front_preview = [
       { text: "css隐藏页面元素", link: "/前端面试/HTML与CSS/css隐藏页面元素" },
       { text: "css绘制各种图形", link: "/前端面试/HTML与CSS/css绘制各种图形" },
       { text: "css实现0.5", link: "/前端面试/HTML与CSS/css实现0.5" },
+      { text: "媒体查询", link: "/前端面试/HTML与CSS/媒体查询" },
       {
         text: "flex最后一行的问题",
         link: "/前端面试/HTML与CSS/flex最后一行的问题",
@@ -41,12 +42,18 @@ export const front_preview = [
         text: "单线程的JavaScript",
         link: "/前端面试/JavaScript/单线程的JavaScript",
       },
+      { text: "Promise", link: "/前端面试/JavaScript/Promise" },
       { text: "精度问题", link: "/前端面试/JavaScript/精度问题" },
+      {
+        text: "setTimeout误差问题",
+        link: "/前端面试/JavaScript/setTimeout误差问题",
+      },
       { text: "this关键字", link: "/前端面试/JavaScript/this关键字" },
       { text: "作用域/变量提升", link: "/前端面试/JavaScript/作用域" },
       { text: "类型转换", link: "/前端面试/JavaScript/类型转换" },
       { text: "等式判断", link: "/前端面试/JavaScript/等式判断" },
       { text: "柯里化", link: "/前端面试/JavaScript/柯里化" },
+      { text: "取消重复请求", link: "/前端面试/JavaScript/取消重复请求" },
       {
         text: "箭头函数和普通函数",
         link: "/前端面试/JavaScript/箭头函数和普通函数",

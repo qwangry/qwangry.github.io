@@ -136,6 +136,7 @@ export const front_preview = [
       { text: "Rollup", link: "/前端面试/打包工具/Rollup" },
       { text: "esbuild", link: "/前端面试/打包工具/esbuild" },
       { text: "Vite", link: "/前端面试/打包工具/Vite" },
+      { text: "打包文件名", link: "/前端面试/打包工具/打包文件名" },
     ],
   },
   {

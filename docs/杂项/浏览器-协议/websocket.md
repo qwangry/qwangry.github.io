@@ -580,7 +580,6 @@ export const useSocket = (options = defaultOptions) => {
 
 - url：要连接的 WebSocket URL；
 
-- 
 - protocols：一个协议字符串或者一个包含协议字符串的数组；
 
 - query：可以通过 URL 传递给后端的查询参数；

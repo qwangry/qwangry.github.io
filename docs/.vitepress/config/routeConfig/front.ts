@@ -53,6 +53,10 @@ export const front = [
             text: "客户端框架介绍",
             link: "/前端开发/基础/javascript/客户端框架介绍",
           },
+          {
+            text: "WebAssembly",
+            link: "/前端开发/基础/javascript/WebAssembly",
+          },
         ],
       },
     ],
@@ -140,6 +144,7 @@ export const front = [
         collapsed: false,
         items: [
           { text: "基础知识", link: "/前端开发/其他/typescript/基础知识" },
+          { text: "数据类型", link: "/前端开发/其他/typescript/数据类型" },
         ],
       },
       {

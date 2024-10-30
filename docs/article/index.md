@@ -7,9 +7,9 @@
 
 - 📫 Email：qwangry123@163.com
 
-- 🎈 Welcome to visit [✨**My Github Blog**✨](https://qwangry.github.io/)
+- 🎈 WeNlcome to visit [✨**My Github Blog**✨](https://qwangry.github.io/)
 
-- 🍀 Welcome to visit [✨**My CSND**✨](https://blog.csdn.net/wwang_123?spm=1010.2135.3001.5343)
+- 🍀 Welcome to visit [✨**My CSD**✨](https://blog.csdn.net/wwang_123?spm=1010.2135.3001.5343)
 
 ---
 

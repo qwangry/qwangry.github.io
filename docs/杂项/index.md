@@ -11,7 +11,7 @@
 
 - 🎈 Welcome to visit [✨**My Github Blog**✨](https://qwangry.github.io/)
 
-- 🍀 Welcome to visit [✨**My CSND**✨](https://blog.csdn.net/wwang_123?spm=1010.2135.3001.5343)
+- 🍀 Welcome to visit [✨**My CSDN**✨](https://blog.csdn.net/wwang_123?spm=1010.2135.3001.5343)
 
 ---
 

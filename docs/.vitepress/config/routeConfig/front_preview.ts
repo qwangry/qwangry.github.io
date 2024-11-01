@@ -14,6 +14,7 @@ export const front_preview = [
       },
       { text: "盒模型", link: "/前端面试/HTML与CSS/盒模型" },
       { text: "BFC", link: "/前端面试/HTML与CSS/BFC" },
+      { text: "定位", link: "/前端面试/HTML与CSS/定位" },
       {
         text: "CSS预处理器-后处理器",
         link: "/前端面试/HTML与CSS/CSS预处理器-后处理器",
@@ -24,6 +25,7 @@ export const front_preview = [
       { text: "css绘制各种图形", link: "/前端面试/HTML与CSS/css绘制各种图形" },
       { text: "css实现0.5", link: "/前端面试/HTML与CSS/css实现0.5" },
       { text: "媒体查询", link: "/前端面试/HTML与CSS/媒体查询" },
+      { text: "文本省略号", link: "/前端面试/HTML与CSS/文本省略号" },
       {
         text: "flex最后一行的问题",
         link: "/前端面试/HTML与CSS/flex最后一行的问题",
@@ -85,6 +87,7 @@ export const front_preview = [
       { text: "数组扁平化", link: "/前端面试/手写代码/数组扁平化" },
       { text: "柯里化", link: "/前端面试/手写代码/柯里化" },
       { text: "数组reduce", link: "/前端面试/手写代码/数组reduce" },
+      { text: "url的query解析", link: "/前端面试/手写代码/url的query解析" },
       { text: "代码片段", link: "/前端面试/手写代码/代码片段" },
       {
         text: "React写一个倒计时",
@@ -154,6 +157,7 @@ export const front_preview = [
       { text: "页面监控", link: "/前端面试/性能优化/页面监控" },
       { text: "性能优化方案", link: "/前端面试/性能优化/性能优化方案" },
       { text: "长列表展示", link: "/前端面试/性能优化/长列表展示" },
+      { text: "防止接口重复请求", link: "/前端面试/性能优化/防止接口重复请求" },
       {
         text: "JS执行100万个函数",
         link: "/前端面试/性能优化/JS执行100万个函数",

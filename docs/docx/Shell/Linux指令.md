@@ -182,6 +182,56 @@ head [-n number] 文件
 tail [-n number] 文件 
 ```
 
+### 权限
+
+Linux下每个文件都有以下三种权限：
+
+- r：表示读取，对应的数字是4
+
+- w：表示写入，对应的数字为2
+
+- x：表示执行，对应的数字为1
+
+通过4，2，1组合，可以得到以下几种权限：
+
+- 0：没有权限，用`-`表示
+
+- 4：读取权限，用`w`表示
+
+- 5：读取和执行权限，用`rx`表示
+
+- 6：读取和写入权限，用`rw`表示
+
+- 7：读取，写入和执行权限，用`rwx`表示
+
+权限为什么是三位数字？如777
+
+> 三位是指三个不同的对象：
+> 
+> - User：文件所属者
+> 
+> - Group：文件所属组
+> 
+> - Other：其他人
+> 
+
+**修改权限指令：chmod**
+
+```
+chmod 777 文件名
+chmod -R 764 目录名
+```
+
+![alt text](image-4.png)
+
+英文表示权限的前面还有一个字符，比如`l`、`d`，这些代表什么呢？
+
+- `l`：表示此文件为软链接
+
+- `d`：表示文件为目录
+
+- `-`：表示文件为普通文件
+
 ## vi/vim
 ![alt text](./images/Linux/image-1.png)
 
@@ -346,3 +396,4 @@ umount [-fn] 装置文件名或挂载点
 ## 参考链接
 [https://www.runoob.com/linux/linux-system-boot.html](https://www.runoob.com/linux/linux-system-boot.html)
 
+[https://cloud.tencent.com/developer/article/1796771](https://cloud.tencent.com/developer/article/1796771)

@@ -20,7 +20,8 @@ export const docx = [
     items: [
       { text: "数据库指令", link: "/docx/数据库/数据库指令" },
       { text: "MySQL架构", link: "/docx/数据库/MySQL架构" },
-      // { text: "数据库索引", link: "/docx/数据库/数据库索引" },
+      { text: "数据库索引", link: "/docx/数据库/数据库索引" },
+      { text: "Redis", link: "/docx/数据库/Redis" },
     ],
   },
   {

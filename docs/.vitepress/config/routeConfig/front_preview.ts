@@ -15,6 +15,7 @@ export const front_preview = [
       { text: "盒模型", link: "/前端面试/HTML与CSS/盒模型" },
       { text: "BFC", link: "/前端面试/HTML与CSS/BFC" },
       { text: "定位", link: "/前端面试/HTML与CSS/定位" },
+      { text: "清除浮动", link: "/前端面试/HTML与CSS/清除浮动" },
       {
         text: "CSS预处理器-后处理器",
         link: "/前端面试/HTML与CSS/CSS预处理器-后处理器",

@@ -1,8 +1,14 @@
 # MySQL 架构
 
+
+## 架构
+
 ![alt text](image-2.png)
 
 MySQL 架构共分为两层：server 层和存储引擎层
+
+
+![alt text](image-3.png)
 
 ## server 层
 

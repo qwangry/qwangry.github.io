@@ -28,6 +28,7 @@ export const other = [
     items: [
       { text: "进程和线程", link: "/杂项/操作系统/进程和线程" },
       { text: "死锁", link: "/杂项/操作系统/死锁" },
+      { text: "内存管理", link: "/杂项/操作系统/内存管理" },
     ],
   },
   {

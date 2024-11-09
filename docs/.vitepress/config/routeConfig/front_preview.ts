@@ -175,6 +175,7 @@ export const front_preview = [
       { text: "认证授权", link: "/前端面试/项目/认证授权" },
       { text: "组件化", link: "/前端面试/项目/组件化" },
       { text: "在线聊天", link: "/前端面试/项目/在线聊天" },
+      { text: "在线视频", link: "/前端面试/项目/在线视频" },
       { text: "pdf预览实现", link: "/前端面试/项目/pdf预览实现" },
       { text: "html5的video", link: "/前端面试/项目/html5的video" },
       { text: "测试", link: "/前端面试/项目/测试" },

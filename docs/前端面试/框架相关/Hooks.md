@@ -392,6 +392,77 @@ function Counter() {
 
 > 基于状态或道具变化发起网络请求；监听某个状态的变化并执行相应的操作
 
+## useNavigate && useParams && useLocation
+
+useNavigae是`react-router-dom`库提供的一个Hook，用于在函数组件中实现编程式导航，允许我们在代码中通过函数的方式来控制路由跳转，而不需要通过传统的链接
+
+- useNavigate 返回一个函数，该函数接收一个参数，即要跳转的路径
+
+> 可选参数：
+> 
+> - `navigate(path,{replace: true})`：通过传递`replace: true`，可以替换为当前历史记录，而不是将新路径添加到历史记录中
+> 
+> - `navigate(path, { state: { key: 'value' } })`：可以传递一些状态参数到目标页面，在目标页面中可以通过`useLocation`钩子来获取这些参数。
+> 
+> `navigate('/target-page', { replace: true, state: { key: 'value' } });`
+
+
+```js
+import { useNavigate } from 'react-router-dom';
+
+function MyComponent() {
+    const navigate = useNavigate();
+
+    const goToPage = () => {
+        navigate('/target-page');
+    };
+
+    return (
+        <button onClick={goToPage}>Go to Target Page</button>
+    );
+}
+```
+
+- useParams是另一个常用的路由钩子，用于获取路径中的动态参数
+
+```js
+import { useParams } from 'react-router-dom';
+
+function UserProfile() {
+    const { userId } = useParams();
+
+    return <div>User ID: {userId}</div>;
+}
+
+// 假设路由为/user/:userId，那么访问/user/123时，userId的值为123
+```
+
+- useLocation用于获取当前路由的location对象，其中包含当前URL的信息，包括`pathname、search、hash和state`
+
+```js
+import { useLocation } from 'react-router-dom';
+
+function MyComponent() {
+    const location = useLocation();
+
+    console.log(location.pathname); // 当前路径
+    console.log(location.state); // 传递的状态
+
+    return <div>Current path: {location.pathname}</div>;
+}
+```
+
+- useNavigate和useLocation配合传递状态：可以利用navigate的state参数将数据传递到目标页面，并在目标页面通过useLocation来接收这些状态数据
+
+```js
+// Page A
+navigate('/target-page', { state: { userId: 123, name: 'John' } });
+
+// Page B
+const location = useLocation();
+console.log(location.state); // { userId: 123, name: 'John' }
+```
+
 ## 自定义 Hook
 
 - 自定义 Hook 更像是一种约定，而不是一种功能。如果函数的名字以 use 开头，并且调用了其他的 Hook，则就称其为一个自定义 Hook

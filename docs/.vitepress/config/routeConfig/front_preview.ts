@@ -45,6 +45,7 @@ export const front_preview = [
         text: "单线程的JavaScript",
         link: "/前端面试/JavaScript/单线程的JavaScript",
       },
+      { text: "模块化", link: "/前端面试/JavaScript/模块化" },
       { text: "Promise", link: "/前端面试/JavaScript/Promise" },
       { text: "精度问题", link: "/前端面试/JavaScript/精度问题" },
       {
@@ -191,6 +192,7 @@ export const front_preview = [
     text: "设计模式",
     collapsed: false,
     items: [
+      { text: "设计模式概览", link: "/前端面试/设计模式/设计模式概览" },
       { text: "发布订阅和观察者", link: "/前端面试/设计模式/发布订阅和观察者" },
     ],
   },

@@ -44,6 +44,7 @@ export const front = [
             text: "JS执行上下文和执行栈",
             link: "/前端开发/基础/javascript/JS执行堆栈",
           },
+          { text: '正则表达式', link: '/前端开发/基础/javascript/正则表达式' },
           // { text: 'web表单', link: '/前端开发/基础/javascript/web表单' },
           {
             text: "客户端web开发工具",

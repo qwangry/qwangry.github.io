@@ -110,7 +110,7 @@ export const front_preview = [
     collapsed: false,
     items: [
       { text: "汇总1", link: "/前端面试/网络相关/汇总1" },
-      { text: "汇总1", link: "/前端面试/网络相关/汇总1" },
+      { text: "多域名存储资源", link: "/前端面试/网络相关/多域名存储资源" },
     ],
   },
   {

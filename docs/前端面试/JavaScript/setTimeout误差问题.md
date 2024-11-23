@@ -68,4 +68,58 @@ setTimeout(() => {
 
 ```
 
+## 其他减少误差的方法
 
+### 使用精确计时库
+可以使用像setInterval或requestAnimationFrame这样精确的计时机制来实现准确的定时任务
+```js
+//系统时间补偿，实现一个更加精确的setTimouta
+function countDown(duration,callback) {
+    const startTime = performance.now()
+    function tick(){
+        const currentTime = performance.now()
+        const elapsed = currentTime - startTime
+        const remaining = duration - elapsed
+        if(remaining<= 0) {
+            callback()
+        } else {
+            setTimeout(tick, Math.max(0,remaining))
+        }
+    }
+    tick()
+}
+
+const duration  = 6000
+countDown(duration,()=>{
+    console.log('倒计时结束')
+})
+```
+
+
+### 手动调整
+在每次定时器触发后，通过记录实际执行时间并与预期执行时间进行比较，计算误差并进行手动调整，以纠正误差
+```js
+// setTimeout 补偿系统时间
+function mySetTiemout(fn, delay, ...args){
+    let currentTime = Date.now()
+    let timer = null
+     const task = ()=>{
+        currentTime +=delay
+         timer = setTimeout(()=>{
+             fn.apply(this, args)
+         },currentTime - Date.now())
+     }
+
+     task()
+    return clearTimeout(timer)
+}
+```
+### 使用Web Workers
+将计时任务移至 Web Workers 中执行，这样可以避免与主线程的其他代码竞争，提高定时器的准确性。
+
+### 使用时间戳
+而不是依赖定时器的延迟时间，使用时间戳来进行倒计时和计算，可以更精确地控制时间。
+
+## 参考
+
+[https://juejin.cn/post/7350209063522025510](https://juejin.cn/post/7350209063522025510)

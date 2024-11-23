@@ -801,3 +801,19 @@ c = Counter(a=10, b=5, c=0)
 c.total()
 # 15
 ```
+
+## 快速幂
+
+求a的b次方对p取模的值
+
+```python
+def power(a, b, p):
+	ans = 1 % p
+	while b:
+        # b & 1 = 1（最低位为 1，说明 b 是奇数）
+		if b & 1:
+			ans = ans * a % p
+		a = a * a % p
+		b >>= 1
+	return ans
+```

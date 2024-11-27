@@ -4,6 +4,7 @@ export const other = [
     text: "浏览器-协议",
     collapsed: false,
     items: [
+      { text: "网络模型", link: "/杂项/浏览器-协议/网络模型" },
       { text: "http", link: "/杂项/浏览器-协议/http" },
       {
         text: "对称加密和非对称加密",

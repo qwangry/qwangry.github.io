@@ -11,6 +11,7 @@ export const docx = [
     text: "网络流量处理",
     collapsed: false,
     items: [
+      { text: "CICFlowMeter使用", link: "/docx/网络流量处理/CICFlowMeter使用" },
       { text: "大型pcap的读写", link: "/docx/网络流量处理/大型pcap的读写" },
     ],
   },

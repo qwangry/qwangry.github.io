@@ -12,7 +12,7 @@ git clone https://github.com/ahlashkari/CICFlowMeter.git
 
 2、IDEA 打开所在目录
 
-- 使用代码提示的方式，控制台进入`project/jnetpcap/win/jnetpcap-1.4.r1425`目录，运行对用指令
+- 使用代码提示的方式，控制台进入`project/jnetpcap/win/jnetpcap-1.4.r1425`目录，运行对应指令
 
 ```sh
 mvn install:install-file -Dfile=jnetpcap.jar -DgroupId=org.jnetpcap -DartifactId=jnetpcap -Dversion=1.4.1 -Dpackaging=jar

@@ -1,5 +1,12 @@
-// .vitepress/theme/index.js
 import DefaultTheme from "vitepress/theme";
-import "./custom.css";
+import MyLayout from "./MyLayout.vue";
+import confetti from "./confetti.vue";
 
-export default DefaultTheme;
+export default {
+    ...DefaultTheme,
+    Layout: MyLayout,
+    enhanceApp(ctx) {
+        const { app } = ctx;
+        app.component("confetti", confetti);
+    },
+};

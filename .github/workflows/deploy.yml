@@ -43,6 +43,9 @@ jobs:
       - name: Install dependencies
         run: npm install # or pnpm install / yarn install
       - name: Build with VitePress
+        env: # 注入环境变量
+          VITE_CLIENT_ID: ${{ secrets.VITE_CLIENT_ID }}
+          VITE_CLIENT_SECRET: ${{ secrets.VITE_CLIENT_SECRET }}
         run: npm run docs:build # or pnpm docs:build / yarn docs:build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

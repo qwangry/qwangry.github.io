@@ -47,6 +47,7 @@ export const docx = [
       { text: "排序算法", link: "/docx/leetcode/排序算法" },
       { text: "最优解问题", link: "/docx/leetcode/最优解问题" },
       { text: "最小生成树", link: "/docx/leetcode/最小生成树" },
+      { text: "单源最短路径", link: "/docx/leetcode/单源最短路径" },
       { text: "leetcode总结1", link: "/docx/leetcode/leetcode总结1" },
     ],
   },

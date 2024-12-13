@@ -47,7 +47,19 @@ ListNode.__lt__=lambda a,b:a.val<b.val
 
 heapq.heappush(pq,head)
 
-node=heapq.heappop()
+node=heapq.heappop(pq)
+```
+
+堆元素可以是元组
+
+```py
+h = []
+heappush(h, (5, 'write code'))
+heappush(h, (7, 'release product'))
+heappush(h, (1, 'write spec'))
+heappush(h, (3, 'create tests'))
+heappop(h)
+# (1, 'write spec')
 ```
 
 ### 快慢指针

@@ -160,11 +160,13 @@ const PDFViewerMobile = () => {
 
 ## PDF预览其他方案
 
-### 使用 `<embed>` 或 `<iframe>` 标签直接嵌入 PDF
-```js
+### 使用 `<embed>` 、 `<iframe>`、`<object>` 标签直接嵌入 PDF
+```html
 <embed src="path/to/file.pdf" type="application/pdf" width="100%" height="600px" />
 <!-- 或 -->
 <iframe src="path/to/file.pdf" width="100%" height="600px"></iframe>
+<!-- 或 -->
+<object data="./test.pdf" type="application/pdf" width="100%" height="100%"></object>
 ```
 
 #### 特点
@@ -177,6 +179,14 @@ const PDFViewerMobile = () => {
 - 这种方式的优势在于无需额外的代码库，但浏览器的渲染效果取决于其内置的 PDF 查看器支持，可能在部分设备或浏览器上不一致。
 
 ### PDF.js
+
+pdf.js分为3层：
+
+- Core Layer（核心层）：pdf.worker.js，用于解析和解释二进制PDF文档，这一层是所有后续层的基础。一般不会直接操作核心层，而是去操作由核心层封装的展示层。
+
+- Display Layer（展示层）：pdf.js，是对核心层进行了一个封装，从而得到更容易使用的API，用来展示PDF或从文档获取其他信息。
+
+- Viewer Layer（查看器层）：viewer.html+viewer.css+viewer.js，构建在显示层上，是PDF查看器的UI。
 
 ```js
 // 引入 PDF.js 库

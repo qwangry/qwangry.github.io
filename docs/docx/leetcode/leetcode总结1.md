@@ -814,6 +814,54 @@ c.total()
 # 15
 ```
 
+## sortedcontainers库
+
+### SortedList
+
+主要用处：
+
+1、自动排序
+
+2、高效查找
+
+3、替代传统的排序操作，相比于python原生的`list+sort()`操作，`SortedList`在频繁插入、删除元素时性能更高
+
+4、适合动态维护有序数据：比如需要维护滑动窗口中的有序元素、区间查询、排名查询等场景
+
+操作：
+
+add：添加
+
+remove：删除
+
+index：返回某个元素的索引位置
+
+bisect_left(value)：返回插入value时，左侧插入点的索引
+
+bisect_right(value)：返回插入value时，右侧插入点的索引
+
+```py
+from sortedcontainers import SortedList
+s1=SortedList()
+s1.add(1)
+s1.add(3)
+s1.add(2)
+s1.add(4)
+s1.add(5)
+s1.add(7)
+# [1,2,3,4,5,7]
+s1.remove(1)
+s1.remove(3)
+# [2,4,5,7]
+
+s1[0]#2
+s1[-1]#7
+
+print(sl.index(4))          # 输出: 1
+print(sl.bisect_left(5))    # 输出: 2
+print(sl.bisect_right(5))   # 输出: 3
+```
+
 ## 快速幂
 
 求a的b次方对p取模的值

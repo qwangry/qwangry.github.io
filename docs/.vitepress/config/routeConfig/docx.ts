@@ -48,6 +48,7 @@ export const docx = [
       { text: "最优解问题", link: "/docx/leetcode/最优解问题" },
       { text: "最小生成树", link: "/docx/leetcode/最小生成树" },
       { text: "单源最短路径", link: "/docx/leetcode/单源最短路径" },
+      { text: "位运算", link: "/docx/leetcode/位运算" },
       { text: "leetcode总结1", link: "/docx/leetcode/leetcode总结1" },
     ],
   },

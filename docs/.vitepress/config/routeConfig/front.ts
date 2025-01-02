@@ -1,62 +1,62 @@
 export const front = [
   { text: "Welcome", link: "/前端开发/" },
   {
-    text: "基础",
+    text: "前端基础",
     collapsed: false,
     items: [
-      { text: "构建网站的工具", link: "/前端开发/基础/构建网站的工具" },
+      { text: "构建网站的工具", link: "/前端开发/前端基础/构建网站的工具" },
       {
         text: "HTML",
         collapsed: false,
         items: [
-          { text: "简介", link: "/前端开发/基础/html/introduce" },
-          { text: "HTML5新特性", link: "/前端开发/基础/html/HTML5新特性" },
+          { text: "简介", link: "/前端开发/前端基础/html/introduce" },
+          { text: "HTML5新特性", link: "/前端开发/前端基础/html/HTML5新特性" },
         ],
       },
       {
         text: "CSS",
         collapsed: false,
         items: [
-          { text: "简介", link: "/前端开发/基础/css/introduce" },
-          { text: "CSS基础", link: "/前端开发/基础/css/CSS基础" },
-          { text: "常见概念", link: "/前端开发/基础/css/常见概念" },
-          { text: "样式设置", link: "/前端开发/基础/css/样式设置" },
-          { text: "CSS布局", link: "/前端开发/基础/css/CSS布局" },
+          { text: "简介", link: "/前端开发/前端基础/css/introduce" },
+          { text: "CSS基础", link: "/前端开发/前端基础/css/CSS基础" },
+          { text: "常见概念", link: "/前端开发/前端基础/css/常见概念" },
+          { text: "样式设置", link: "/前端开发/前端基础/css/样式设置" },
+          { text: "CSS布局", link: "/前端开发/前端基础/css/CSS布局" },
         ],
       },
       {
         text: "JavaScript",
         collapsed: false,
         items: [
-          { text: "简介", link: "/前端开发/基础/javascript/introduce" },
+          { text: "简介", link: "/前端开发/前端基础/javascript/introduce" },
           {
             text: "JavaScript语法",
-            link: "/前端开发/基础/javascript/javascript语法",
+            link: "/前端开发/前端基础/javascript/javascript语法",
           },
-          { text: "数据类型", link: "/前端开发/基础/javascript/数据类型" },
-          { text: "事件", link: "/前端开发/基础/javascript/事件" },
-          { text: "浏览器模型", link: "/前端开发/基础/javascript/浏览器模型" },
-          { text: "ES6", link: "/前端开发/基础/javascript/ES6" },
-          { text: "面向对象", link: "/前端开发/基础/javascript/面向对象" },
-          { text: "异步", link: "/前端开发/基础/javascript/异步" },
-          { text: "前后端交互", link: "/前端开发/基础/javascript/前后端交互" },
+          { text: "数据类型", link: "/前端开发/前端基础/javascript/数据类型" },
+          { text: "事件", link: "/前端开发/前端基础/javascript/事件" },
+          { text: "浏览器模型", link: "/前端开发/前端基础/javascript/浏览器模型" },
+          { text: "ES6", link: "/前端开发/前端基础/javascript/ES6" },
+          { text: "面向对象", link: "/前端开发/前端基础/javascript/面向对象" },
+          { text: "异步", link: "/前端开发/前端基础/javascript/异步" },
+          { text: "前后端交互", link: "/前端开发/前端基础/javascript/前后端交互" },
           {
             text: "JS执行上下文和执行栈",
-            link: "/前端开发/基础/javascript/JS执行堆栈",
+            link: "/前端开发/前端基础/javascript/JS执行堆栈",
           },
-          { text: '正则表达式', link: '/前端开发/基础/javascript/正则表达式' },
-          // { text: 'web表单', link: '/前端开发/基础/javascript/web表单' },
+          { text: '正则表达式', link: '/前端开发/前端基础/javascript/正则表达式' },
+          // { text: 'web表单', link: '/前端开发/前端基础/javascript/web表单' },
           {
             text: "客户端web开发工具",
-            link: "/前端开发/基础/javascript/客户端web开发工具",
+            link: "/前端开发/前端基础/javascript/客户端web开发工具",
           },
           {
             text: "客户端框架介绍",
-            link: "/前端开发/基础/javascript/客户端框架介绍",
+            link: "/前端开发/前端基础/javascript/客户端框架介绍",
           },
           {
             text: "WebAssembly",
-            link: "/前端开发/基础/javascript/WebAssembly",
+            link: "/前端开发/前端基础/javascript/WebAssembly",
           },
         ],
       },
@@ -129,6 +129,13 @@ export const front = [
     ],
   },
   {
+    text: "前端测试",
+    collapsed: false,
+    items: [
+      { text: "Playwright基本使用", link: "/前端开发/前端测试/Playwright基本使用" },
+    ],
+  },
+  {
     text: "NodeJS",
     collapsed: false,
     items: [
@@ -182,7 +189,7 @@ export const front = [
         text: "其他",
         collapsed: false,
         items: [
-          { text: "前端模块化", link: "/前端开发/基础/前端模块化" },
+          { text: "前端模块化", link: "/前端开发/前端基础/前端模块化" },
           { text: "axios", link: "/前端开发/其他/其他/axios" },
           { text: "mockjs", link: "/前端开发/其他/其他/mockjs" },
         ],

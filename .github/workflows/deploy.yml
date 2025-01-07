@@ -40,7 +40,20 @@ jobs:
           cache: npm # or pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Cache Node Modules
+      # 为step设置id，可通过steps.[id].outputs获取该步骤的值
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+          restore-keys: node-modules-
+      # 查看缓存是否设置成功，输出node-modules目录
+      - name: Check Install/Build Cache
+        run: ls -lah node_modules | head -5
       - name: Install dependencies
+        # 如果命中 key ，则直接跳过依赖安装
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install # or pnpm install / yarn install
       - name: Build with VitePress
         env: # 注入环境变量

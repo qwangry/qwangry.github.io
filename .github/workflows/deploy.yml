@@ -43,7 +43,7 @@ jobs:
       - name: Cache Node Modules
       # 为step设置id，可通过steps.[id].outputs获取该步骤的值
         id: cache-node-modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}

@@ -92,6 +92,7 @@ export const front_preview = [
       { text: "url的query解析", link: "/前端面试/手写代码/url的query解析" },
       { text: "代码片段", link: "/前端面试/手写代码/代码片段" },
       { text: "数组常见方法", link: "/前端面试/手写代码/数组常见方法" },
+      { text: "模板语法解析", link: "/前端面试/手写代码/模板语法解析" },
       {
         text: "React写一个倒计时",
         link: "/前端面试/手写代码/React写一个倒计时",

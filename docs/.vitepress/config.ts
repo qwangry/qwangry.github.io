@@ -47,6 +47,13 @@ export default defineConfig({
       // 默认禁用；设置为 true 可为所有图片启用懒加载。
       lazyLoading: true
     },
+    config(md) {
+      const defaultCodeInline = md.renderer.rules.code_inline!
+      md.renderer.rules.code_inline = (tokens, idx, options, env, self) => {
+        tokens[idx].attrSet('v-pre', '')
+        return defaultCodeInline(tokens, idx, options, env, self)
+      }
+    },
   },
   // 当设置为 true 时，VitePress 不会因为死链而导致构建失败
   ignoreDeadLinks: true,

@@ -3,16 +3,25 @@
   "devDependencies": {
     "@giscus/vue": "^3.0.0",
     "@types/canvas-confetti": "^1.6.4",
+    "@types/node": "^22.13.9",
     "@vitejs/plugin-vue": "^5.2.1",
     "canvas-confetti": "^1.9.3",
     "gitalk": "^1.8.0",
     "markdown-it-mathjax3": "^4.3.2",
+    "sharp": "^0.33.5",
     "vite": "^6.0.7",
     "vitepress": "^1.3.4"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "audit": "lighthouse https://qwangry.github.io --output html --output-path ./report.html",
+    "audit:test": "lighthouse http://localhost:5173/ --output html --output-path ./report.html"
+  },
+  "dependencies": {
+    "vitepress-plugin-codeblocks-fold": "^1.2.35",
+    "vitepress-plugin-google-analytics": "^1.0.2",
+    "vitepress-plugin-image-viewer": "^1.1.6"
   }
 }

@@ -16,6 +16,19 @@ export default defineConfig({
         content: "MX1eK0VRiaFy3YQBfQ7A6QjscbHdiEyTAj10C2-UBu0",
       },
     ],
+    // 基础SEO
+    [
+      'meta', 
+      {
+        name: 'keywords', content: '前端开发,React,性能优化,VitePress' 
+      }
+    ],
+    [
+      'meta', 
+      { 
+        property: 'og:type', content: 'website' 
+      }
+    ],
   ],
   cleanUrls: true,
   // lastUpdated: true,
@@ -45,7 +58,7 @@ export default defineConfig({
     math: true, 
     image: {
       // 默认禁用；设置为 true 可为所有图片启用懒加载。
-      lazyLoading: true
+      lazyLoading: true,
     },
     config(md) {
       const defaultCodeInline = md.renderer.rules.code_inline!

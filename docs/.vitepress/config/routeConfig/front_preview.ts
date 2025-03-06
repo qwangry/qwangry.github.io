@@ -63,6 +63,7 @@ export const front_preview = [
         link: "/前端面试/JavaScript/箭头函数和普通函数",
       },
       { text: "Object-Set-Map", link: "/前端面试/JavaScript/Object-Set-Map" },
+      { text: "数组常用操作", link: "/前端面试/JavaScript/数组常用操作" },
       {
         text: "函数-变量代码输出",
         link: "/前端面试/JavaScript/函数-变量代码输出",

@@ -64,6 +64,7 @@ export const front_preview = [
       },
       { text: "Object-Set-Map", link: "/前端面试/JavaScript/Object-Set-Map" },
       { text: "数组常用操作", link: "/前端面试/JavaScript/数组常用操作" },
+      { text: "JavaScript继承", link: "/前端面试/JavaScript/JavaScript继承" },
       {
         text: "函数-变量代码输出",
         link: "/前端面试/JavaScript/函数-变量代码输出",

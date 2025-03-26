@@ -139,8 +139,8 @@ export const front = [
     text: "NodeJS",
     collapsed: false,
     items: [
-      { text: "xx", link: "/前端开发/NodeJS/xx" },
       { text: "包管理工具", link: "/前端开发/NodeJS/包管理工具" },
+      { text: "npx", link: "/前端开发/NodeJS/npx" },
     ],
   },
   {

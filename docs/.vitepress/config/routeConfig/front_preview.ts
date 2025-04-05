@@ -26,6 +26,7 @@ export const front_preview = [
       { text: "css绘制各种图形", link: "/前端面试/HTML与CSS/css绘制各种图形" },
       { text: "css实现0.5", link: "/前端面试/HTML与CSS/css实现0.5" },
       { text: "媒体查询", link: "/前端面试/HTML与CSS/媒体查询" },
+      { text: "物理像素与逻辑像素", link: "/前端面试/HTML与CSS/物理像素与逻辑像素" },
       { text: "文本省略号", link: "/前端面试/HTML与CSS/文本省略号" },
       {
         text: "flex最后一行的问题",

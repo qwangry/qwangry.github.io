@@ -16,13 +16,16 @@ hero:
   tagline: 学习记录，也许坚持就会成功吧
 
   actions:
-    - theme: brand
-      text: ✨快速开始
-      # link: /docx/hello/hello
-      link: /前端开发/
+    # - theme: brand
+    #   text: ✨快速开始
+    #   # link: /docx/hello/hello
+    #   link: /前端开发/
     # - theme: alt
     #   text: 团队介绍
-    #   link: /public/team
+    #   link: /public/team👩‍💻
+    - theme: brand
+      text: ✨个人简历
+      link: https://my-portfolio-virid-gamma-63.vercel.app/
     - theme: alt
       text: Github
       link: https://github.com/qwangry

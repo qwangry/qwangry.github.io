@@ -5,6 +5,8 @@
 - 🌱 I’m ✨**qwangry~**✨
 <!-- - 🔭 You are the ![Visitor Count](https://profile-counter.glitch.me/qwangry/count.svg)th visitor! -->
 
+- 👩‍💻 Resume：[✨**Resume**✨](https://my-portfolio-virid-gamma-63.vercel.app/)
+
 - 📫 Email：qwangry123@163.com
 
 - 🎈 WeNlcome to visit [✨**My Github Blog**✨](https://qwangry.github.io/)

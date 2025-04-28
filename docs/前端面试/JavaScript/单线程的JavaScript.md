@@ -400,3 +400,62 @@ micro-task 大概包括:
 - MutationObserver(html5 新特性)
 
 ![alt text](image-2.png)
+
+## Node中的事件循环
+
+Node中的Event Loop和浏览器中的是完全不同的东西
+
+![alt text](image-31.png)
+
+Node采用V8作为js的解析引擎，而I/O处理方面使用了自己设计的libuv，libuv是一个基于事件驱动的跨平台抽象层，封装了不同操作系统的一些底层特性，对外提供统一的API（时间，非阻塞的网络，异步文件操作，子进程等等），Event Loop也是它里面的实现。
+
+> Node的运行机制：
+> 
+> V8引擎解析JavaScript脚本
+> 
+> 解析后的代码，调用Node API
+> 
+> libuv库负责Node API的执行。将不同的任务分配给不同的线程，形成一个Event Loop，以异步的方式将任务的执行结果返回给V8引擎
+> 
+> V8引擎再将结果返回给用户
+> 
+
+![alt text](image-32.png)
+
+Node的Event Loop分为6个阶段，按照顺序反复运行。每当进入某一个阶段的时候，都会从对应的回调队列中取出函数去执行，当队列为空或者执行的回调函数数量达到系统设定的阈值，就会进入下一阶段。
+
+1、Timers（计时器阶段）：初次进入事件循环，会从计时器阶段开始。此阶段会判断是否存在过期的计时器回调（包含setTimeout和setInterval），如果存在则会执行所有过期的计时器回调，执行完毕后，如果回调中触发了相应的微任务，会接着执行所有的微任务，执行完微任务后再进入Pending callbacks阶段。
+
+2、Pending callbacks：执行推迟到下一个循环迭代的I/O回调
+
+3、Idle/Prepare：仅供内部使用
+
+4、Poll（轮询阶段）：回到timer阶段执行回调，执行I/O回调
+
+> - 当回调队列不为空时：会执行回调，若回调中触发了相应的微任务，这里的微任务执行时机和其他地方有所不同，不会等到所有回调执行完毕后才执行，而是针对每一个回调执行完毕后，就执行相应微任务。执行完所有的回调后，变为下面的情况。
+> 
+> - 当回调队列为空时（没有回调或所有回调执行完毕）：但如果存在有计时器（setTimeout、setInterval和setImmediate）没有执行，会结束轮询阶段，进入Check阶段。否则会阻塞并等待任何正在执行的I/O操作完成，并马上执行相应的回调，直到所有回调执行完毕
+> 
+
+5、Check（查询阶段）：会检查是否存在setImmediate相关的回调，如果存在则执行所有回调，执行完毕后，如果回调中触发了相应的微任务，会接着执行所有微任务，执行完微任务后再进入Close callbacks阶段。
+
+6、Close callbacks：执行一些关闭回调，比如socket.on('close', ...)等。
+
+### process.nextTick
+
+process.nextTick有一个自己的队列，当每个阶段完成后，如果存在 nextTick 队列，就会清空队列中的所有回调函数，并且优先于其他 microtask 执行。
+
+### node中的宏任务和微任务
+
+Node端事件循环中的异步队列也是这两种：macro（宏任务）队列和 micro（微任务）队列：
+
+- 常见的 macro-task 比如：setTimeout、setInterval、 setImmediate、script（整体代码）、 I/O 操作等
+
+- 常见的 micro-task 比如: process.nextTick、new Promise().then(回调)等
+
+
+## 参考
+
+[https://www.yuque.com/cuggz/interview/browser#a749f3035609d95dbdd1ee99d6f14b02](https://www.yuque.com/cuggz/interview/browser#a749f3035609d95dbdd1ee99d6f14b02)
+
+[https://cchroot.github.io/interview/pages/interview%20notes/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8ENode%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AFEvent%20Loop.html#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF-event-loop](https://cchroot.github.io/interview/pages/interview%20notes/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8ENode%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AFEvent%20Loop.html#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF-event-loop)

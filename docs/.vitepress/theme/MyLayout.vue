@@ -10,18 +10,26 @@
                     :theme="isDark ? 'dark' : 'light'" />
             </div>
         </template>
+        <template #layout-bottom>
+            <DonateQR v-if="!isHomePage" />
+        </template>
     </Layout>
 </template>
 
 <script lang="ts" setup>
 import Giscus from "@giscus/vue";
 import DefaultTheme from "vitepress/theme";
-import { watch } from "vue";
-import { inBrowser, useData } from "vitepress";
+import { computed, watch } from "vue";
+import { inBrowser, useData, useRoute } from "vitepress";
+import DonateQR from "./DonateQR.vue";
 
 const { isDark, page } = useData();
-
+const route = useRoute();
 const { Layout } = DefaultTheme;
+
+const isHomePage = computed(() => {
+    return route.path === "/" || page.value.frontmatter?.layout === "home";
+});
 
 watch(isDark, (dark) => {
     if (!inBrowser) return;

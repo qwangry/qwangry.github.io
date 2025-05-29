@@ -1,37 +1,32 @@
-export const nav=[
+export const nav = [
     {
-        text: '文档',
-        activeMatch: '/docx/',
-        link: '/docx/hello/hello'
-    }, 
-    {
-        text: '前端',
-        activeMatch: '/前端开发/',
-        link: '/前端开发/'
+        text:'前端/后端',
+        items:[
+            {
+                text:'前端技术',
+                activeMatch: '/前端技术/',
+                link: '/前端技术/'
+            },
+            {
+                text:'后端技术',
+                activeMatch: '/后端技术/',
+                link: '/后端技术/'
+            },
+            {
+                text: '面试准备',
+                activeMatch: '/面试准备/',
+                link: '/面试准备/'
+            },
+        ]
     },
     {
-        text: '面试',
-        activeMatch: '/前端面试/',
-        link: '/前端面试/'
+        text: '计算机基础',
+        activeMatch: '/计算机基础/',
+        link: '/计算机基础/'
     },
-    // {
-    //     text: '文章记录',
-    //     activeMatch: '/article/',
-    //     link: '/article/'
-    // },
     {
-        text: '杂项',
-        activeMatch: '/杂项/',
-        link: '/杂项/'
-    },
-    // {
-    //     text: '团队介绍',
-    //     activeMatch: '/acticle/',
-    //     link: '/public/team'
-    // },
-    // {
-    //     text: '图片',
-    //     activeMatch: '/public/',
-    //     link: '/public/logo.jpg',
-    // }
+        text: '开发工具',
+        activeMatch: '/开发工具/',
+        link: '/开发工具/'
+    }
 ]

@@ -1,14 +1,13 @@
-
-import { docx } from "./routeConfig/docx";
-import { front } from "./routeConfig/front";
-import { article } from "./routeConfig/article";
-import { other } from "./routeConfig/other";
-import { front_preview } from "./routeConfig/front_preview";
+import { frontend } from "./routeConfig/frontend";
+import { backend } from "./routeConfig/backend";
+import { computerBasics } from "./routeConfig/computer_basics";
+import { interview } from "./routeConfig/interview";
+import { tools } from "./routeConfig/tools";
 
 export const sidebar = {
-    '/docx/': docx,
-    '/前端开发/': front,
-    '/article/': article,
-    '/杂项/': other,
-    '/前端面试/': front_preview,
+    '/前端技术/': frontend,
+    '/后端技术/': backend,
+    '/计算机基础/': computerBasics,
+    '/面试准备/': interview,
+    '/开发工具/': tools,
 }

@@ -1,6 +1,7 @@
 import DefaultTheme from "vitepress/theme";
 import MyLayout from "./MyLayout.vue";
 import confetti from "./confetti.vue";
+import DonateQR from "./DonateQR.vue";
 // 图片预览
 import 'viewerjs/dist/viewer.min.css'
 import imageViewer from "vitepress-plugin-image-viewer";
@@ -17,6 +18,7 @@ export default {
         const { app } = ctx;
         app.component("confetti", confetti);
         app.component("vImageViewer", vImageViewer);
+        app.component("DonateQR", DonateQR);
     },
     setup() {
         const route = useRoute();

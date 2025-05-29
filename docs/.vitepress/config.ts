@@ -18,15 +18,24 @@ export default defineConfig({
     ],
     // 基础SEO
     [
-      'meta', 
+      'meta',
       {
-        name: 'keywords', content: '前端开发,React,性能优化,VitePress' 
+        name: 'keywords', content: '前端开发,React,性能优化,VitePress'
       }
     ],
     [
-      'meta', 
-      { 
-        property: 'og:type', content: 'website' 
+      'meta',
+      {
+        property: 'og:type', content: 'website'
+      }
+    ],
+    // Google AdSense
+    [
+      'script',
+      {
+        async: 'true',
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6580163109975746',
+        crossorigin: 'anonymous'
       }
     ],
   ],
@@ -55,7 +64,7 @@ export default defineConfig({
   markdown: {
     theme: "material-theme-palenight",
     lineNumbers: true,
-    math: true, 
+    math: true,
     image: {
       // 默认禁用；设置为 true 可为所有图片启用懒加载。
       lazyLoading: true,

@@ -9,6 +9,7 @@
                     emit-metadata="0" input-position="bottom" lang="zh-CN" crossorigin="anonymous"
                     :theme="isDark ? 'dark' : 'light'" />
             </div>
+            <StarProject v-if="!isHomePage" />
         </template>
         <template #layout-bottom>
             <DonateQR v-if="!isHomePage" />
@@ -21,7 +22,8 @@ import Giscus from "@giscus/vue";
 import DefaultTheme from "vitepress/theme";
 import { computed, watch } from "vue";
 import { inBrowser, useData, useRoute } from "vitepress";
-import DonateQR from "./DonateQR.vue";
+import DonateQR from "./components/DonateQR.vue";
+import StarProject from "./components/StarProject.vue";
 
 const { isDark, page } = useData();
 const route = useRoute();

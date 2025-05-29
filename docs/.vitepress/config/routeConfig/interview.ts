@@ -183,10 +183,11 @@ export const interview = [
             },
         ]
     },
-    // {
-    //     text: '项目经验',
-    //     collapsed: false,
-    //     items: [
-    //     ]
-    // }
+    {
+        text: '面试题整理',
+        collapsed: false,
+        items: [
+            { text: '面试真题', link: '/面试准备/面试题整理/面试真题' },
+        ]
+    }
 ] 

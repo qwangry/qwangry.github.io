@@ -7,7 +7,7 @@
         <transition name="fade">
             <div v-if="showQR" class="qr-popup" @click="closeQR">
                 <div class="qr-content" @click.stop>
-                    <h4>如果觉得内容有帮助的话，可以请我喝杯咖啡 ☕</h4>
+                    <h4>如果这些内容对您有帮助</h4>
                     <div class="qr-codes">
                         <div class="qr-item">
                             <img src="/donate-wechat.jpg" alt="微信打赏" />

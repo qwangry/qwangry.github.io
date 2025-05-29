@@ -40,7 +40,7 @@ export default defineConfig({
     ],
   ],
   cleanUrls: true,
-  // lastUpdated: true,
+  lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: "/logo.jpg",
@@ -49,7 +49,7 @@ export default defineConfig({
     socialLinks: [{ icon: "github", link: "https://github.com/qwangry" }],
     editLink: {
       pattern: "https://github.com/qwangry/qwangry.github.io/tree/main/docs/:path",
-      text: "Edit this page on GitHub",
+      text: "在GitHub上编辑",
     },
     outline: [2, 3],
     docFooter: {

@@ -33,7 +33,7 @@ export default defineConfig({
     [
       'script',
       {
-        async: 'true',
+        async: '',
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6580163109975746',
         crossorigin: 'anonymous'
       }

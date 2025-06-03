@@ -3,6 +3,7 @@ import MyLayout from "./MyLayout.vue";
 import confetti from "./components/confetti.vue";
 import DonateQR from "./components/DonateQR.vue";
 import StarProject from "./components/StarProject.vue";
+import AdComponent from "./components/AdComponent.vue";
 // 图片预览
 import 'viewerjs/dist/viewer.min.css'
 import imageViewer from "vitepress-plugin-image-viewer";
@@ -21,6 +22,7 @@ export default {
         app.component("vImageViewer", vImageViewer);
         app.component("DonateQR", DonateQR);
         app.component("StarProject", StarProject);
+        app.component("AdComponent", AdComponent);
     },
     setup() {
         const route = useRoute();

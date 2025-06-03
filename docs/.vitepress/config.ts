@@ -37,6 +37,15 @@ export default defineConfig({
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6580163109975746',
         crossorigin: 'anonymous'
       }
+    ],  
+    // 添加AMP广告库脚本
+    [
+      'script',
+      {
+        async: '',
+        'custom-element': 'amp-ad',
+        src: 'https://cdn.ampproject.org/v0/amp-ad-0.1.js'
+      }
     ],
   ],
   cleanUrls: true,

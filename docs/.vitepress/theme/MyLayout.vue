@@ -10,6 +10,7 @@
                     :theme="isDark ? 'dark' : 'light'" />
             </div>
             <StarProject v-if="!isHomePage" />
+            <AdComponent  v-if="!isHomePage" />
         </template>
         <template #layout-bottom>
             <DonateQR v-if="!isHomePage" />
@@ -24,6 +25,7 @@ import { computed, watch } from "vue";
 import { inBrowser, useData, useRoute } from "vitepress";
 import DonateQR from "./components/DonateQR.vue";
 import StarProject from "./components/StarProject.vue";
+import AdComponent from "./components/AdComponent.vue";
 
 const { isDark, page } = useData();
 const route = useRoute();

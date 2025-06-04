@@ -4,7 +4,8 @@ export const tools = [
         collapsed: false,
         items: [
             { text: 'Git入门', link: '/开发工具/Git版本控制/入门' },
-            { text: 'Git常用指令', link: '/开发工具/Git版本控制/常用指令' }
+            { text: '常用指令', link: '/开发工具/Git版本控制/常用指令' },
+            { text: '常见场景', link: '/开发工具/Git版本控制/常见场景' }
         ]
     },
     {

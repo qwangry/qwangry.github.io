@@ -122,11 +122,11 @@ export const interview = [
                 text: "打包工具",
                 collapsed: true,
                 items: [
-                    { text: "webpack", link: "/面试准备/面试题集/打包工具/webpack" },
+                    { text: "Webpack", link: "/面试准备/面试题集/打包工具/Webpack" },
                     { text: "Rollup", link: "/面试准备/面试题集/打包工具/Rollup" },
-                    { text: "esbuild", link: "/面试准备/面试题集/打包工具/esbuild" },
+                    { text: "Esbuild", link: "/面试准备/面试题集/打包工具/Esbuild" },
                     { text: "Vite", link: "/面试准备/面试题集/打包工具/Vite" },
-                    { text: "打包文件名", link: "/面试准备/面试题集/打包工具/打包文件名" },
+                    { text: "前端打包文件名与Hash策略", link: "/面试准备/面试题集/打包工具/前端打包文件名与Hash策略" },
                 ],
             },
             {
